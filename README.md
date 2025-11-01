@@ -33,15 +33,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **2. Operators and Expressions**
-- Arithmetic, relational, logical operators  
-- Assignment and bitwise operators  
-- Identity and membership operators  
-- Operator precedence  
-
----
-
-### **3. Control Flow**
+### **2. Control Flow**
 - `if`, `elif`, `else` statements  
 - Nested conditions  
 - `for` and `while` loops  
@@ -51,7 +43,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **4. Data Structures**
+### **3. Data Structures**
 - Lists, tuples, sets, and dictionaries  
 - Indexing and slicing  
 - List comprehensions and dictionary comprehensions  
@@ -60,7 +52,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **5. Functions**
+### **4. Functions**
 - Defining and calling functions  
 - Function arguments (positional, keyword, default, variable-length)  
 - Return values  
@@ -71,7 +63,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **6. Modules and Packages**
+### **5. Modules and Packages**
 - Creating and importing modules  
 - Built-in modules (`os`, `sys`, `datetime`, `platform`)  
 - The `pip` package manager  
@@ -80,7 +72,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **7. File Handling**
+### **6. File Handling**
 - Reading and writing text, CSV, JSON files  
 - Working with configuration files (`.ini`, `.yaml`, `.json`)  
 - Automating log file reading  
@@ -88,7 +80,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **8. Exception Handling**
+### **7. Exception Handling**
 - Understanding errors and exceptions  
 - `try`, `except`, `finally`, `else` blocks  
 - Raising exceptions  
@@ -97,7 +89,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **9. Object-Oriented Programming (OOP)**
+### **8. Object-Oriented Programming (OOP)**
 - Classes and objects  
 - Constructors (`__init__`)  
 - Instance vs class variables  
@@ -107,7 +99,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **10. Advanced Python Concepts**
+### **9. Advanced Python Concepts**
 - Iterators and generators  
 - Decorators and context managers  
 - Regular expressions (`re` module)  
@@ -118,7 +110,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **11. Working with APIs and Networking**
+### **10. Working with APIs and Networking**
 - Introduction to REST APIs  
 - Using `requests` module  
 - Consuming JSON APIs  
@@ -127,7 +119,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **12. DevOps-Specific Python Automation**
+### **11. DevOps-Specific Python Automation**
 - Writing Python scripts for:
   - AWS automation using `boto3`  
   - File transfer using `paramiko` (SSH, SFTP)  
@@ -139,14 +131,14 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **13. Database Integration**
+### **12. Database Integration**
 - Connecting to databases (MySQL, PostgreSQL, SQLite)  
 - Executing CRUD operations  
 - Reading data for reporting or automation  
 
 ---
 
-### **14. Logging and Debugging**
+### **13. Logging and Debugging**
 - Python `logging` module  
 - Logging levels and configuration  
 - Writing logs to files  
@@ -154,7 +146,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **15. Testing and CI/CD**
+### **14. Testing and CI/CD**
 - Unit testing with `unittest` and `pytest`  
 - Mocking and fixtures  
 - Integrating Python tests in Jenkins/GitLab pipelines  
@@ -162,7 +154,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **16. Popular DevOps Libraries**
+### **15. Popular DevOps Libraries**
 | Purpose | Library |
 |----------|----------|
 | AWS Cloud Automation | `boto3` |
@@ -175,7 +167,7 @@ This syllabus covers everything you need — from **basic syntax to advanced Dev
 
 ---
 
-### **17. Hands-on Projects**
+### **16. Hands-on Projects**
 - ✅ Automate AWS EC2 instance start/stop using `boto3`  
 - ✅ Log file analyzer script  
 - ✅ Automated backup using Python  
