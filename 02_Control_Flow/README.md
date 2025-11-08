@@ -80,7 +80,7 @@ Loops allow you to **repeat actions** — very useful in **automation tasks**.
 
 ---
 
-### ➤ `for` Loop
+## ➤ `for` Loop
 
 Used for iterating over a **sequence** (like list, tuple, or string).
 
@@ -114,7 +114,7 @@ for i in range(1, 4):
 
 ---
 
-### ➤ `while` Loop
+## ➤ `while` Loop
 
 Runs **until a condition becomes False**.
 
