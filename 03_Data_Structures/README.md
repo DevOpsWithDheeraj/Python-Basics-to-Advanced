@@ -11,7 +11,7 @@ In this section, you’ll learn:
 
 ---
 
-## 🧩 1. What are Data Structures?
+## 🧩 What are Data Structures?
 
 **Definition:**  
 Data Structures in Python are **containers used to store, organize, and manipulate data** efficiently.
@@ -24,7 +24,7 @@ They help DevOps engineers manage:
 
 ---
 
-## 📋 2. List — Ordered and Mutable Collection
+## 📋 1. List — Ordered and Mutable Collection
 
 **Definition:**  
 A **list** is an ordered, **mutable (changeable)** collection of items.
@@ -70,7 +70,7 @@ for s in servers:
 
 ---
 
-## 🧱 3. Tuple — Ordered and Immutable Collection
+## 🧱 2. Tuple — Ordered and Immutable Collection
 
 **Definition:**
 A **tuple** is an ordered, **immutable (unchangeable)** collection of items.
@@ -102,7 +102,7 @@ for region in aws_regions:
 
 ---
 
-## 🔢 4. Set — Unordered, Unique Collection
+## 🔢 3. Set — Unordered, Unique Collection
 
 **Definition:**
 A **set** is an **unordered collection** that does **not allow duplicates**.
@@ -135,7 +135,7 @@ Identify common tools between multiple environments (e.g., staging vs production
 
 ---
 
-## 🔑 5. Dictionary — Key-Value Pairs (Most Used in DevOps)
+## 🔑 4. Dictionary — Key-Value Pairs (Most Used in DevOps)
 
 **Definition:**
 A **dictionary** stores data in **key-value** pairs.
@@ -195,7 +195,7 @@ for key, value in ec2_instance.items():
 
 ---
 
-## ⚙️ 6. Nested Data Structures
+## ⚙️ 5. Nested Data Structures
 
 You can **combine multiple structures** together — useful for real DevOps JSON-like data.
 
@@ -231,7 +231,7 @@ for env, srv_list in deployments.items():
 
 ---
 
-## 🧠 7. Conversion Between Data Structures
+## 🧠 6. Conversion Between Data Structures
 
 ### Examples:
 
@@ -252,7 +252,7 @@ print(list(data.values()))
 
 ---
 
-## 🧰 8. DevOps Real-world Examples
+## 🧰 7. DevOps Real-world Examples
 
 ### ✅ Example 1: Parse JSON from AWS CLI
 
@@ -295,7 +295,7 @@ print("Common Tools:", common)
 
 ---
 
-## 🧾 9. Summary
+## 🧾 8. Summary
 
 | Data Structure | Ordered                        | Mutable | Allows Duplicates   | Example            |
 | -------------- | ------------------------------ | ------- | ------------------- | ------------------ |
