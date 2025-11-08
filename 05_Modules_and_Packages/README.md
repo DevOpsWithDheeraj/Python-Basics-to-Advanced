@@ -224,12 +224,18 @@ pip install boto3 paramiko requests psutil
 ```python
 import boto3
 
-ec2 = boto3.client('ec2')
+ec2 = boto3.resource('ec2')
 
-response = ec2.describe_instances()
-for reservation in response['Reservations']:
-    for instance in reservation['Instances']:
-        print(instance['InstanceId'], instance['State']['Name'])
+instance = ec2.create_instances(
+    ImageId='ami-0abcdef1234567890',  # Example AMI ID
+    InstanceType='t2.micro',
+    MinCount=1,
+    MaxCount=1,
+    KeyName='my-key-pair'
+)
+
+print("Launched EC2 Instance:", instance[0].id)
+
 ```
 
 💡 **Use Case:**
