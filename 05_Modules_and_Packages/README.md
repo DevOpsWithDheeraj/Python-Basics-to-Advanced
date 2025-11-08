@@ -305,12 +305,12 @@ docker_utils.start_container("nginx")
 
 ## ✅ 6. Best Practices
 
-✔️ Keep **related functions in one module** (e.g., `aws_utils`, `docker_utils`)
-✔️ Use **meaningful names** for modules and packages
-✔️ Add **docstrings** to explain functions
-✔️ Store **configuration files** separately (`.json` or `.yaml`)
-✔️ Use **virtual environments** for dependency management
-✔️ Maintain **requirements.txt** for all libraries
+✔️ Keep **related functions in one module** (e.g., `aws_utils`, `docker_utils`) <br>
+✔️ Use **meaningful names** for modules and packages <br>
+✔️ Add **docstrings** to explain functions <br>
+✔️ Store **configuration files** separately (`.json` or `.yaml`) <br>
+✔️ Use **virtual environments** for dependency management <br>
+✔️ Maintain **requirements.txt** for all libraries <br>
 
 ---
 
