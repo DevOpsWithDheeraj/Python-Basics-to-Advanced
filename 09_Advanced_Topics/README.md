@@ -200,7 +200,6 @@ Numbers Thread: 1
 Letters Thread: A
 Numbers Thread: 2
 Letters Thread: B
-...
 ✅ Both threads completed!
 ```
 > ⏱️ Both functions run concurrently, so the total execution time is much shorter than running them sequentially.
