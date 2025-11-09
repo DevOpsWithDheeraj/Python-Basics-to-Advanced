@@ -98,21 +98,7 @@ def deploy_app():
 deploy_app()
 ```
 ---
-
-#### ⚙️ **Explanation**
-
-1. The `@logger` decorator wraps the `deploy_app()` function.
-   That means before and after `deploy_app()` runs, `wrapper()` adds extra behavior — printing logs.
-
-2. When `deploy_app()` is called:
-
-   * It first prints `"📜 Running deploy_app..."`
-   * Then executes the actual `deploy_app()` function → `"🚀 Deploying application..."`
-   * Finally, prints `"✅ Completed."`
-
----
-
-#### 🖨️ **Output**
+#### **Output**:
 
 ```
 📜 Running deploy_app...
