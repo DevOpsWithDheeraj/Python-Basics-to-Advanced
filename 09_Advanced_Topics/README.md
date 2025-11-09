@@ -46,7 +46,7 @@ Reading configuration files line by line or streaming logs without loading the e
 ### 🔹 **Generators**
 
 **Definition:**
-A *generator* is a special function that yields one value at a time using the `yield` keyword. It saves memory compared to returning large lists.
+A *generator* is a special function that yields **one value at a time** using the `yield` keyword. It saves memory compared to returning large lists.
 
 ### Example:
 
