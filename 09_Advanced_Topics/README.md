@@ -48,8 +48,6 @@ Reading configuration files line by line or streaming logs without loading the e
 **Definition:**
 A *generator* is a special function that yields **one value at a time** using the `yield` keyword instead of `return`. It saves memory compared to returning large lists.
 
-> You can think of decorators as **wrappers** around functions that add extra functionality.
-
 ### Example:
 
 ```python
@@ -80,6 +78,8 @@ Stream server logs, API responses, or cloud resources efficiently without using 
 
 **Definition:**
 A decorator is a function that adds functionality to another function **without modifying its structure** — often used for **logging, authentication, or timing.**
+
+> You can think of decorators as **wrappers** around functions that add extra functionality.
 
 ### Example:
 
