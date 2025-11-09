@@ -214,20 +214,51 @@ Run parallel backups or deploy to multiple servers at once.
 ### 🔹 **Multiprocessing**
 
 **Definition:**
-Used to run multiple processes in **parallel**, taking advantage of multiple CPU cores — ideal for CPU-intensive tasks.
+Multiprocessing means running multiple processes simultaneously, where each process has its own Python interpreter and memory space.
+
+> 👉 Unlike multithreading, multiprocessing bypasses the Global Interpreter Lock (GIL), allowing true parallel execution on multiple CPU cores.
 
 ### Example:
 
 ```python
-from multiprocessing import Pool
+import multiprocessing
+import time
 
-def heavy_task(x):
-    return x * x
+def square_numbers():
+    for i in range(1, 6):
+        print(f"Square of {i} is {i*i}")
+        time.sleep(1)
 
-with Pool(4) as p:
-    results = p.map(heavy_task, [1, 2, 3, 4])
-print(results)
+def cube_numbers():
+    for i in range(1, 6):
+        print(f"Cube of {i} is {i*i*i}")
+        time.sleep(1)
+
+if __name__ == "__main__":
+    # Creating processes
+    p1 = multiprocessing.Process(target=square_numbers)
+    p2 = multiprocessing.Process(target=cube_numbers)
+
+    # Starting processes
+    p1.start()
+    p2.start()
+
+    # Waiting for both to complete
+    p1.join()
+    p2.join()
+
+    print("✅ Both processes completed!")
+
 ```
+#### Output (order may vary):
+```
+Square of 1 is 1
+Cube of 1 is 1
+Square of 2 is 4
+Cube of 2 is 8
+✅ Both processes completed!
+```
+> Each process runs independently on different CPU cores — truly in parallel.
 
 💡 **DevOps Use Case:**
 Process large datasets, compress logs, or analyze performance metrics in parallel.
