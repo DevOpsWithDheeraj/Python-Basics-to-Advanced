@@ -48,6 +48,8 @@ Reading configuration files line by line or streaming logs without loading the e
 **Definition:**
 A *generator* is a special function that yields **one value at a time** using the `yield` keyword instead of `return`. It saves memory compared to returning large lists.
 
+> You can think of decorators as **wrappers** around functions that add extra functionality.
+
 ### Example:
 
 ```python
