@@ -106,7 +106,6 @@ deploy_app()
 ✅ Completed.
 ```
 
----
 💡 **DevOps Use Case:**
 Add logging or execution time measurement around automation tasks.
 
