@@ -21,13 +21,17 @@ By the end of this chapter, you’ll understand:
 ### 🔹 **Iterators**
 
 **Definition:**  
-An *iterator* is an object that allows you to traverse through a sequence (like lists or tuples) one element at a time using the `iter()` and `next()` functions.
+An *iterator* is an object that allows you to traverse through a sequence (like lists, tuples, or strings) **one element at a time** using the `iter()` and `next()` functions.
 
 ### Example:
 ```python
+# Create a List
 numbers = [10, 20, 30]
+
+# Convert the list into a iterator
 it = iter(numbers)
 
+# Access element one by one
 print(next(it))  # 10
 print(next(it))  # 20
 print(next(it))  # 30
