@@ -34,7 +34,7 @@ It’s the backbone of automation tools like **AWS CLI, Jenkins, Kubernetes, Git
 **Example REST API Endpoint:**
 ```
 
-[https://api.github.com/users/dheeraj](https://api.github.com/users/dheeraj)
+[https://api.github.com/users/dheeraj]
 
 ````
 
