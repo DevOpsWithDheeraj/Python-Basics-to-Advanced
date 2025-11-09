@@ -194,7 +194,7 @@ t2.join()
 print("✅ Both threads completed!")
 
 ```
-####🧭 Output (order may vary):
+#### 🧭 Output (order may vary):
 ```
 Numbers Thread: 1
 Letters Thread: A
