@@ -161,7 +161,9 @@ Extract IPs, error codes, or timestamps from server logs or monitoring data.
 ### 🔹 **Multithreading**
 
 **Definition:**
-Used to run multiple tasks **concurrently** in the same process — useful for I/O-bound operations (like file or network access).
+Multithreading means running multiple threads (smaller units of a process) concurrently to perform different tasks at the same time.
+
+> 👉 Each thread runs in the same process memory, sharing variables and resources.
 
 ### Example:
 
