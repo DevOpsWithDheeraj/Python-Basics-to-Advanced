@@ -226,12 +226,12 @@ import time
 
 def square_numbers():
     for i in range(1, 6):
-        print(f"Square of {i} is {i*i}")
+        print(f"Square of {i} is : {i*i}")
         time.sleep(1)
 
 def cube_numbers():
     for i in range(1, 6):
-        print(f"Cube of {i} is {i*i*i}")
+        print(f"Cube of {i} is : {i*i*i}")
         time.sleep(1)
 
 if __name__ == "__main__":
@@ -252,10 +252,10 @@ if __name__ == "__main__":
 ```
 #### Output (order may vary):
 ```
-Square of 1 is 1
-Cube of 1 is 1
-Square of 2 is 4
-Cube of 2 is 8
+Square of 1 is : 1
+Cube of 1 is : 1
+Square of 2 is : 4
+Cube of 2 is : 8
 ✅ Both processes completed!
 ```
 > Each process runs independently on different CPU cores — truly in parallel.
