@@ -177,15 +177,22 @@ Safely execute Linux commands and handle failed executions in scripts.
 ## 🧩 9. Using `raise` to Trigger Custom Exceptions
 
 ```python
-def deploy_app(env):
-    if env not in ["staging", "production"]:
-        raise ValueError("Invalid environment specified!")
-    print(f"🚀 Deploying to {env} environment...")
+import boto3
+from botocore.exceptions import ClientError
+
+s3 = boto3.client('s3')
 
 try:
-    deploy_app("test")
-except ValueError as e:
-    print("❌ Deployment failed:", e)
+    s3.upload_file('data.txt', 'my-bucket', 'data.txt')
+except ClientError as e:
+    error_code = e.response['Error']['Code']
+    if error_code == 'NoSuchBucket':
+        raise Exception("❌ The target S3 bucket does not exist. Check bucket name or region.") from e
+    elif error_code == 'AccessDenied':
+        raise PermissionError("🚫 Access denied to the S3 bucket. Verify IAM policy.") from e
+    else:
+        raise        # re-raise unknown AWS errors
+
 ```
 
 💡 **Use Case:**
