@@ -174,11 +174,13 @@ Uniform operations (e.g., restart) for different server types.
 ```python
 from abc import ABC, abstractmethod
 
+# Abstract Class
 class CloudProvider(ABC):
     @abstractmethod
     def create_instance(self):
         pass
 
+# Concrete Class
 class AWS(CloudProvider):
     def create_instance(self):
         print("☁️ Launching EC2 instance on AWS...")
