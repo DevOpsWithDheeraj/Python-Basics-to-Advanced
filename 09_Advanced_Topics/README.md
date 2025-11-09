@@ -169,22 +169,41 @@ Used to run multiple tasks **concurrently** in the same process — useful for I
 import threading
 import time
 
-def backup_server(server):
-    print(f"Backing up {server}...")
-    time.sleep(2)
-    print(f"{server} backup complete.")
+def print_numbers():
+    for i in range(1, 6):
+        print(f"Numbers Thread: {i}")
+        time.sleep(1)
 
-servers = ["web1", "web2", "db1"]
+def print_letters():
+    for ch in ['A', 'B', 'C', 'D', 'E']:
+        print(f"Letters Thread: {ch}")
+        time.sleep(1)
 
-threads = []
-for s in servers:
-    t = threading.Thread(target=backup_server, args=(s,))
-    t.start()
-    threads.append(t)
+# Creating threads
+t1 = threading.Thread(target=print_numbers)
+t2 = threading.Thread(target=print_letters)
 
-for t in threads:
-    t.join()
+# Starting threads
+t1.start()
+t2.start()
+
+# Waiting for both threads to finish
+t1.join()
+t2.join()
+
+print("✅ Both threads completed!")
+
 ```
+####🧭 Output (order may vary):
+```
+Numbers Thread: 1
+Letters Thread: A
+Numbers Thread: 2
+Letters Thread: B
+...
+✅ Both threads completed!
+```
+> ⏱️ Both functions run concurrently, so the total execution time is much shorter than running them sequentially.
 
 💡 **DevOps Use Case:**
 Run parallel backups or deploy to multiple servers at once.
