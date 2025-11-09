@@ -97,7 +97,7 @@ def deploy_app():
 
 deploy_app()
 ```
----
+
 #### **Output**:
 
 ```
