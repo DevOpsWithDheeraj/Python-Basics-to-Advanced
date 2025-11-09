@@ -322,12 +322,12 @@ Output:
 
 ## ✅ 14. Best Practices
 
-✔️ Use classes to group related operations (e.g., EC2, S3, Jenkins).
-✔️ Keep methods **short and single-purpose**.
-✔️ Use **inheritance and composition** wisely.
-✔️ Prefer **encapsulation** for sensitive data (credentials).
-✔️ Write **docstrings** and comments.
-✔️ Separate logic into **modules** (e.g., `aws.py`, `docker.py`, `logger.py`).
+✔️ Use classes to group related operations (e.g., EC2, S3, Jenkins). <br>
+✔️ Keep methods **short and single-purpose**. <br>
+✔️ Use **inheritance and composition** wisely. <br>
+✔️ Prefer **encapsulation** for sensitive data (credentials). <br>
+✔️ Write **docstrings** and comments. <br>
+✔️ Separate logic into **modules** (e.g., `aws.py`, `docker.py`, `logger.py`). <br>
 
 ---
 
