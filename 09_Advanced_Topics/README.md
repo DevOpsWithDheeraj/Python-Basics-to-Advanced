@@ -25,7 +25,7 @@ An *iterator* is an object that allows you to traverse (loop through) all the el
 
 ### Example:
 ```python
-# Create a List
+# Create a List (iterable)
 numbers = [10, 20, 30]
 
 # Convert the list into a iterator
