@@ -268,13 +268,13 @@ Store all automation errors in log files for debugging.
 
 ## ✅ 13. Best Practices
 
-✔️ Use **specific exceptions** instead of generic `except:`
-✔️ Always log errors instead of ignoring them
-✔️ Use `finally` to clean up resources (e.g., close connections)
-✔️ Avoid exposing sensitive info in error messages
-✔️ Use **retry logic** for network operations
-✔️ Create **custom exception classes** for clarity
-✔️ Use `raise` for enforcing rules in scripts
+✔️ Use **specific exceptions** instead of generic `except:` <br>
+✔️ Always log errors instead of ignoring them <br>
+✔️ Use `finally` to clean up resources (e.g., close connections) <br>
+✔️ Avoid exposing sensitive info in error messages <br>
+✔️ Use **retry logic** for network operations <br>
+✔️ Create **custom exception classes** for clarity <br>
+✔️ Use `raise` for enforcing rules in scripts <br>
 
 ---
 
