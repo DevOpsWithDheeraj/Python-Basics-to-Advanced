@@ -188,6 +188,7 @@ class AWS(CloudProvider):
 class Azure(CloudProvider):
     def create_instance(self):
         print("☁️ Launching VM on Azure...")
+
 # cp = CloudProvider()      # ❌ Error
 aws = AWS()
 aws.create_instance()
