@@ -161,7 +161,7 @@ Extract IPs, error codes, or timestamps from server logs or monitoring data.
 ### 🔹 **Multithreading**
 
 **Definition:**
-Multithreading means running multiple threads (smaller units of a process) concurrently to perform different tasks at the same time.
+Multithreading means running multiple threads (smaller units of a process) **concurrently** to perform different tasks at the same time.
 
 > 👉 Each thread runs in the same process memory, sharing variables and resources.
 
