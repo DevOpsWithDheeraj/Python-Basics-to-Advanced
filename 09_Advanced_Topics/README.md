@@ -82,7 +82,6 @@ A decorator is a function that adds functionality to another function **without 
 > You can think of decorators as **wrappers** around functions that add extra functionality.
 
 ### Example:
-
 ```python
 def logger(func):
     def wrapper(*args, **kwargs):
@@ -98,7 +97,30 @@ def deploy_app():
 
 deploy_app()
 ```
+---
 
+#### ⚙️ **Explanation**
+
+1. The `@logger` decorator wraps the `deploy_app()` function.
+   That means before and after `deploy_app()` runs, `wrapper()` adds extra behavior — printing logs.
+
+2. When `deploy_app()` is called:
+
+   * It first prints `"📜 Running deploy_app..."`
+   * Then executes the actual `deploy_app()` function → `"🚀 Deploying application..."`
+   * Finally, prints `"✅ Completed."`
+
+---
+
+#### 🖨️ **Output**
+
+```
+📜 Running deploy_app...
+🚀 Deploying application...
+✅ Completed.
+```
+
+---
 💡 **DevOps Use Case:**
 Add logging or execution time measurement around automation tasks.
 
