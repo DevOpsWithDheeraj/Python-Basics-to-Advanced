@@ -1,19 +1,5 @@
 # ⚠️ 07_Exception_Handling — Managing Errors Gracefully in Python for DevOps
 
----
-
-## 🎯 Objective
-
-By the end of this chapter, you’ll learn to:
-
-- Understand **exceptions** and their types in Python.  
-- Use `try`, `except`, `else`, `finally`, and `raise`.  
-- Handle **file errors, API failures, network issues**, and more.  
-- Implement **custom exceptions** for DevOps automation scripts.  
-- Write **reliable, fault-tolerant automation scripts**.
-
----
-
 ## 🧠 1. What is an Exception?
 
 **Definition:**  
