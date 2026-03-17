@@ -1,17 +1,5 @@
 # 🔁 02_Control_Flow — Conditional Logic & Loops in Python
 
----
-
-## 🎯 Objective
-
-This module teaches how to **control the execution flow** of your Python scripts using:
-- Conditional statements (`if`, `elif`, `else`)
-- Loops (`for`, `while`)
-- Loop control keywords (`break`, `continue`, `pass`)
-- Real-world **DevOps use cases** — such as looping over servers, checking statuses, and conditional deployments.
-
----
-
 ## 🧠 1. What is Control Flow?
 
 Control flow allows your program to **make decisions** and **repeat actions** based on conditions.
