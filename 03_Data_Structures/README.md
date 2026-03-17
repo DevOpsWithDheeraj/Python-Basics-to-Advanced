@@ -1,15 +1,17 @@
 # 🧱 03_Data_Structures — Lists, Tuples, Sets, and Dictionaries
 
-## 🧩 What are Data Structures?
+**Data Structure** in Python is a way of **organizing, storing, and managing data efficiently so that it can be accessed and modified easily.**
 
-**Definition:**  
-Data Structures in Python are **containers used to store, organize, and manipulate data** efficiently.
+In simple words, a **data structure** defines how data is **arranged in memory and how operations like insertion, deletion, searching, and updating are performed.**
 
-They help DevOps engineers manage:
-- Lists of servers, tools, or containers  
-- Configuration parameters  
-- JSON API responses  
-- Log or monitoring data  
+## Common Data Structures in Python:
+
+| Data Structure | Description                                |
+| -------------- | ------------------------------------------ |
+| **List**       | Ordered and mutable collection of elements |
+| **Tuple**      | Ordered but immutable collection           |
+| **Set**        | Unordered collection of unique elements    |
+| **Dictionary** | Collection of key–value pairs              |
 
 ---
 
