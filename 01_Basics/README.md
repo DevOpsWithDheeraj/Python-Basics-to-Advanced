@@ -1,17 +1,5 @@
 # 🐍 01_Basics — Python Fundamentals 
 
----
-
-## 🎯 Objective
-
-By the end of this section, you’ll:
-
-* Understand the **core syntax** and **structure** of Python.
-* Be able to write **basic scripts** for automation tasks.
-* Know how to **run Python programs** on Linux or Windows.
-
----
-
 ## 🧩 1. Introduction to Python
 
 **Python** is a high-level, interpreted, and object-oriented programming language.
