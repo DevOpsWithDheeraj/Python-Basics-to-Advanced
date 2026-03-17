@@ -119,15 +119,152 @@ print(f"{tool} is a popular configuration management tool.")
 
 ## 🔢 6. Type Conversion
 
-You can convert between data types using casting functions.
+**Type Conversion** means converting a value from one **data type** to another.
+Python supports two types of type conversion:
 
-### Example:
+1. **Implicit Type Conversion (Automatic)**
+2. **Explicit Type Conversion (Type Casting)**
+
+### 1. Implicit Type Conversion (Automatic)
+
+In **implicit conversion**, Python automatically converts one data type to another to avoid data loss.
+
+### Example
 
 ```python
-num_str = "10"
-num_int = int(num_str)
-print(num_int + 5)  # Output: 15
+a = 10      # integer
+b = 5.5     # float
+
+c = a + b
+
+print(c)
+print(type(c))
 ```
+
+### Output
+
+```
+15.5
+<class 'float'>
+```
+
+### Explanation
+
+* `a` is **int**
+* `b` is **float**
+* Python automatically converts **int → float**
+
+So the result becomes **float**.
+
+---
+
+### 2. Explicit Type Conversion (Type Casting)
+
+In **explicit conversion**, the programmer manually converts one data type to another using **built-in functions**.
+
+#### Common Type Conversion Functions
+
+| Function  | Converts To | Example                   |
+| --------- | ----------- | ------------------------- |
+| `int()`   | Integer     | `int("10")`               |
+| `float()` | Float       | `float(5)`                |
+| `str()`   | String      | `str(100)`                |
+| `bool()`  | Boolean     | `bool(1)`                 |
+| `list()`  | List        | `list("abc")`             |
+| `tuple()` | Tuple       | `tuple([1,2,3])`          |
+| `set()`   | Set         | `set([1,2,2,3])`          |
+| `dict()`  | Dictionary  | `dict([(1,'a'),(2,'b')])` |
+
+---
+
+### Examples of Explicit Conversion
+
+### 1. Convert String to Integer
+
+```python
+x = "100"
+
+y = int(x)
+
+print(y)
+print(type(y))
+```
+
+Output
+
+```
+100
+<class 'int'>
+```
+
+---
+
+### 2. Convert Integer to Float
+
+```python
+a = 10
+
+b = float(a)
+
+print(b)
+print(type(b))
+```
+
+Output
+
+```
+10.0
+<class 'float'>
+```
+
+---
+
+### 3. Convert Number to String
+
+```python
+num = 50
+
+s = str(num)
+
+print(s)
+print(type(s))
+```
+
+Output
+
+```
+'50'
+<class 'str'>
+```
+
+---
+
+### 4. Convert List to Tuple
+
+```python
+l = [1,2,3,4]
+
+t = tuple(l)
+
+print(t)
+print(type(t))
+```
+
+Output
+
+```
+(1, 2, 3, 4)
+<class 'tuple'>
+```
+
+---
+
+# Summary
+
+| Type                | Description                   |
+| ------------------- | ----------------------------- |
+| Implicit Conversion | Done automatically by Python  |
+| Explicit Conversion | Done manually using functions |
 
 ---
 
