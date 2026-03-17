@@ -124,6 +124,7 @@ Python supports two types of type conversion:
 
 1. **Implicit Type Conversion (Automatic)**
 2. **Explicit Type Conversion (Type Casting)**
+---
 
 ### 1. Implicit Type Conversion (Automatic)
 
