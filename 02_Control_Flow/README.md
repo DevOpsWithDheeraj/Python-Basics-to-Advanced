@@ -195,30 +195,7 @@ for name, status in servers.items():
 
 ---
 
-### ✅ Example 2: Retry API Call Until Success
-
-```python
-import time
-
-attempt = 0
-max_attempts = 5
-success = False
-
-while attempt < max_attempts and not success:
-    print(f"Attempt {attempt + 1}: Sending request to API...")
-    # Simulate success in 3rd attempt
-    if attempt == 2:
-        success = True
-        print("API call successful ✅")
-    else:
-        print("Failed — retrying in 2 seconds...")
-        time.sleep(2)
-    attempt += 1
-```
-
----
-
-### ✅ Example 3: Loop Over Docker Containers
+### ✅ Example 2: Loop Over Docker Containers
 
 ```python
 containers = ["nginx", "mysql", "redis"]
@@ -229,7 +206,7 @@ for c in containers:
 
 ---
 
-### ✅ Example 4: Conditional Deployment Script
+### ✅ Example 3: Conditional Deployment Script
 
 ```python
 env = "production"
