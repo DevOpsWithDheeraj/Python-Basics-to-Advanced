@@ -1,16 +1,4 @@
-# ⚙️ 04_Functions — Reusable and Modular Scripting in Python for DevOps
-
----
-
-## 🎯 Objective
-
-By the end of this section, you’ll be able to:
-- Define and use **functions** effectively.
-- Pass arguments and return data.
-- Create **modular and reusable scripts**.
-- Apply functions in **real DevOps automation** (AWS, Docker, Monitoring, etc.).
-
----
+# ⚙️ 04_Functions in Python for DevOps
 
 ## 🧩 1. What is a Function?
 
