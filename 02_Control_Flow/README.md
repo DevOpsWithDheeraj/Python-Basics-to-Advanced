@@ -244,28 +244,6 @@ else:
 
 ---
 
-## 🧩 7. Practical Exercises
-
-1. **Server Health Checker**
-
-   * Create a list of 5 servers with random statuses (`running`, `stopped`).
-   * Loop through them and print whether each server is healthy or needs restart.
-
-2. **Retry Logic Script**
-
-   * Simulate 3 retry attempts for a failed deployment.
-   * Use `while` loop and `break` once success is achieved.
-
-3. **Even/Odd Counter**
-
-   * Use a `for` loop to count even and odd numbers from 1–20.
-
-4. **Tool Installation Automation**
-
-   * Given a list `["Docker", "Ansible", "Jenkins"]`, print installation messages for each.
-
----
-
 ## 🧾 Summary
 
 | Concept          | Description                   | Example                     |
