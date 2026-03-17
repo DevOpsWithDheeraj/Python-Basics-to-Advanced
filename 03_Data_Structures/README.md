@@ -1,16 +1,5 @@
 # 🧱 03_Data_Structures — Lists, Tuples, Sets, and Dictionaries
 
----
-
-## 🎯 Objective
-
-In this section, you’ll learn:
-- The **different data structures** in Python  
-- How to **store and manipulate data efficiently**  
-- Real-world **DevOps use cases** (like parsing server lists, config files, or AWS resource data)
-
----
-
 ## 🧩 What are Data Structures?
 
 **Definition:**  
