@@ -397,9 +397,6 @@ print("Checking Python version on local system...")
 os.system("python3 --version")
 ```
 
-**Use Case:**
-You can extend this script to check Python installation across multiple servers using SSH automation.
-
 ---
 
 ## ✅ Summary
