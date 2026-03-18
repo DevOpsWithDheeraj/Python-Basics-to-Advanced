@@ -65,13 +65,32 @@ Python provides several **standard libraries** that are extremely helpful in Dev
 ---
 
 ### 🧩 Example 2: Using `os` Module
-
+#### 1. 📁 Working with Directories:
 ```python
 import os
 
-print("Current Directory:", os.getcwd())
-os.mkdir("logs")
-print("Directory 'logs' created successfully!")
+# Get current working directory
+print(os.getcwd())
+
+# Change directory
+os.chdir("C:/Users")
+
+# Create a new directory
+os.mkdir("test_folder")
+
+# Remove directory
+os.rmdir("test_folder")
+
+# List files and folders
+print(os.listdir())
+```
+#### 2. 📄 Working with Files:
+```python
+# Rename a file
+os.rename("old.txt", "new.txt")
+
+# Delete a file
+os.remove("new.txt")
 ```
 
 💡 **Use Case (DevOps):**
