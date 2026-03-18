@@ -286,18 +286,7 @@ devops_pipeline()
 
 ---
 
-## ⚡ 10. Best Practices
-
-✅ Keep functions **small and focused** <br>
-✅ Use **meaningful names** (e.g., `deploy_to_aws`, not `fun1`) <br>
-✅ Add **docstrings** for clarity <br>
-✅ Return values instead of printing whenever possible <br>
-✅ Avoid global variables <br>
-✅ Reuse functions across automation scripts <br>
-
----
-
-## 🧾 12. Summary
+## 🧾 10. Summary
 
 | Concept          | Description            | Example           |
 | ---------------- | ---------------------- | ----------------- |
