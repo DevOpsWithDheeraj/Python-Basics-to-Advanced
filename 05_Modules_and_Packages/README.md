@@ -1,17 +1,4 @@
-# 📦 05_Modules_and_Packages — Reusable Code and Library Management in Python for DevOps
-
----
-
-## 🎯 Objective
-
-By the end of this chapter, you’ll be able to:
-
-- Understand **modules** and **packages** in Python.  
-- Import and use **built-in** and **third-party libraries**.  
-- Create **custom modules** for reusable DevOps automation scripts.  
-- Explore **key libraries for DevOps** like `os`, `sys`, `boto3`, `paramiko`, and `subprocess`.  
-
----
+# 📦 05_Modules_and_Packages 
 
 ## 🧠 1. What is a Module?
 
