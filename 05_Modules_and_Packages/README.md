@@ -110,12 +110,29 @@ Run shell commands, start services, or manage system resources directly from Pyt
 
 ### 🧩 Example 5: Using `json` Module
 
+####1. Convert Python Dictionary into JSON string:
+
 ```python
 import json
 
-data = '{"server": "web01", "status": "running"}'
-parsed = json.loads(data)
-print("Server:", parsed["server"])
+data = {
+    "name": "Dheeraj",
+    "age": 25,
+    "skills": ["Python", "DevOps"]
+}
+
+json_data = json.dumps(data)
+print(json_data)
+```
+
+####2. Convert JSON string into Python dictionary:
+```python
+import json
+
+json_data = '{"name": "Dheeraj", "age": 25, "skills": ["Python", "DevOps"]}'
+
+data = json.loads(json_data)
+print(data["skills"])
 ```
 
 💡 **Use Case:**
