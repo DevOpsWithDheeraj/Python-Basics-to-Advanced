@@ -1,18 +1,5 @@
 # 📂 06_File_Handling — Reading, Writing & Managing Files in Python for DevOps
 
----
-
-## 🎯 Objective
-
-By the end of this section, you’ll learn to:
-
-- Read, write, and update files using Python.  
-- Manage **log files** and **configuration files** (`.txt`, `.json`, `.yaml`).  
-- Use **context managers** (`with open()`) safely.  
-- Automate **log parsing, backups, and config updates** in DevOps workflows.
-
----
-
 ## 🧠 1. What is File Handling?
 
 **Definition:**  
