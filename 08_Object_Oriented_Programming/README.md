@@ -287,16 +287,25 @@ print(server1.name, server2.name)
 ## 🔁 13. Magic Methods (`__str__`, `__len__`, etc.)
 
 ```python
-class LogFile:
-    def __init__(self, name, entries):
+class Server:
+    def __init__(self, name, services):
         self.name = name
-        self.entries = entries
+        self.services = services
 
+    # String representation
     def __str__(self):
-        return f"📄 LogFile: {self.name} ({len(self.entries)} entries)"
+        return f"Server: {self.name}"
 
-logs = LogFile("system.log", ["Start", "Deploy", "Error"])
-print(logs)
+    # Length (number of services)
+    def __len__(self):
+        return len(self.services)
+
+
+# Create object
+s = Server("NginxServer", ["nginx", "docker", "ssh"])
+
+print(s)          # Calls __str__
+print(len(s))     # Calls __len__
 ```
 
 Output:
