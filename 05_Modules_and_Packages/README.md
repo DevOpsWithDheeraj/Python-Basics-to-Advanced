@@ -123,6 +123,8 @@ import subprocess
 
 output = subprocess.getoutput("uptime")
 print("Server Uptime:", output)
+
+subprocess.run(["ls", "-l"])
 ```
 
 💡 **Use Case (DevOps):**
