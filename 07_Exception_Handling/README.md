@@ -1,4 +1,4 @@
-# ⚠️ 07_Exception_Handling — Managing Errors Gracefully in Python for DevOps
+# ⚠️ 07_Exception_Handling 
 
 ## 🧠 1. What is an Exception?
 
