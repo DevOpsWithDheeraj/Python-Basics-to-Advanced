@@ -284,19 +284,7 @@ except FileNotFoundError:
 
 ---
 
-## ✅ 14. Best Practices
-
-✔️ Always use `with open()` for safe file access <br>
-✔️ Validate file existence before reading <br>
-✔️ Close files properly <br>
-✔️ Use **absolute paths** for production scripts <br>
-✔️ Keep **logs and configs separate** <br>
-✔️ Implement **error handling** for missing files <br>
-✔️ Use JSON or YAML for structured configuration <br>
-
----
-
-## 🧾 16. Summary
+## 🧾 14. Summary
 
 | Concept            | Description                         |
 | ------------------ | ----------------------------------- |
