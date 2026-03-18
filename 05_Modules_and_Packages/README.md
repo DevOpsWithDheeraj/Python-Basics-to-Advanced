@@ -86,6 +86,8 @@ print(os.listdir())
 ```
 #### 2. 📄 Working with Files:
 ```python
+import os
+
 # Rename a file
 os.rename("old.txt", "new.txt")
 
