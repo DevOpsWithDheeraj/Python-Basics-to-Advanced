@@ -1,20 +1,4 @@
-# 🧠 09_Advanced_Topics — Advanced Python Concepts for DevOps Engineers
-
----
-
-## 🎯 Objective
-
-This chapter covers **advanced Python concepts** that help you build **efficient, scalable, and production-grade automation scripts** in DevOps.
-
-By the end of this chapter, you’ll understand:
-- Iterators, generators, decorators, and context managers  
-- How to use regular expressions for log analysis  
-- Multithreading and multiprocessing for parallel execution  
-- Handling command-line arguments  
-- Managing environment variables securely  
-- Scheduling and automating tasks  
-
----
+# 🧠 09_Advanced_Topics 
 
 ## ⚙️ 1. Iterators and Generators
 
