@@ -193,10 +193,33 @@ Handle **API responses**, **Terraform outputs**, or **Kubernetes manifests**.
 ### 🧩 Example 6: Using `datetime` Module
 
 ```python
-from datetime import datetime
+import datetime
 
-now = datetime.now()
-print("Deployment Timestamp:", now.strftime("%Y-%m-%d %H:%M:%S"))
+# Current date and time
+now = datetime.datetime.now()
+print("Current Date & Time:", now)
+
+# Current date only
+today = datetime.date.today()
+print("Today's Date:", today)
+
+# Create custom date
+d = datetime.date(2026, 3, 18)
+print("Custom Date:", d)
+
+# Create custom time
+t = datetime.time(14, 30, 45)
+print("Custom Time:", t)
+
+# Date difference
+d1 = datetime.date(2026, 3, 18)
+d2 = datetime.date(2026, 3, 10)
+diff = d1 - d2
+print("Difference:", diff)
+
+# Formatting date
+formatted = now.strftime("%d-%m-%Y %H:%M:%S")
+print("Formatted:", formatted)
 ```
 
 💡 **Use Case:**
