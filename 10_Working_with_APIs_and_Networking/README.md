@@ -1,20 +1,4 @@
-# 🌐 10_Working_with_APIs_and_Networking — Python for DevOps Automation
-
----
-
-## 🎯 Objective
-
-This chapter teaches how to use **Python for API communication and network automation** — essential for DevOps engineers managing cloud, CI/CD, and infrastructure automation.
-
-By the end of this chapter, you’ll learn to:
-
-- Understand REST APIs and how they work  
-- Use the `requests` module to interact with APIs  
-- Handle JSON data efficiently  
-- Automate DevOps tools (Jenkins, AWS, Kubernetes) via APIs  
-- Implement basic socket programming for network communication  
-
----
+# 🌐 10_Working_with_APIs_and_Networking 
 
 ## 🔹 1. Introduction to REST APIs
 
@@ -281,15 +265,5 @@ Use retries, logging, and alerting when automating production APIs.
 | **Automation via API** | Automate infrastructure tasks               | Deployments, monitoring       |
 | **Socket Programming** | Low-level networking                        | Connectivity testing          |
 | **Error Handling**     | Manage API failures                         | Improve script reliability    |
-
----
-
-## 🧠 Quick Recap
-
-✅ REST APIs = Communication backbone
-✅ `requests` = Core library for API calls
-✅ JSON = Lightweight data format
-✅ Automate Jenkins, AWS, Kubernetes with Python
-✅ Sockets = Network-level control for testing
 
 ---
