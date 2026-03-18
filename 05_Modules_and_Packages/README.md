@@ -60,7 +60,6 @@ Python provides several **standard libraries** that are extremely helpful in Dev
 | `shutil`     | High-level file operations        | Copy, move, delete          |
 | `json`       | Work with JSON data               | API or config parsing       |
 | `datetime`   | Handle time/date                  | Logs, timestamps            |
-| `platform`   | System info                       | Identify OS, architecture   |
 
 ---
 
