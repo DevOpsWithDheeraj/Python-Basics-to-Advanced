@@ -131,7 +131,34 @@ subprocess.run(["ls", "-l"])
 Run shell commands, start services, or manage system resources directly from Python.
 
 ---
+### Example 5: Using `shutil` Module
 
+```python
+import shutil
+import os
+
+# Source and destination paths
+source = "source.txt"
+copy_dest = "copy.txt"
+move_dest = "moved.txt"
+
+# Create a sample file
+with open(source, "w") as f:
+    f.write("Hello, this is a shutil example.")
+
+# 1. Copy file
+shutil.copy(source, copy_dest)
+print("File copied.")
+
+# 2. Move file
+shutil.move(copy_dest, move_dest)
+print("File moved.")
+
+# 3. Delete file
+os.remove(move_dest)
+print("File deleted.")
+```
+---
 ### 🧩 Example 5: Using `json` Module
 
 #### 1. Convert Python Dictionary into JSON string:
