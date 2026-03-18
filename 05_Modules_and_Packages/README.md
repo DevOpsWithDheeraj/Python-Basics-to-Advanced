@@ -110,7 +110,7 @@ Run shell commands, start services, or manage system resources directly from Pyt
 
 ### 🧩 Example 5: Using `json` Module
 
-####1. Convert Python Dictionary into JSON string:
+#### 1. Convert Python Dictionary into JSON string:
 
 ```python
 import json
@@ -125,7 +125,7 @@ json_data = json.dumps(data)
 print(json_data)
 ```
 
-####2. Convert JSON string into Python dictionary:
+#### 2. Convert JSON string into Python dictionary:
 ```python
 import json
 
