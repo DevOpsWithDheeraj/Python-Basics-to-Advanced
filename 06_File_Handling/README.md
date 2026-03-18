@@ -204,7 +204,7 @@ Update Kubernetes YAML files dynamically before deployment.
 
 ---
 
-## 🔁 10. Automating Log Rotation (Example)
+## 🔁 10. Automating Log Rotation 
 
 ```python
 import os
