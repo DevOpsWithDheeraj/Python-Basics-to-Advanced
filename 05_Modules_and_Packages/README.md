@@ -354,40 +354,8 @@ Monitor APIs or integrate with CI/CD tools like **Jenkins, GitLab, GitHub Action
 
 ---
 
-## 🧠 5. Organizing Your DevOps Automation Project
 
-**Example Folder Structure:**
-
-```
-devops_automation/
-│
-├── main.py
-├── devops_utils/
-│   ├── __init__.py
-│   ├── aws_utils.py
-│   ├── docker_utils.py
-│   ├── monitoring_utils.py
-│
-├── configs/
-│   └── app_config.json
-│
-└── logs/
-    └── deployment.log
-```
-
-**main.py**
-
-```python
-from devops_utils import aws_utils, docker_utils
-
-aws_utils.deploy_ec2("prod-web")
-docker_utils.start_container("nginx")
-```
-
----
-
-
-## 🧾 6. Summary
+## 🧾 5. Summary
 
 | Concept                 | Description                                           |
 | ----------------------- | ----------------------------------------------------- |
