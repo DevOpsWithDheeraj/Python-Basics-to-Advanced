@@ -1,18 +1,5 @@
-# 🧱 08_Object_Oriented_Programming (OOP) — Building Modular & Scalable DevOps Scripts
+# 🧱 08_Object_Oriented_Programming (OOP) 
 
----
-
-## 🎯 Objective
-
-By the end of this chapter, you’ll learn to:
-
-- Understand the **concepts of Object-Oriented Programming** (OOP) in Python.  
-- Create and use **classes and objects** effectively.  
-- Implement **encapsulation, inheritance, polymorphism**, and **abstraction**.  
-- Design **modular and reusable automation tools** for DevOps workflows.  
-- Apply OOP principles in **real DevOps projects** — CI/CD tools, AWS automation, log management, etc.
-
----
 
 ## 🧠 1. What is OOP?
 
@@ -318,20 +305,7 @@ Output:
 📄 LogFile: system.log (3 entries)
 ```
 
----
-
-## ✅ 14. Best Practices
-
-✔️ Use classes to group related operations (e.g., EC2, S3, Jenkins). <br>
-✔️ Keep methods **short and single-purpose**. <br>
-✔️ Use **inheritance and composition** wisely. <br>
-✔️ Prefer **encapsulation** for sensitive data (credentials). <br>
-✔️ Write **docstrings** and comments. <br>
-✔️ Separate logic into **modules** (e.g., `aws.py`, `docker.py`, `logger.py`). <br>
-
----
-
-## 🧾 16. Summary
+## 🧾 14. Summary
 
 | Concept            | Description                |
 | ------------------ | -------------------------- |
