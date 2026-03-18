@@ -106,7 +106,8 @@ Automatically create a log directory before deploying an application.
 import sys
 
 print("Python version:", sys.version)
-print("System Path:", sys.path)
+print("System Path:", sys.path)   # shows the list of directories Python searches for modules
+print("Command line arguments:", sys.argv)
 sys.exit("Exiting Script 🚫")
 ```
 
