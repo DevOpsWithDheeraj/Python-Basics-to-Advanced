@@ -387,7 +387,7 @@ print(heap_sort(arr))
 
 ### 🔹 Idea:
 
-Count occurrences of elements.
+- Counting Sort is a non-comparison sorting algorithm that counts the occurrences of each element.
 
 ### 🔹 Example:
 
@@ -402,16 +402,30 @@ Result → [1, 2, 2, 4]
 ```python
 def counting_sort(arr):
     max_val = max(arr)
+    
+    # Create count array
     count = [0] * (max_val + 1)
-
+    
+    # Count occurrences
     for num in arr:
         count[num] += 1
-
-    result = []
+    
+    # Build sorted array
+    sorted_arr = []
     for i in range(len(count)):
-        result.extend([i] * count[i])
+        sorted_arr.extend([i] * count[i])
+    
+    return sorted_arr
 
-    return result
+
+# Example
+arr = [4, 2, 2, 8, 3, 3, 1]
+print(counting_sort(arr))
+```
+
+### Output:
+```
+[1, 2, 2, 3, 3, 4, 8]
 ```
 
 ### 🔹 Complexity:
@@ -425,28 +439,56 @@ def counting_sort(arr):
 
 ### 🔹 Idea:
 
-Sort numbers digit by digit.
+- Radix Sort is a non-comparison sorting algorithm that sorts numbers digit by digit (from least significant digit to most significant digit).
 
 ### 🔹 Code:
 
 ```python
+def counting_sort(arr, exp):
+    n = len(arr)
+    output = [0] * n
+    count = [0] * 10  # digits 0-9
+
+    # Count occurrences of digits
+    for i in range(n):
+        index = (arr[i] // exp) % 10
+        count[index] += 1
+
+    # Update count[i] so it contains actual position
+    for i in range(1, 10):
+        count[i] += count[i - 1]
+
+    # Build output array (stable sort)
+    for i in range(n - 1, -1, -1):
+        index = (arr[i] // exp) % 10
+        output[count[index] - 1] = arr[i]
+        count[index] -= 1
+
+    # Copy to original array
+    for i in range(n):
+        arr[i] = output[i]
+
+
 def radix_sort(arr):
-    exp = 1
     max_val = max(arr)
+    exp = 1
 
+    # Apply counting sort for every digit
     while max_val // exp > 0:
-        buckets = [[] for _ in range(10)]
-
-        for num in arr:
-            buckets[(num // exp) % 10].append(num)
-
-        arr = []
-        for bucket in buckets:
-            arr.extend(bucket)
-
+        counting_sort(arr, exp)
         exp *= 10
 
     return arr
+
+
+# Example
+arr = [170, 45, 75, 90, 802, 24, 2, 66]
+print(radix_sort(arr))
+```
+
+### Output:
+```
+[2, 24, 45, 66, 75, 90, 170, 802]
 ```
 
 ### 🔹 Complexity:
@@ -460,26 +502,45 @@ def radix_sort(arr):
 
 ### 🔹 Idea:
 
-Distribute elements into buckets and sort individually.
+- Bucket Sort distributes elements into different buckets, sorts each bucket, and then combines them.
 
 ### 🔹 Code:
 
 ```python
 def bucket_sort(arr):
-    bucket = [[] for _ in range(len(arr))]
+    if len(arr) == 0:
+        return arr
 
+    # Create buckets
+    bucket_count = len(arr)
+    buckets = [[] for _ in range(bucket_count)]
+
+    # Put elements into buckets
+    max_val = max(arr)
     for num in arr:
-        index = int(num * len(arr))
-        bucket[index].append(num)
+        index = int(num * bucket_count / (max_val + 1))
+        buckets[index].append(num)
 
-    for b in bucket:
-        b.sort()
+    # Sort each bucket
+    for bucket in buckets:
+        bucket.sort()
 
-    result = []
-    for b in bucket:
-        result.extend(b)
+    # Merge buckets
+    sorted_arr = []
+    for bucket in buckets:
+        sorted_arr.extend(bucket)
 
-    return result
+    return sorted_arr
+
+
+# Example
+arr = [0.42, 0.32, 0.23, 0.52, 0.25, 0.47]
+print(bucket_sort(arr))
+```
+
+### Output:
+```
+[0.23, 0.25, 0.32, 0.42, 0.47, 0.52]
 ```
 
 ### 🔹 Complexity:
@@ -502,15 +563,5 @@ def bucket_sort(arr):
 | Counting Sort  | O(n+k)          | O(k)     | Yes    |
 | Radix Sort     | O(nk)           | O(n)     | Yes    |
 | Bucket Sort    | O(n+k)          | O(n)     | Yes    |
-
-
-
-# 🔹 Important Points
-
-* **Stable Sort:** Maintains order of equal elements
-* **In-place Sort:** Uses constant memory
-* **Divide & Conquer:** Merge, Quick
-* **Best General Use:** Quick Sort / Merge Sort
-* **For Integers:** Counting / Radix
 
 
