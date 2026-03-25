@@ -130,7 +130,7 @@ else:
 
 ### 🔹 Collision Resolution (Chaining)
 
-👉 **Collision** happens when **two keys map to the same index** in a hash table.
+👉 **Collision** happens when **two keys map to the same index** in a hash table. <br>
 👉 One simple way to handle it is **Chaining** (store multiple values at same index using a list).
 
 
