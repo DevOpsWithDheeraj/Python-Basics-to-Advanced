@@ -6,7 +6,7 @@ Searching is the process of locating a target element (key) within a data struct
 
 
 
-# 📌 Types of Searching
+## Types of Searching
 
 Searching techniques can be broadly classified into:
 
@@ -18,7 +18,7 @@ Searching techniques can be broadly classified into:
 
 
 
-# 1️⃣ Linear Search (Sequential Search)
+## 1️⃣ Linear Search (Sequential Search)
 
 ### 📖 Definition:
 
@@ -56,7 +56,7 @@ print(linear_search(arr, 30))  # Output: 2
 
 
 
-# 2️⃣ Binary Search
+## 2️⃣ Binary Search
 
 ### 📖 Definition:
 
@@ -102,7 +102,7 @@ print(binary_search(arr, 40))  # Output: 3
 
 
 
-# 3️⃣ Hashing (Direct Access Search)
+## 3️⃣ Hashing (Direct Access Search)
 
 ### 📖 Definition:
 
@@ -137,7 +137,7 @@ print(hash_table["apple"])  # Output: 10
 
 
 
-# 4️⃣ Tree-Based Searching
+## 4️⃣ Tree-Based Searching
 
 ## 🌳 Binary Search Tree (BST)
 
@@ -192,7 +192,7 @@ Self-balancing trees maintain height to ensure efficient search.
 
 
 
-# 5️⃣ Graph Searching
+## 5️⃣ Graph Searching
 
 ## 🔎 Breadth-First Search (BFS)
 
