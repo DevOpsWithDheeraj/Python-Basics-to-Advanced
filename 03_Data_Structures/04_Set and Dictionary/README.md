@@ -12,7 +12,7 @@ A **Set** is an **unordered collection of unique elements**.
 * Mutable (can add/remove elements)
 * Defined using `{}`
 
----
+
 
 ## 🔸 Example of Set
 
@@ -27,7 +27,7 @@ print(my_set)
 {1, 2, 3, 4, 5}
 ```
 
----
+
 
 ## 🔸 Duplicate Handling
 
@@ -44,7 +44,7 @@ print(s)
 
 ✔️ Duplicate `2` is automatically removed.
 
----
+
 
 ## 🔸 Set Operations
 
@@ -56,7 +56,7 @@ s.add(4)
 print(s)
 ```
 
----
+
 
 ### 2. Remove Element
 
@@ -65,7 +65,7 @@ s.remove(2)
 print(s)
 ```
 
----
+
 
 ### 3. Union
 
@@ -81,7 +81,7 @@ print(a | b)
 {1, 2, 3, 4, 5}
 ```
 
----
+
 
 ### 4. Intersection
 
@@ -95,13 +95,13 @@ print(a & b)
 {3}
 ```
 
----
+
 
 ## 🔸 Real-Life Example
 
 👉 Think of a set like a **collection of unique students in a class** — no student appears twice.
 
----
+
 
 # 🔹 2. Dictionary in Python
 
@@ -117,7 +117,7 @@ A **Dictionary** is a collection of **key-value pairs**.
 * Mutable
 * Defined using `{key: value}`
 
----
+
 
 ## 🔸 Example of Dictionary
 
@@ -136,7 +136,7 @@ print(student)
 {'name': 'Dheeraj', 'age': 22, 'course': 'Python'}
 ```
 
----
+
 
 ## 🔸 Accessing Values
 
@@ -150,7 +150,7 @@ print(student["name"])
 Dheeraj
 ```
 
----
+
 
 ## 🔸 Adding / Updating
 
@@ -160,7 +160,7 @@ student["city"] = "Kolkata"  # add
 print(student)
 ```
 
----
+
 
 ## 🔸 Removing Elements
 
@@ -169,7 +169,7 @@ student.pop("course")
 print(student)
 ```
 
----
+
 
 ## 🔸 Looping Through Dictionary
 
@@ -178,7 +178,7 @@ for key, value in student.items():
     print(key, ":", value)
 ```
 
----
+
 
 ## 🔸 Real-Life Example
 
@@ -187,9 +187,9 @@ for key, value in student.items():
 * Name → Phone Number
 * Roll No → Student Name
 
----
 
-# 🔥 Difference Between Set and Dictionary
+
+# Difference Between Set and Dictionary
 
 | Feature   | Set         | Dictionary                 |
 | --------- | ----------- | -------------------------- |
@@ -198,7 +198,7 @@ for key, value in student.items():
 | Access    | No indexing | Access via key             |
 | Example   | `{1, 2, 3}` | `{"a": 1, "b": 2}`         |
 
----
+
 
 # ✅ Final Summary
 
