@@ -148,30 +148,20 @@ front = (front + 1) % size
 ### Python Example:
 
 ```python
-class CircularQueue:
-    def __init__(self, size):
-        self.queue = [None]*size
-        self.size = size
-        self.front = -1
-        self.rear = -1
+cq = CircularQueue(3)
 
-    def enqueue(self, data):
-        if (self.rear + 1) % self.size == self.front:
-            print("Queue Full")
-        elif self.front == -1:
-            self.front = self.rear = 0
-            self.queue[self.rear] = data
-        else:
-            self.rear = (self.rear + 1) % self.size
-            self.queue[self.rear] = data
+cq.enqueue(10)
+cq.enqueue(20)
+cq.enqueue(30)
 
-    def dequeue(self):
-        if self.front == -1:
-            print("Queue Empty")
-        elif self.front == self.rear:
-            self.front = self.rear = -1
-        else:
-            self.front = (self.front + 1) % self.size
+cq.display()       # 10 20 30
+
+print(cq.dequeue())  # 10
+
+cq.display()       # 20 30
+
+cq.enqueue(40)
+cq.display()       # 20 30 40
 ```
 
 
@@ -184,16 +174,6 @@ Elements are processed based on **priority**, not order.
 
 👉 Higher priority → served first
 
-### Example:
-
-```
-Insert: (10, priority 2), (20, priority 1)
-
-Output:
-20 (higher priority)
-10
-```
-
 ### Python Example:
 
 ```python
@@ -204,7 +184,14 @@ pq = []
 heapq.heappush(pq, (2, "Low"))
 heapq.heappush(pq, (1, "High"))
 
-print(heapq.heappop(pq))  # (1, "High")
+# Print heap before pop
+print("Heap before pop:", pq)
+
+# Pop highest priority element
+print("Popped element:", heapq.heappop(pq))
+
+# Print heap after pop
+print("Heap after pop:", pq)
 ```
 
 
