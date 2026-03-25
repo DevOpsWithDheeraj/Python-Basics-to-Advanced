@@ -291,12 +291,27 @@ Right: [9]
 def quick_sort(arr):
     if len(arr) <= 1:
         return arr
-
-    pivot = arr[0]
-    left = [x for x in arr[1:] if x <= pivot]
-    right = [x for x in arr[1:] if x > pivot]
-
+    
+    pivot = arr[0]  # choosing first element as pivot
+    left = []
+    right = []
+    
+    for i in arr[1:]:
+        if i <= pivot:
+            left.append(i)
+        else:
+            right.append(i)
+    
     return quick_sort(left) + [pivot] + quick_sort(right)
+
+# Example
+arr = [10, 7, 8, 9, 1, 5]
+print(quick_sort(arr))
+```
+
+### Output:
+```
+[1, 5, 7, 8, 9, 10]
 ```
 
 ### 🔹 Complexity:
