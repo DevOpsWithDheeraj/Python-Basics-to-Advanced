@@ -36,7 +36,6 @@ A tree is a collection of nodes where:
 ### Definition:
 
 A tree where each node has **at most 2 children**:
-
 * Left child
 * Right child
 
@@ -59,11 +58,27 @@ class Node:
         self.left = None
         self.right = None
 
-root = Node(10)
-root.left = Node(5)
-root.right = Node(20)
+# Create nodes
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+# Display (Preorder Traversal)
+def preorder(node):
+    if node:
+        print(node.data, end=" ")
+        preorder(node.left)
+        preorder(node.right)
+
+preorder(root)
 ```
 
+### Output:
+```
+1 2 4 5 3
+```
 
 
 ## 3.2 Binary Search Tree (BST)
