@@ -437,11 +437,66 @@ print(counting_sort(arr))
 
 # 🔸 8. Radix Sort
 
-### 🔹 Idea:
+## 🔹 Idea:
 
 - Radix Sort is a non-comparison sorting algorithm that sorts numbers digit by digit (from least significant digit to most significant digit).
+- 
+## 🔹 Radix Sort Example:
 
-### 🔹 Code:
+👉 Input:
+```
+[170, 45, 75, 90, 802, 24, 2, 66]
+```
+### 🔸 Step 1: Sort by **Units Place (1s digit)**
+```
+Digits → [0, 5, 5, 0, 2, 4, 2, 6]
+
+Buckets:
+0 → [170, 90]
+2 → [802, 2]
+4 → [24]
+5 → [45, 75]
+6 → [66]
+
+Result → [170, 90, 802, 2, 24, 45, 75, 66]
+```
+### 🔸 Step 2: Sort by **Tens Place (10s digit)**
+```
+Digits → [7, 9, 0, 0, 2, 4, 7, 6]
+
+Buckets:
+0 → [802, 2]
+2 → [24]
+4 → [45]
+6 → [66]
+7 → [170, 75]
+9 → [90]
+
+Result → [802, 2, 24, 45, 66, 170, 75, 90]
+```
+### 🔸 Step 3: Sort by **Hundreds Place (100s digit)**
+
+```
+Digits → [8, 0, 0, 0, 0, 1, 0, 0]
+
+Buckets:
+0 → [2, 24, 45, 66, 75, 90]
+1 → [170]
+8 → [802]
+
+Result → [2, 24, 45, 66, 75, 90, 170, 802]
+```
+
+## 🔥 Final Sorted Output
+```
+[2, 24, 45, 66, 75, 90, 170, 802]
+```
+
+## 🔹 Quick Pattern 🧠
+
+👉 **Units → Tens → Hundreds → Final Sorted**
+
+## 🔹 Code:
 
 ```python
 def counting_sort(arr, exp):
