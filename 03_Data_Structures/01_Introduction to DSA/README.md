@@ -180,26 +180,6 @@ Chooses the best option at each step.
 * Example: Fibonacci
 
 
-
-# ⏱️ Time & Space Complexity
-
-## 📌 Time Complexity
-
-Measures how fast an algorithm runs.
-
-* O(1) → Constant
-* O(log n) → Logarithmic
-* O(n) → Linear
-* O(n²) → Quadratic
-
-
-
-## 📌 Space Complexity
-
-Measures how much memory is used.
-
-
-
 # 🎯 Real-Life Applications of DSA
 
 * Navigation (Google Maps → Graphs)
