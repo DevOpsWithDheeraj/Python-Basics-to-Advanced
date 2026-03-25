@@ -375,11 +375,6 @@ bfs('A')
 ```
 A B C D E F
 ```
-### 🔹 How it works
-- Start from A
-- Visit neighbors → B, C
-- Then next level → D, E, F
-- 
 
 ## 🔎 Depth-First Search (DFS)
 
@@ -387,15 +382,33 @@ A B C D E F
 
 ### 🧠 Example:
 ```python
-def dfs(graph, node, visited=set()):
+# Graph representation
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+# DFS function
+def dfs(node, visited=set()):
     if node not in visited:
-        print(node)
+        print(node, end=" ")
         visited.add(node)
+        
         for neighbor in graph[node]:
-            dfs(graph, neighbor, visited)
+            dfs(neighbor, visited)
+
+# Run DFS
+dfs('A')
 ```
 
-
+### Output:
+```
+A B D E C F
+```
 
 # 🔄 Comparison Table
 
