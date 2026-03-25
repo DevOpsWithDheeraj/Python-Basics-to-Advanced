@@ -8,7 +8,7 @@
 - Sorted (Ascending) → `[1, 2, 5, 9]`
 
 
-# 🔹 Why is Sorting Important?
+## 🔹 Why is Sorting Important?
 
 * Faster searching (Binary Search requires sorted data)
 * Data organization
@@ -17,7 +17,7 @@
 
 
 
-# 🔹 Types of Sorting Algorithms
+## 🔹 Types of Sorting Algorithms
 
 Sorting algorithms are mainly classified into:
 
