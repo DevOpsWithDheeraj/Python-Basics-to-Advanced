@@ -559,6 +559,56 @@ print(radix_sort(arr))
 
 - Bucket Sort distributes elements into different buckets, sorts each bucket, and then combines them.
 
+## 🔹 Bucket Sort Example:
+
+👉 Input:
+```
+[0.42, 0.32, 0.23, 0.52, 0.25, 0.47]
+```
+
+### 🔸 Step 1: Create Buckets
+👉 Assume 5 buckets (0–1 range divided)
+```
+Buckets:
+B0 → [0.0 – 0.2)
+B1 → [0.2 – 0.4)
+B2 → [0.4 – 0.6)
+B3 → [0.6 – 0.8)
+B4 → [0.8 – 1.0)
+```
+### 🔸 Step 2: Distribute Elements
+```
+0.42 → B2
+0.32 → B1
+0.23 → B1
+0.52 → B2
+0.25 → B1
+0.47 → B2
+```
+
+👉 Buckets after insertion:
+```
+B0 → []
+B1 → [0.32, 0.23, 0.25]
+B2 → [0.42, 0.52, 0.47]
+B3 → []
+B4 → []
+```
+### 🔸 Step 3: Sort Each Bucket
+```
+B1 → [0.23, 0.25, 0.32]
+B2 → [0.42, 0.47, 0.52]
+```
+### 🔸 Step 4: Merge Buckets
+```
+Result → [0.23, 0.25, 0.32, 0.42, 0.47, 0.52]
+```
+
+## 🔥 Final Output
+```
+[0.23, 0.25, 0.32, 0.42, 0.47, 0.52]
+```
+
 ### 🔹 Code:
 
 ```python
@@ -618,5 +668,3 @@ print(bucket_sort(arr))
 | Counting Sort  | O(n+k)          | O(k)     | Yes    |
 | Radix Sort     | O(nk)           | O(n)     | Yes    |
 | Bucket Sort    | O(n+k)          | O(n)     | Yes    |
-
-
