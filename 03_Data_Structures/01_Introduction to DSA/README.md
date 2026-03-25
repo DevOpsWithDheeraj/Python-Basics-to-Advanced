@@ -8,7 +8,7 @@
 
 👉 Together, DSA helps in writing **optimized, scalable, and efficient code**
 
-# 🧱 Data Structures (Using Python)
+## 🧱 Data Structures (Python)
 
 ## 1. Array (List in Python)
 
