@@ -1,7 +1,7 @@
 
 # 🔹 What is Sorting?
 
-**Sorting** is the process of arranging elements in a collection based on a comparison operator.
+- **Sorting** is the process of arranging elements in a collection based on a comparison operator.
 
 👉 Example: 
 - Unsorted → `[5, 2, 9, 1]` <br>
