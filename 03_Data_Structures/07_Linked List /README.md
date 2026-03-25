@@ -215,69 +215,89 @@ display(head)
 
 ## 1. Singly Linked List
 
-### 📌 Definition:
+👉 A **Singly Linked List** is a collection of nodes where each node contains:
+* **Data**
+* **Reference (next)** to the next node
 
-Each node points to the **next node only**.
-
-### Example:
-
-```
-10 -> 20 -> 30 -> 40 -> None
-```
-
-### Code Example:
-
-```python
-head = Node(10)
-head.next = Node(20)
-head.next.next = Node(30)
-```
-
-### ✔️ Advantages:
-
-* Simple and memory efficient
-* Easy insertion/deletion
-
-### ❌ Disadvantages:
-
-* Cannot traverse backward
-
-
-
-## 2. Doubly Linked List
-
-### 📌 Definition:
-
-Each node has:
-
-* pointer to **next**
-* pointer to **previous**
-
-### Example:
-
-```
-None <- 10 <-> 20 <-> 30 -> None
-```
-
-### Node Structure:
-
-```python
+### Example Code
+```python 
 class Node:
     def __init__(self, data):
         self.data = data
-        self.prev = None
         self.next = None
+
+# Create Linked List
+head = Node(10)
+second = Node(20)
+third = Node(30)
+
+# Link nodes
+head.next = second
+second.next = third
+
+# Traverse (Display)
+temp = head
+while temp:
+    print(temp.data, end=" -> ")
+    temp = temp.next
+print("None")
 ```
 
-### ✔️ Advantages:
+### Output
 
-* Traversal in both directions
-* Easier deletion
+```python
+10 -> 20 -> 30 -> None
+```
 
-### ❌ Disadvantages:
 
-* Extra memory for `prev` pointer
+## 2. Doubly Linked List (DLL)
 
+👉 A **Doubly Linked List** is a type of linked list where each node contains:
+* **Data**
+* **Pointer to next node**
+* **Pointer to previous node**
+
+### Example Code
+```python
+class Node:
+    def __init__(self, data):
+        self.prev = None
+        self.data = data
+        self.next = None
+
+# Create nodes
+head = Node(10)
+second = Node(20)
+third = Node(30)
+
+# Link nodes
+head.next = second
+second.prev = head
+
+second.next = third
+third.prev = second
+
+# Traverse forward
+temp = head
+while temp:
+    print(temp.data, end=" <-> ")
+    temp = temp.next
+print("None")
+```
+
+### Output:
+
+```python 
+10 <-> 20 <-> 30 <-> None
+```
+
+### Singly vs Doubly 
+
+| Feature   | Singly LL     | Doubly LL      |
+| --------- | ------------- | -------------- |
+| Pointers  | 1 (next)      | 2 (prev, next) |
+| Traversal | One direction | Two directions |
+| Memory    | Less          | More           |
 
 
 ## 3. Circular Linked List
