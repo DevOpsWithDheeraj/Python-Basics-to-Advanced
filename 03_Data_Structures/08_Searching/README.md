@@ -1,8 +1,6 @@
 
 # 🔍 What is Searching?
-
-**Definition:**
-Searching is the process of locating a target element (key) within a data structure and returning its position (index) or confirming its absence.
+- Searching is the process of locating a target element (key) within a data structure and returning its position (index) or confirming its absence.
 
 
 
