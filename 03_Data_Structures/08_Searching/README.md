@@ -329,7 +329,6 @@ Self-balancing trees maintain height to ensure efficient search.
 * Always: O(log n)
 
 
-
 ## 5️⃣ Graph Searching
 
 ## 🔎 Breadth-First Search (BFS)
