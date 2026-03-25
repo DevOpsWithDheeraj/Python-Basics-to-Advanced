@@ -128,6 +128,57 @@ else:
 * Hash Function
 * Collision Handling (Chaining, Open Addressing)
 
+### 🔹 Collision Resolution (Chaining)
+
+👉 **Collision** happens when **two keys map to the same index** in a hash table.
+👉 One simple way to handle it is **Chaining** (store multiple values at same index using a list).
+
+
+### Example Code (Chaining)
+
+```python id="hash_chaining"
+# Hash function
+def hash_func(key, size):
+    return key % size
+
+# Create hash table (list of empty lists)
+size = 5
+hash_table = [[] for _ in range(size)]
+
+# Insert function
+def insert(key):
+    index = hash_func(key, size)
+    hash_table[index].append(key)
+
+# Search function
+def search(key):
+    index = hash_func(key, size)
+    if key in hash_table[index]:
+        return True
+    return False
+
+# Insert elements (collision will happen)
+insert(10)   # 10 % 5 = 0
+insert(15)   # 15 % 5 = 0  → collision with 10
+insert(20)   # 20 % 5 = 0  → collision again
+
+# Display hash table
+print(hash_table)
+
+# Search
+print("Search 15:", search(15))
+```
+
+### 🔥 Output
+```python id="hash_chain_output"
+[[10, 15, 20], [], [], [], []]
+Search 15: True
+```
+
+### 🔹 Explanation
+* All keys **10, 15, 20 → index 0**
+* Instead of overwriting, we **store them in a list**
+* This list is called a **chain**
 
 
 ## 4️⃣ Tree-Based Searching
