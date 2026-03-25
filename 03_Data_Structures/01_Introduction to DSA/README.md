@@ -215,19 +215,6 @@ Measures how much memory is used.
 
 ---
 
-# 🐍 Why Python for DSA?
-
-* Easy syntax
-* Built-in data structures
-* Faster prototyping
-* Libraries like:
-
-  * `collections`
-  * `heapq`
-  * `itertools`
-
----
-
 # 🎯 Real-Life Applications of DSA
 
 * Navigation (Google Maps → Graphs)
