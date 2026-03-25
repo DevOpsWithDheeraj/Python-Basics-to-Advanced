@@ -300,87 +300,130 @@ print("None")
 | Memory    | Less          | More           |
 
 
-## 3. Circular Linked List
+## 3. Circular Linked List (CLL)
 
-### 📌 Definition:
+👉 A **Circular Linked List** is a type of linked list where **the last node points back to the first node (head)** instead of `None`.
 
-Last node points back to the **first node**.
+### Example Code 
+```python 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-### Example:
-
-```
-10 -> 20 -> 30 -> (back to 10)
-```
-
-### Code Example:
-
-```python
+# Create nodes
 head = Node(10)
 second = Node(20)
 third = Node(30)
 
+# Link nodes in circular manner
 head.next = second
 second.next = third
-third.next = head  # Circular link
+third.next = head   # circular link
+
+# Traverse circular linked list
+temp = head
+while True:
+    print(temp.data, end=" -> ")
+    temp = temp.next
+    if temp == head:
+        break
+print("(back to head)")
 ```
 
-### ✔️ Advantages:
 
-* No NULL pointers
-* Useful in cyclic processes (e.g., round-robin scheduling)
+### Output
 
-### ❌ Disadvantages:
-
-* Infinite loops if not handled carefully
-
-
-
-## 4. Doubly Circular Linked List
-
-### 📌 Definition:
-
-* Like doubly linked list
-* Last node connects to first
-* First node connects to last
-
-### Example:
-
-```
-10 <-> 20 <-> 30 (circular both sides)
+```python 
+10 -> 20 -> 30 -> (back to head)
 ```
 
-### ✔️ Advantages:
 
-* Full two-way circular traversal
-* Efficient for navigation systems
+## 4. Doubly Circular Linked List (DCLL)
 
-### ❌ Disadvantages:
+👉 A **Doubly Circular Linked List** is a combination of:
+* **Doubly Linked List** (has `prev` and `next`)
+* **Circular Linked List** (forms a loop)
 
-* More complex
-* More memory usage
+### Example Code
+```python 
+class Node:
+    def __init__(self, data):
+        self.prev = None
+        self.data = data
+        self.next = None
 
+# Create nodes
+head = Node(10)
+second = Node(20)
+third = Node(30)
 
+# Link nodes
+head.next = second
+second.prev = head
 
-## 5. Self-Referential Linked List (Single Node Loop)
+second.next = third
+third.prev = second
 
-### 📌 Definition:
+# Make it circular
+third.next = head
+head.prev = third
 
-A node points to **itself**.
-
-### Example:
-
+# Traverse forward
+temp = head
+while True:
+    print(temp.data, end=" <-> ")
+    temp = temp.next
+    if temp == head:
+        break
+print("(back to head)")
 ```
-10 -> (points to itself)
+
+### Output
+
+```python 
+10 <-> 20 <-> 30 <-> (back to head)
 ```
 
-### Code:
+### Comparison 
+
+| Feature   | Circular LL | Doubly Circular LL |
+| --------- | ----------- | ------------------ |
+| Pointers  | 1 (next)    | 2 (prev, next)     |
+| Direction | One-way     | Two-way            |
+| Loop      | Yes         | Yes                |
+
+
+## 5. Self-Referential Linked List 
+
+👉 A **Self-Referential Linked List** means a **node points to itself** instead of another node.
+
+### Example Code
+```python 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# Create a node
+node = Node(10)
+
+# Self-referential link
+node.next = node
+
+# Display (limited traversal to avoid infinite loop)
+temp = node
+for _ in range(3):   # print 3 times to show loop
+    print(temp.data, end=" -> ")
+    temp = temp.next
+print("... (loops to itself)")
+```
+
+### Output
 
 ```python
-node = Node(10)
-node.next = node
+10 -> 10 -> 10 -> ... (loops to itself)
 ```
-
-
 
 # ⚡ Time Complexity
 
