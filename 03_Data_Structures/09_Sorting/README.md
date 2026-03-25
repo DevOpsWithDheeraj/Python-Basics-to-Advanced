@@ -4,10 +4,9 @@
 **Sorting** is the process of arranging elements in a collection based on a comparison operator.
 
 👉 Example:
-Unsorted → `[5, 2, 9, 1]`
+Unsorted → `[5, 2, 9, 1]` <br>
 Sorted (Ascending) → `[1, 2, 5, 9]`
 
----
 
 # 🔹 Why is Sorting Important?
 
@@ -16,7 +15,7 @@ Sorted (Ascending) → `[1, 2, 5, 9]`
 * Duplicate detection
 * Efficient algorithms (e.g., merging, grouping)
 
----
+
 
 # 🔹 Types of Sorting Algorithms
 
@@ -43,7 +42,7 @@ Sorting algorithms are mainly classified into:
   * Radix Sort
   * Bucket Sort
 
----
+
 
 # 🔸 1. Bubble Sort
 
@@ -81,7 +80,7 @@ def bubble_sort(arr):
 * Time: O(n²)
 * Space: O(1)
 
----
+
 
 # 🔸 2. Selection Sort
 
@@ -118,7 +117,7 @@ def selection_sort(arr):
 * Time: O(n²)
 * Space: O(1)
 
----
+
 
 # 🔸 3. Insertion Sort
 
@@ -156,7 +155,7 @@ def insertion_sort(arr):
 * Time: O(n²), Best: O(n)
 * Space: O(1)
 
----
+
 
 # 🔸 4. Merge Sort (Divide & Conquer)
 
@@ -205,7 +204,7 @@ def merge_sort(arr):
 * Time: O(n log n)
 * Space: O(n)
 
----
+
 
 # 🔸 5. Quick Sort
 
@@ -245,7 +244,7 @@ def quick_sort(arr):
 * Worst: O(n²)
 * Space: O(log n)
 
----
+
 
 # 🔸 6. Heap Sort
 
@@ -268,7 +267,7 @@ def heap_sort(arr):
 * Time: O(n log n)
 * Space: O(1)
 
----
+
 
 # 🔸 7. Counting Sort (Non-Comparison)
 
@@ -306,7 +305,7 @@ def counting_sort(arr):
 * Time: O(n + k)
 * Space: O(k)
 
----
+
 
 # 🔸 8. Radix Sort
 
@@ -341,7 +340,7 @@ def radix_sort(arr):
 * Time: O(nk)
 * Space: O(n)
 
----
+
 
 # 🔸 9. Bucket Sort
 
@@ -374,7 +373,7 @@ def bucket_sort(arr):
 * Average: O(n + k)
 * Worst: O(n²)
 
----
+
 
 # 🔹 Comparison Table
 
@@ -390,7 +389,7 @@ def bucket_sort(arr):
 | Radix Sort     | O(nk)           | O(n)     | Yes    |
 | Bucket Sort    | O(n+k)          | O(n)     | Yes    |
 
----
+
 
 # 🔹 Important Points
 
@@ -400,4 +399,4 @@ def bucket_sort(arr):
 * **Best General Use:** Quick Sort / Merge Sort
 * **For Integers:** Counting / Radix
 
----
+
