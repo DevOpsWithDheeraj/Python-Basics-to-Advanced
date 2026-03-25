@@ -11,7 +11,7 @@ Each node contains:
 
 👉 Unlike arrays, linked lists **do not require contiguous memory**.
 
----
+
 
 ## 🧱 Structure of a Node (Python)
 
@@ -31,7 +31,7 @@ n1.next = n2
 n2.next = n3
 ```
 
----
+
 
 ## ⚙️ Basic Operations
 
@@ -45,7 +45,7 @@ def traverse(head):
         temp = temp.next
 ```
 
----
+
 
 ### 2. Insertion at Beginning
 
@@ -56,7 +56,7 @@ def insert_at_beginning(head, data):
     return new_node
 ```
 
----
+
 
 ### 3. Insertion at End
 
@@ -74,7 +74,7 @@ def insert_at_end(head, data):
     return head
 ```
 
----
+
 
 ### 4. Deletion
 
@@ -96,11 +96,11 @@ def delete_node(head, key):
     return head
 ```
 
----
+
 
 # 🔥 Types of Linked Lists
 
----
+
 
 ## 1. Singly Linked List
 
@@ -131,7 +131,7 @@ head.next.next = Node(30)
 
 * Cannot traverse backward
 
----
+
 
 ## 2. Doubly Linked List
 
@@ -167,7 +167,7 @@ class Node:
 
 * Extra memory for `prev` pointer
 
----
+
 
 ## 3. Circular Linked List
 
@@ -202,7 +202,7 @@ third.next = head  # Circular link
 
 * Infinite loops if not handled carefully
 
----
+
 
 ## 4. Doubly Circular Linked List
 
@@ -228,7 +228,7 @@ third.next = head  # Circular link
 * More complex
 * More memory usage
 
----
+
 
 ## 5. Self-Referential Linked List (Single Node Loop)
 
@@ -249,7 +249,7 @@ node = Node(10)
 node.next = node
 ```
 
----
+
 
 # ⚡ Time Complexity
 
@@ -260,7 +260,7 @@ node.next = node
 | Insertion | O(1)            |
 | Deletion  | O(1)            |
 
----
+
 
 # 🧠 Linked List vs Array
 
@@ -271,7 +271,7 @@ node.next = node
 | Access    | Slow (O(n))    | Fast (O(1)) |
 | Insertion | Easy           | Costly      |
 
----
+
 
 # 🚀 Real-Life Applications
 
@@ -281,7 +281,7 @@ node.next = node
 * Memory management
 * Graph adjacency lists
 
----
+
 
 # 🧾 Final Summary
 
@@ -295,4 +295,4 @@ node.next = node
   * Doubly Circular
 * Best when **frequent insertions/deletions** are needed
 
----
+
