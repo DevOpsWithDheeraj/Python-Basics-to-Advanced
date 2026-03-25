@@ -248,12 +248,9 @@ Search 15: True
 
 ## 🌳 Binary Search Tree (BST)
 
-### 📖 Definition:
-
-A tree where:
-
-* Left child < Root
-* Right child > Root
+👉 In a Binary Search Tree (BST):
+- Left subtree → values smaller than root
+- Right subtree → values greater than root
 
 ### 🔁 Searching Process:
 
@@ -265,21 +262,55 @@ A tree where:
 
 ```python
 class Node:
-    def __init__(self, value):
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
-        self.value = value
 
+# Insert function to build BST
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    if key < root.data:
+        root.left = insert(root.left, key)
+    else:
+        root.right = insert(root.right, key)
+    return root
+
+# Search function
 def search(root, key):
-    if root is None or root.value == key:
-        return root
+    if root is None:
+        return "Not Found"
     
-    if key < root.value:
+    if root.data == key:
+        return "Found"
+    
+    elif key < root.data:
         return search(root.left, key)
     else:
         return search(root.right, key)
+
+# Create BST
+root = None
+for value in [50, 30, 70, 20, 40, 60, 80]:
+    root = insert(root, value)
+
+# Search key
+print(search(root, 60))
+```
+### Output:
+```
+Found
 ```
 
+### 🔹 Step-by-Step Search (Key = 60)
+- Start at root → 50
+- 60 > 50 → go right
+- Move to 70
+- 60 < 70 → go left
+- Move to 60 → ✅ Found
+
+  
 ### ⏱ Time Complexity:
 
 * Average: O(log n)
