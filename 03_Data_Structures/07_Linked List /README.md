@@ -43,71 +43,157 @@ print("None")
 ## ⚙️ Basic Operations
 
 ### 1. Traversal
+👉 Traversal means visiting each node one by one from start (head) to end (None).
 
 ```python
-def traverse(head):
-    temp = head
-    while temp:
-        print(temp.data, end=" -> ")
-        temp = temp.next
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# Create Linked List: 10 -> 20 -> 30
+head = Node(10)
+second = Node(20)
+third = Node(30)
+
+head.next = second
+second.next = third
+
+# Traversal
+temp = head
+while temp is not None:
+    print(temp.data, end=" -> ")
+    temp = temp.next
+print("None")
 ```
 
 
 
 ### 2. Insertion at Beginning
+👉 Insertion at beginning means adding a new node before the current head and updating the head pointer.
 
 ```python
-def insert_at_beginning(head, data):
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# Function to insert at beginning
+def insert_begin(head, data):
     new_node = Node(data)
     new_node.next = head
-    return new_node
+    return new_node   # new node becomes new head
+
+# Function to display list
+def display(head):
+    temp = head
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+    print("None")
+
+# Initial Linked List: 20 -> 30
+head = Node(20)
+head.next = Node(30)
+
+display(head)
+
+# Insert at beginning
+head = insert_begin(head, 10)
+
+display(head)
 ```
 
 
 
 ### 3. Insertion at End
+👉 Insertion at end means adding a new node at the last position of the linked list.
 
 ```python
-def insert_at_end(head, data):
-    new_node = Node(data)
-    if not head:
-        return new_node
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
+# Function to insert at end
+def insert_end(head, data):
+    new_node = Node(data)
+    
+    # If list is empty
+    if head is None:
+        return new_node
+    
     temp = head
     while temp.next:
-        temp = temp.next
-
-    temp.next = new_node
+        temp = temp.next   # traverse to last node
+    
+    temp.next = new_node  # link last node to new node
     return head
+
+# Function to display list
+def display(head):
+    temp = head
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+    print("None")
+
+# Initial Linked List: 10 -> 20
+head = Node(10)
+head.next = Node(20)
+
+display(head)
+
+# Insert at end
+head = insert_end(head, 30)
+
+display(head)
 ```
 
 
 
 ### 4. Deletion
+👉 Deletion means removing a node from the linked list.
 
 ```python
-def delete_node(head, key):
-    temp = head
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-    if temp and temp.data == key:
-        return temp.next
-
-    prev = None
-    while temp and temp.data != key:
-        prev = temp
-        temp = temp.next
-
-    if temp:
-        prev.next = temp.next
-
+# Function to delete from beginning
+def delete_begin(head):
+    if head is None:
+        print("List is empty")
+        return None
+    
+    head = head.next   # move head to next node
     return head
+
+# Function to display list
+def display(head):
+    temp = head
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+    print("None")
+
+# Create Linked List: 10 -> 20 -> 30
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(30)
+
+display(head)
+
+# Delete from beginning
+head = delete_begin(head)
+
+display(head)
 ```
 
 
 
 # 🔥 Types of Linked Lists
-
-
 
 ## 1. Singly Linked List
 
