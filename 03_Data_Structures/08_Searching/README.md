@@ -17,10 +17,7 @@ Searching techniques can be broadly classified into:
 
 
 ## 1️⃣ Linear Search (Sequential Search)
-
-### 📖 Definition:
-
-Linear Search checks each element one by one until the desired element is found or the list ends.
+- Linear Search checks each element one by one until the desired element is found or the list ends.
 
 ### ✅ When to Use:
 
@@ -55,10 +52,7 @@ print(linear_search(arr, 30))  # Output: 2
 
 
 ## 2️⃣ Binary Search
-
-### 📖 Definition:
-
-Binary Search works by repeatedly dividing a **sorted array** into halves.
+- Binary Search works by repeatedly dividing a **sorted array** into halves.
 
 ### ⚠️ Requirement:
 
@@ -101,10 +95,7 @@ print(binary_search(arr, 40))  # Output: 3
 
 
 ## 3️⃣ Hashing (Direct Access Search)
-
-### 📖 Definition:
-
-Hashing uses a **hash function** to map keys directly to indices.
+-mHashing uses a **hash function** to map keys directly to indices.
 
 ### 🧠 Idea:
 
