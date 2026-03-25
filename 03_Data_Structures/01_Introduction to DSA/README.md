@@ -8,8 +8,6 @@
 
 👉 Together, DSA helps in writing **optimized, scalable, and efficient code**
 
----
-
 # 🧱 Data Structures (Using Python)
 
 ## 1. Array (List in Python)
@@ -28,7 +26,6 @@ print(arr[0])  # Access
   * Access → O(1)
   * Insert/Delete → O(n)
 
----
 
 ## 2. Stack
 
@@ -46,7 +43,7 @@ stack.pop()       # Pop
   * Pop
   * Peek
 
----
+
 
 ## 3. Queue
 
@@ -60,7 +57,7 @@ queue.append(10)     # Enqueue
 queue.popleft()      # Dequeue
 ```
 
----
+
 
 ## 4. Linked List
 
@@ -72,7 +69,7 @@ queue.popleft()      # Dequeue
   * Doubly Linked List
   * Circular Linked List
 
----
+
 
 ## 5. Set
 
@@ -83,7 +80,6 @@ s = {1, 2, 3}
 s.add(4)
 ```
 
----
 
 ## 6. Dictionary (HashMap)
 
@@ -96,7 +92,6 @@ print(d["name"])
 
 * Fast lookup → O(1)
 
----
 
 ## 7. Tree
 
@@ -108,7 +103,7 @@ print(d["name"])
   * Binary Search Tree (BST)
   * AVL Tree
 
----
+
 
 ## 8. Graph
 
@@ -120,7 +115,7 @@ print(d["name"])
   * Undirected
   * Weighted
 
----
+
 
 # ⚙️ Algorithms
 
@@ -128,7 +123,7 @@ print(d["name"])
 
 A **finite set of instructions** used to solve a problem.
 
----
+
 
 ## 🔹 Types of Algorithms
 
@@ -137,7 +132,7 @@ A **finite set of instructions** used to solve a problem.
 * Linear Search → O(n)
 * Binary Search → O(log n)
 
----
+
 
 ### 2. Sorting Algorithms
 
@@ -147,7 +142,7 @@ A **finite set of instructions** used to solve a problem.
 * Merge Sort
 * Quick Sort
 
----
+
 
 ### 3. Recursion
 
@@ -160,7 +155,7 @@ def factorial(n):
     return n * factorial(n-1)
 ```
 
----
+
 
 ### 4. Backtracking
 
@@ -168,7 +163,7 @@ Used to solve problems by trying all possibilities.
 
 * Example: N-Queens, Sudoku
 
----
+
 
 ### 5. Greedy Algorithm
 
@@ -176,7 +171,7 @@ Chooses the best option at each step.
 
 * Example: Coin Change
 
----
+
 
 ### 6. Dynamic Programming (DP)
 
@@ -184,7 +179,7 @@ Chooses the best option at each step.
 
 * Example: Fibonacci
 
----
+
 
 # ⏱️ Time & Space Complexity
 
@@ -197,13 +192,13 @@ Measures how fast an algorithm runs.
 * O(n) → Linear
 * O(n²) → Quadratic
 
----
+
 
 ## 📌 Space Complexity
 
 Measures how much memory is used.
 
----
+
 
 # 🎯 Real-Life Applications of DSA
 
@@ -213,7 +208,7 @@ Measures how much memory is used.
 * Job scheduling (Queue)
 * Databases (Trees)
 
----
+
 
 # ✅ Conclusion
 
