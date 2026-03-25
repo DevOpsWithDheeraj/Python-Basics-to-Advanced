@@ -215,27 +215,49 @@ Divide array → sort halves → merge them.
 
 ```python
 def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-
-    mid = len(arr)//2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-
-    result = []
-    i = j = 0
-
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        
+        left = arr[:mid]
+        right = arr[mid:]
+        
+        # Recursively sort both halves
+        merge_sort(left)
+        merge_sort(right)
+        
+        i = j = k = 0
+        
+        # Merge the sorted halves
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        
+        # Remaining elements
+        while i < len(left):
+            arr[k] = left[i]
             i += 1
-        else:
-            result.append(right[j])
+            k += 1
+        
+        while j < len(right):
+            arr[k] = right[j]
             j += 1
+            k += 1
+    
+    return arr
 
-    result.extend(left[i:])
-    result.extend(right[j:])
-    return result
+# Example
+arr = [38, 27, 43, 3, 9, 82, 10]
+print(merge_sort(arr))
+```
+
+### Output:
+```
+[3, 9, 10, 27, 38, 43, 82]
 ```
 
 ### 🔹 Complexity:
