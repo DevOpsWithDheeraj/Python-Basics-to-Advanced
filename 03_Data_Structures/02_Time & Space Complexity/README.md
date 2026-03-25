@@ -117,16 +117,26 @@ def copy(arr):
 
 ---
 
-### ✅ Example 3: Recursive Space
+### ✅ Example 3: Quadratic Space — O(n²)
 
 ```python
-def factorial(n):
-    if n == 0:
-        return 1
-    return n * factorial(n-1)
+def create_matrix(n):
+    matrix = []
+    for i in range(n):
+        row = []
+        for j in range(n):
+            row.append(0)
+        matrix.append(row)
+    return matrix
 ```
 
-👉 Call stack depth = `n` → **O(n)** space
+👉 Explanation:
+
+* You are creating a 2D matrix (list of lists)
+* Total elements = n × n = n²
+* Memory grows with square of input size
+
+✅ Space Complexity = O(n²)
 
 ---
 
