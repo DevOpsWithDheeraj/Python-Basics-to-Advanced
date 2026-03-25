@@ -1,5 +1,5 @@
 
-# 🌳 1. What is a Tree Data Structure?
+# 🌳 1. What is a Tree ?
 
 A **Tree** is a **non-linear data structure** that represents hierarchical relationships.
 
@@ -11,7 +11,7 @@ A tree is a collection of nodes where:
 * Every node (except root) has exactly **one parent**
 * Nodes can have **zero or more children**
 
----
+
 
 # 🧩 2. Basic Terminology
 
@@ -27,13 +27,9 @@ A tree is a collection of nodes where:
 | **Depth**         | Distance from root to a node              |
 | **Subtree**       | Tree formed by a node and its descendants |
 
----
+
 
 # 🌲 3. Types of Trees
-
-We’ll cover all important types with examples.
-
----
 
 ## 3.1 Binary Tree
 
@@ -68,7 +64,7 @@ root.left = Node(5)
 root.right = Node(20)
 ```
 
----
+
 
 ## 3.2 Binary Search Tree (BST)
 
@@ -107,7 +103,7 @@ def insert(root, key):
     return root
 ```
 
----
+
 
 ## 3.3 Full Binary Tree
 
@@ -128,7 +124,7 @@ Every node has either:
       4   5
 ```
 
----
+
 
 ## 3.4 Complete Binary Tree
 
@@ -147,7 +143,7 @@ Every node has either:
   4  5 6
 ```
 
----
+
 
 ## 3.5 Perfect Binary Tree
 
@@ -170,7 +166,7 @@ Number of nodes = **2^h - 1**
   4  5 6  7
 ```
 
----
+
 
 ## 3.6 Balanced Binary Tree
 
@@ -186,7 +182,7 @@ Height difference between left and right subtree ≤ 1
     5    15
 ```
 
----
+
 
 ## 3.7 Degenerate (Skewed) Tree
 
@@ -204,7 +200,7 @@ Tree behaves like a **linked list**
     3
 ```
 
----
+
 
 ## 3.8 AVL Tree (Self-Balancing BST)
 
@@ -226,7 +222,7 @@ BF = Height(left) - Height(right)
 * Left-Right
 * Right-Left
 
----
+
 
 ## 3.9 Red-Black Tree
 
@@ -243,7 +239,7 @@ Used in:
 * Maps
 * Sets
 
----
+
 
 ## 3.10 Heap (Binary Heap)
 
@@ -275,7 +271,7 @@ heapq.heappush(heap, 20)
 print(heapq.heappop(heap))  # smallest element
 ```
 
----
+
 
 ## 3.11 Trie (Prefix Tree)
 
@@ -299,7 +295,7 @@ class TrieNode:
         self.end = False
 ```
 
----
+
 
 ## 3.12 N-ary Tree
 
@@ -317,7 +313,6 @@ Each node can have **more than 2 children**
         E
 ```
 
----
 
 ## 3.13 B-Tree
 
@@ -327,7 +322,7 @@ Each node can have **more than 2 children**
 * Used in databases & file systems
 * Stores multiple keys per node
 
----
+
 
 ## 3.14 B+ Tree
 
@@ -341,11 +336,9 @@ Used in:
 * Databases
 * Indexing systems
 
----
+
 
 # 🔄 4. Tree Traversals
-
----
 
 ## 4.1 Depth First Traversal (DFS)
 
@@ -381,7 +374,6 @@ def postorder(root):
         print(root.data)
 ```
 
----
 
 ## 4.2 Breadth First Traversal (Level Order)
 
@@ -399,7 +391,6 @@ def level_order(root):
             q.append(node.right)
 ```
 
----
 
 # ⚡ 5. Time Complexity
 
@@ -409,9 +400,8 @@ def level_order(root):
 | Insert    | O(log n) | O(n)  |
 | Delete    | O(log n) | O(n)  |
 
----
 
-# 🚀 6. Applications of Trees
+# 6. Applications of Trees
 
 * File systems (folders)
 * Databases (B-Trees)
@@ -420,14 +410,3 @@ def level_order(root):
 * Networking (routing trees)
 * AI (decision trees)
 
----
-
-# 🔚 Final Summary
-
-Trees are powerful because they:
-
-* Represent **hierarchical data**
-* Provide **efficient search & insert**
-* Form the backbone of many advanced systems
-
----
