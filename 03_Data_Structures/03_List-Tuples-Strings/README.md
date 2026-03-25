@@ -86,7 +86,6 @@ print(my_tuple[1])   # Access element
 * When data should not change (e.g., coordinates, fixed values)
 * Improves performance and safety
 
----
 
 # 🔹 3. String in Python
 
@@ -132,7 +131,7 @@ Python Dev
 * `replace()`
 * `split()`
 
----
+
 
 # 🔥 Difference Between List, Tuple, and String
 
