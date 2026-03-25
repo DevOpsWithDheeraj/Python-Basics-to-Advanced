@@ -11,7 +11,7 @@ The element inserted first is removed first.
 * Queue at a ticket counter 🎫
 * People stand in line → first person gets served first
 
----
+
 
 # 📌 2. Basic Operations of Queue
 
@@ -23,7 +23,7 @@ The element inserted first is removed first.
 | **isEmpty**      | Check if queue is empty            |
 | **isFull**       | Check if queue is full (for array) |
 
----
+
 
 # 📌 3. Representation of Queue
 
@@ -38,7 +38,7 @@ Example:
 Front → [10, 20, 30, 40] ← Rear
 ```
 
----
+
 
 # 📌 4. Implementation of Queue
 
@@ -60,7 +60,7 @@ print(queue)
 
 ⚠️ Problem: `pop(0)` is slow → O(n)
 
----
+
 
 ## 👉 (B) Using collections.deque (Best)
 
@@ -80,11 +80,11 @@ print(queue)
 
 ✅ Efficient → O(1)
 
----
+
 
 # 📌 5. Types of Queue (Very Important)
 
----
+
 
 # 🔹 1. Simple Queue (Linear Queue)
 
@@ -119,7 +119,7 @@ q.popleft()
 print(q)
 ```
 
----
+
 
 # 🔹 2. Circular Queue
 
@@ -174,7 +174,7 @@ class CircularQueue:
             self.front = (self.front + 1) % self.size
 ```
 
----
+
 
 # 🔹 3. Priority Queue
 
@@ -207,7 +207,7 @@ heapq.heappush(pq, (1, "High"))
 print(heapq.heappop(pq))  # (1, "High")
 ```
 
----
+
 
 # 🔹 4. Double Ended Queue (Deque)
 
@@ -236,7 +236,7 @@ dq.pop()             # remove rear
 dq.popleft()         # remove front
 ```
 
----
+
 
 # 🔹 5. Input Restricted Queue
 
@@ -245,7 +245,7 @@ dq.popleft()         # remove front
 * Insertion allowed only at **one end**
 * Deletion allowed at **both ends**
 
----
+
 
 # 🔹 6. Output Restricted Queue
 
@@ -254,7 +254,7 @@ dq.popleft()         # remove front
 * Deletion allowed only at **one end**
 * Insertion allowed at **both ends**
 
----
+
 
 # 📌 6. Time Complexity
 
@@ -264,7 +264,7 @@ dq.popleft()         # remove front
 | Dequeue   | O(1)       |
 | Peek      | O(1)       |
 
----
+
 
 # 📌 7. Applications of Queue
 
@@ -277,7 +277,7 @@ dq.popleft()         # remove front
 5. **Task Scheduling (OS)**
 6. **Handling Requests in Web Servers**
 
----
+
 
 # 📌 8. Queue vs Stack
 
@@ -287,7 +287,7 @@ dq.popleft()         # remove front
 | Insert    | Rear  | Top   |
 | Delete    | Front | Top   |
 
----
+
 
 # 🎯 Final Summary
 
@@ -301,4 +301,4 @@ dq.popleft()         # remove front
   * Deque
   * Restricted Queues
 
----
+
