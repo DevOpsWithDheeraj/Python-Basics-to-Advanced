@@ -38,7 +38,10 @@ while temp:
 print("None")
 ```
 
-
+#### Output:
+```
+10 -> 20 -> 30 -> None
+```
 
 ## ⚙️ Basic Operations
 
@@ -67,7 +70,10 @@ while temp is not None:
 print("None")
 ```
 
-
+####  Output
+```
+10 -> 20 -> 30 -> None
+```
 
 ### 2. Insertion at Beginning
 👉 Insertion at beginning means adding a new node before the current head and updating the head pointer.
@@ -104,7 +110,11 @@ head = insert_begin(head, 10)
 display(head)
 ```
 
-
+#### Output:
+```
+20 -> 30 -> None
+10 -> 20 -> 30 -> None
+```
 
 ### 3. Insertion at End
 👉 Insertion at end means adding a new node at the last position of the linked list.
@@ -150,7 +160,11 @@ head = insert_end(head, 30)
 display(head)
 ```
 
-
+#### Output:
+```
+10 -> 20 -> None
+10 -> 20 -> 30 -> None
+```
 
 ### 4. Deletion
 👉 Deletion means removing a node from the linked list.
@@ -191,7 +205,11 @@ head = delete_begin(head)
 display(head)
 ```
 
-
+#### Output:
+```
+10 -> 20 -> 30 -> None
+20 -> 30 -> None
+```
 
 # 🔥 Types of Linked Lists
 
