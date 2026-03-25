@@ -3,9 +3,9 @@
 
 **Sorting** is the process of arranging elements in a collection based on a comparison operator.
 
-👉 Example:
-Unsorted → `[5, 2, 9, 1]` <br>
-Sorted (Ascending) → `[1, 2, 5, 9]`
+👉 Example: 
+- Unsorted → `[5, 2, 9, 1]` <br>
+- Sorted (Ascending) → `[1, 2, 5, 9]`
 
 
 # 🔹 Why is Sorting Important?
