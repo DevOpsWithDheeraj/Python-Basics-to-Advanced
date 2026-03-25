@@ -128,7 +128,7 @@ else:
 * Hash Function
 * Collision Handling (Chaining, Open Addressing)
 
-### 🔹 Collision Resolution (Chaining)
+## 🔹 Collision Resolution (Chaining)
 
 👉 **Collision** happens when **two keys map to the same index** in a hash table. <br>
 👉 One simple way to handle it is **Chaining** (store multiple values at same index using a list).
@@ -179,6 +179,69 @@ Search 15: True
 * All keys **10, 15, 20 → index 0**
 * Instead of overwriting, we **store them in a list**
 * This list is called a **chain**
+
+
+## 🔹 Collision Resolution Example (Linear Probing)
+
+👉 Another way to handle collision is **Linear Probing (Open Addressing)** <br>
+👉 If a slot is full, we **check the next available slot**
+
+### Example Code (Linear Probing)
+
+```python id="hash_linear_probing"
+size = 5
+hash_table = [None] * size
+
+# Hash function
+def hash_func(key):
+    return key % size
+
+# Insert using linear probing
+def insert(key):
+    index = hash_func(key)
+
+    # Find next empty slot
+    while hash_table[index] is not None:
+        index = (index + 1) % size
+
+    hash_table[index] = key
+
+# Search using linear probing
+def search(key):
+    index = hash_func(key)
+    start = index
+
+    while hash_table[index] is not None:
+        if hash_table[index] == key:
+            return True
+        index = (index + 1) % size
+        if index == start:
+            break
+    return False
+
+# Insert elements (collision happens)
+insert(10)   # 10 % 5 = 0
+insert(15)   # 15 % 5 = 0 → collision → move to next index
+insert(20)   # 20 % 5 = 0 → collision → move further
+
+# Display hash table
+print(hash_table)
+
+# Search
+print("Search 15:", search(15))
+```
+
+### 🔥 Output
+
+```python id="hash_linear_output"
+[10, 15, 20, None, None]
+Search 15: True
+```
+
+### 🔹 Explanation
+* `10 → index 0`
+* `15 → index 0 (collision) → placed at index 1`
+* `20 → index 0 (collision) → index 1 full → placed at index 2`
 
 
 ## 4️⃣ Tree-Based Searching
