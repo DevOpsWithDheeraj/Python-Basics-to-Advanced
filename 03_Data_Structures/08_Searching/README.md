@@ -246,8 +246,9 @@ Search 15: True
 
 ## 4️⃣ Tree-Based Searching
 
-## 🌳 Binary Search Tree (BST)
+👉 Tree Searching is the process of finding a specific node or value in a tree data structure by traversing its nodes in a systematic way.
 
+## 🌳 Binary Search Tree (BST)
 👉 In a Binary Search Tree (BST):
 - Left subtree → values smaller than root
 - Right subtree → values greater than root
@@ -331,14 +332,12 @@ Self-balancing trees maintain height to ensure efficient search.
 
 ## 5️⃣ Graph Searching
 
+👉 Graph Searching is the process of visiting or exploring all the vertices (nodes) of a graph in a systematic way to find a particular node or to traverse the entire graph.
+
 ## 🔎 Breadth-First Search (BFS)
-
-### 📖 Definition:
-
-Explores level by level using a queue.
+- Breadth-First Search (BFS) is a graph/tree searching algorithm that visits nodes level by level, starting from a source node and exploring all its neighbors before moving to the next level.
 
 ### 🧠 Example:
-
 ```python
 from collections import deque
 
@@ -358,12 +357,9 @@ def bfs(graph, start):
 
 ## 🔎 Depth-First Search (DFS)
 
-### 📖 Definition:
-
-Explores as deep as possible before backtracking.
+- Depth-First Search (DFS) is a graph/tree searching algorithm that explores nodes as deep as possible first, and then backtracks to explore other paths.
 
 ### 🧠 Example:
-
 ```python
 def dfs(graph, node, visited=set()):
     if node not in visited:
