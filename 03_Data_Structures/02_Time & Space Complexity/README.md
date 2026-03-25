@@ -7,7 +7,7 @@ Time Complexity measures **how the running time of an algorithm grows** as the i
 
 👉 It does **NOT** measure actual time (seconds), but the **number of operations**.
 
----
+
 
 ### ✅ Common Time Complexities
 
@@ -20,7 +20,7 @@ Time Complexity measures **how the running time of an algorithm grows** as the i
 | O(n²)      | Quadratic   | Nested loops            |
 | O(2ⁿ)      | Exponential | Recursive Fibonacci     |
 
----
+
 
 ### ✅ Example 1: Constant Time — O(1)
 
@@ -31,7 +31,7 @@ def get_first(arr):
 
 👉 Only one operation → **O(1)**
 
----
+
 
 ### ✅ Example 2: Linear Time — O(n)
 
@@ -43,7 +43,7 @@ def print_all(arr):
 
 👉 Runs `n` times → **O(n)**
 
----
+
 
 ### ✅ Example 3: Quadratic Time — O(n²)
 
@@ -56,7 +56,7 @@ def pairs(arr):
 
 👉 Runs `n × n = n²` → **O(n²)**
 
----
+
 
 ### ✅ Example 4: Logarithmic Time — O(log n)
 
@@ -75,7 +75,7 @@ def binary_search(arr, target):
 
 👉 Input halves every step → **O(log n)**
 
----
+
 
 # 🔹 2. Space Complexity
 
@@ -83,14 +83,14 @@ def binary_search(arr, target):
 
 Space Complexity measures **how much memory an algorithm uses** as input size increases.
 
----
+
 
 ### ✅ Types of Space
 
 1. **Auxiliary Space** → Extra memory used
 2. **Input Space** → Memory used by input
 
----
+
 
 ### ✅ Example 1: Constant Space — O(1)
 
@@ -101,7 +101,7 @@ def sum(a, b):
 
 👉 Uses fixed variables → **O(1)**
 
----
+
 
 ### ✅ Example 2: Linear Space — O(n)
 
@@ -115,7 +115,7 @@ def copy(arr):
 
 👉 New array of size `n` → **O(n)**
 
----
+
 
 ### ✅ Example 3: Quadratic Space — O(n²)
 
@@ -138,13 +138,13 @@ def create_matrix(n):
 
 ✅ Space Complexity = O(n²)
 
----
+
 
 # 🔹 3. Asymptotic Notations
 
 These are mathematical tools to describe **growth rate of algorithms**.
 
----
+
 
 ## 🔸 3.1 Big-O Notation (O)
 
@@ -154,7 +154,7 @@ Represents the **upper bound (worst-case)** time complexity.
 
 👉 "Maximum time an algorithm can take"
 
----
+
 
 ### ✅ Example
 
@@ -165,7 +165,7 @@ for i in range(n):
 
 👉 Worst case operations = `n` → **O(n)**
 
----
+
 
 ## 🔸 3.2 Big-Omega Notation (Ω)
 
@@ -175,7 +175,7 @@ Represents the **lower bound (best-case)** time complexity.
 
 👉 "Minimum time required"
 
----
+
 
 ### ✅ Example
 
@@ -184,7 +184,7 @@ Linear Search:
 * Best case → element found at first position
   👉 **Ω(1)**
 
----
+
 
 ## 🔸 3.3 Big-Theta Notation (Θ)
 
@@ -194,7 +194,7 @@ Represents the **tight bound (average case)**
 
 👉 When upper and lower bounds are same
 
----
+
 
 ### ✅ Example
 
@@ -206,11 +206,11 @@ for i in range(n):
 👉 Always runs `n` times
 👉 **Θ(n)**
 
----
+
 
 # 🔹 4. Key Rules for Calculating Complexity
 
----
+
 
 ### ✅ Rule 1: Ignore Constants
 
@@ -218,7 +218,7 @@ for i in range(n):
 O(2n + 3) → O(n)
 ```
 
----
+
 
 ### ✅ Rule 2: Focus on Highest Term
 
@@ -226,7 +226,7 @@ O(2n + 3) → O(n)
 O(n² + n) → O(n²)
 ```
 
----
+
 
 ### ✅ Rule 3: Nested Loops Multiply
 
@@ -237,7 +237,7 @@ for i in range(n):
 
 👉 O(n × n) = **O(n²)**
 
----
+
 
 ### ✅ Rule 4: Separate Loops Add
 
@@ -251,7 +251,7 @@ for j in range(n):
 
 👉 O(n + n) = **O(n)**
 
----
+
 
 # 🔹 5. Time vs Space Tradeoff
 
@@ -265,7 +265,7 @@ Sometimes:
 * Merge Sort → Fast but uses extra space
 * Bubble Sort → Less space but slower
 
----
+
 
 # 🔹 6. Summary
 
@@ -275,7 +275,7 @@ Sometimes:
 * **Big-Ω** → Best case
 * **Big-Θ** → Average case
 
----
+
 
 # 🔹 7. Quick Comparison Table
 
