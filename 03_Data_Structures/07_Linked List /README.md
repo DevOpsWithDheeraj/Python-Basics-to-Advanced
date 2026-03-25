@@ -29,6 +29,13 @@ n3 = Node(30)
 # Linking nodes
 n1.next = n2
 n2.next = n3
+
+# Display linked list
+temp = n1
+while temp:
+    print(temp.data, end=" -> ")
+    temp = temp.next
+print("None")
 ```
 
 
