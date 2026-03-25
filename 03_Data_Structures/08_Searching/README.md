@@ -341,19 +341,45 @@ Self-balancing trees maintain height to ensure efficient search.
 ```python
 from collections import deque
 
-def bfs(graph, start):
+# Graph representation
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+# BFS function
+def bfs(start):
     visited = set()
     queue = deque([start])
-    
+
     while queue:
         node = queue.popleft()
+        
         if node not in visited:
-            print(node)
+            print(node, end=" ")
             visited.add(node)
-            queue.extend(graph[node])
+            
+            # Add neighbors to queue
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+
+# Run BFS
+bfs('A')
 ```
-
-
+### Output:
+```
+A B C D E F
+```
+### 🔹 How it works
+- Start from A
+- Visit neighbors → B, C
+- Then next level → D, E, F
+- 
 
 ## 🔎 Depth-First Search (DFS)
 
