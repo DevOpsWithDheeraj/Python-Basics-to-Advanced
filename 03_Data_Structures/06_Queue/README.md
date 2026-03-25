@@ -232,7 +232,73 @@ dq.popleft()         # remove front
 * Insertion allowed only at **one end**
 * Deletion allowed at **both ends**
 
+```python
+# Queue parameters
+size = 5
+queue = [None] * size
+front = 0
+rear = -1
+count = 0
 
+# Enqueue (only at rear)
+def enqueue(x):
+    global rear, count
+    if count == size:
+        print("Queue Full")
+        return
+    rear = (rear + 1) % size
+    queue[rear] = x
+    count += 1
+
+# Dequeue from front
+def dequeue_front():
+    global front, count
+    if count == 0:
+        print("Queue Empty")
+        return None
+    removed = queue[front]
+    front = (front + 1) % size
+    count -= 1
+    return removed
+
+# Dequeue from rear
+def dequeue_rear():
+    global rear, count
+    if count == 0:
+        print("Queue Empty")
+        return None
+    removed = queue[rear]
+    rear = (rear - 1 + size) % size
+    count -= 1
+    return removed
+
+# Display queue
+def display():
+    if count == 0:
+        print("Queue Empty")
+        return
+    i = front
+    for _ in range(count):
+        print(queue[i], end=" ")
+        i = (i + 1) % size
+    print()
+
+# -----------------------------
+# Example usage
+enqueue(10)
+enqueue(20)
+enqueue(30)
+display()               # 10 20 30
+
+print(dequeue_front())  # 10
+display()               # 20 30
+
+print(dequeue_rear())   # 30
+display()               # 20
+
+enqueue(40)
+display()               # 20 40
+```
 
 # 🔹 6. Output Restricted Queue
 
