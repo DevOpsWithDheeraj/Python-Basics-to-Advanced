@@ -115,13 +115,27 @@ Step 3: 5 → swap with 9 → [1, 2, 5, 9]
 ```python
 def selection_sort(arr):
     n = len(arr)
+    
     for i in range(n):
-        min_idx = i
+        min_index = i
+        
         for j in range(i+1, n):
-            if arr[j] < arr[min_idx]:
-                min_idx = j
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        # swap
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    
     return arr
+
+# Example
+arr = [64, 25, 12, 22, 11]
+print(selection_sort(arr))
+```
+
+### Output:
+```
+[11, 12, 22, 25, 64]
 ```
 
 ### 🔹 Complexity:
