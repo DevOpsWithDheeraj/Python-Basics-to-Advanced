@@ -4,7 +4,7 @@
 **Definition:**
 Searching is the process of locating a target element (key) within a data structure and returning its position (index) or confirming its absence.
 
----
+
 
 # 📌 Types of Searching
 
@@ -16,7 +16,7 @@ Searching techniques can be broadly classified into:
 4. **Tree-Based Searching (BST, AVL, etc.)**
 5. **Graph Searching (DFS, BFS)**
 
----
+
 
 # 1️⃣ Linear Search (Sequential Search)
 
@@ -54,7 +54,7 @@ print(linear_search(arr, 30))  # Output: 2
 * Best Case: O(1)
 * Worst Case: O(n)
 
----
+
 
 # 2️⃣ Binary Search
 
@@ -100,7 +100,7 @@ print(binary_search(arr, 40))  # Output: 3
 * Best Case: O(1)
 * Worst Case: O(log n)
 
----
+
 
 # 3️⃣ Hashing (Direct Access Search)
 
@@ -135,7 +135,7 @@ print(hash_table["apple"])  # Output: 10
 * Hash Function
 * Collision Handling (Chaining, Open Addressing)
 
----
+
 
 # 4️⃣ Tree-Based Searching
 
@@ -178,7 +178,7 @@ def search(root, key):
 * Average: O(log n)
 * Worst: O(n) (skewed tree)
 
----
+
 
 ## 🌳 Balanced Trees (AVL, Red-Black)
 
@@ -190,7 +190,7 @@ Self-balancing trees maintain height to ensure efficient search.
 
 * Always: O(log n)
 
----
+
 
 # 5️⃣ Graph Searching
 
@@ -217,7 +217,7 @@ def bfs(graph, start):
             queue.extend(graph[node])
 ```
 
----
+
 
 ## 🔎 Depth-First Search (DFS)
 
@@ -236,7 +236,7 @@ def dfs(graph, node, visited=set()):
             dfs(graph, neighbor, visited)
 ```
 
----
+
 
 # 🔄 Comparison Table
 
@@ -248,7 +248,7 @@ def dfs(graph, node, visited=set()):
 | BST           | Structured       | O(log n) avg    | Dynamic data      |
 | BFS / DFS     | Graph            | O(V + E)        | Network traversal |
 
----
+
 
 # 🚀 Key Takeaways
 
@@ -258,4 +258,4 @@ def dfs(graph, node, visited=set()):
 * **Trees** → good for dynamic ordered data
 * **Graphs (BFS/DFS)** → used in complex relationships
 
----
+
