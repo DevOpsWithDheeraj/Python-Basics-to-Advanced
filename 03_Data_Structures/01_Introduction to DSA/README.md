@@ -10,16 +10,6 @@
 
 ---
 
-## 📌 Why Learn DSA?
-
-* Improves **problem-solving skills**
-* Helps in **writing efficient code**
-* Essential for **coding interviews**
-* Used in **real-world systems** (Google, Netflix, etc.)
-* Builds **logical thinking**
-
----
-
 # 🧱 Data Structures (Using Python)
 
 ## 1. Array (List in Python)
