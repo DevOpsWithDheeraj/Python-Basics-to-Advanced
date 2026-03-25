@@ -95,7 +95,7 @@ print(binary_search(arr, 40))  # Output: 3
 
 
 ## 3️⃣ Hashing (Direct Access Search)
--mHashing uses a **hash function** to map keys directly to indices.
+- Hashing uses a **hash function** to map keys directly to indices.
 
 ### 🧠 Idea:
 
