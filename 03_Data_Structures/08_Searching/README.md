@@ -107,7 +107,7 @@ Instead of searching, we compute the index using a function.
 data = {
     "name": "Dheeraj",
     "role": "DevOps",
-    "city": "Kolkata"
+    "city": "Bangalore"
 }
 
 key = input("Enter key to search: ")
