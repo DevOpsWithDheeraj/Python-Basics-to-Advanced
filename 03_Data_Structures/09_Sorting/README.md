@@ -326,16 +326,54 @@ print(quick_sort(arr))
 
 ### 🔹 Idea:
 
-Use a **heap data structure** (max heap).
+- Heap Sort uses a Binary Heap (Max Heap) to sort elements.
+- First build a heap, then repeatedly extract the maximum element.
 
 ### 🔹 Code:
 
 ```python
-import heapq
+def heapify(arr, n, i):
+    largest = i
+    left = 2*i + 1
+    right = 2*i + 2
+
+    # Check left child
+    if left < n and arr[left] > arr[largest]:
+        largest = left
+
+    # Check right child
+    if right < n and arr[right] > arr[largest]:
+        largest = right
+
+    # Swap and continue heapifying
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
 
 def heap_sort(arr):
-    heapq.heapify(arr)
-    return [heapq.heappop(arr) for _ in range(len(arr))]
+    n = len(arr)
+
+    # Build max heap
+    for i in range(n//2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # Extract elements
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # swap
+        heapify(arr, i, 0)
+
+    return arr
+
+
+# Example
+arr = [12, 11, 13, 5, 6, 7]
+print(heap_sort(arr))
+```
+
+### Output:
+```
+[5, 6, 7, 11, 12, 13]
 ```
 
 ### 🔹 Complexity:
