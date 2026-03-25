@@ -85,10 +85,9 @@ preorder(root)
 
 ### Definition:
 
-A binary tree where:
-
-* Left subtree → values < root
-* Right subtree → values > root
+A Binary Search Tree (BST) is a binary tree where:
+- Left subtree → values smaller than root
+- Right subtree → values greater than root
 
 ### Example:
 
@@ -108,26 +107,68 @@ A binary tree where:
 ### Python Example:
 
 ```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Insert into BST
 def insert(root, key):
     if root is None:
         return Node(key)
+    
     if key < root.data:
         root.left = insert(root.left, key)
     else:
         root.right = insert(root.right, key)
+    
     return root
+
+# Inorder Traversal (Sorted Output)
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data, end=" ")
+        inorder(root.right)
+
+# Search in BST
+def search(root, key):
+    if root is None or root.data == key:
+        return root
+    
+    if key < root.data:
+        return search(root.left, key)
+    else:
+        return search(root.right, key)
+
+
+# Example
+root = None
+values = [50, 30, 70, 20, 40, 60, 80]
+
+for v in values:
+    root = insert(root, v)
+
+# Print BST (sorted)
+inorder(root)
+
+# Search
+result = search(root, 40)
+print("\nFound" if result else "\nNot Found")
 ```
 
-
+### Output:
+```
+20 30 40 50 60 70 80
+Found
+```
 
 ## 3.3 Full Binary Tree
 
 ### Definition:
-
-Every node has either:
-
-* 0 children OR
-* 2 children
+- A Full Binary Tree is a binary tree in which every node has either 0 or 2 children
+- No node has only one child
 
 ### Example:
 
@@ -139,7 +180,43 @@ Every node has either:
       4   5
 ```
 
+### Python Code:
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
 
+def is_full(root):
+    if root is None:
+        return True
+    
+    # If leaf node
+    if root.left is None and root.right is None:
+        return True
+    
+    # If both children exist
+    if root.left and root.right:
+        return is_full(root.left) and is_full(root.right)
+    
+    return False
+
+
+# Example
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+print(is_full(root))  # True
+```
+
+### Output:
+```
+True
+```
 
 ## 3.4 Complete Binary Tree
 
