@@ -307,7 +307,70 @@ display()               # 20 40
 * Deletion allowed only at **one end**
 * Insertion allowed at **both ends**
 
+```python
+# Queue parameters
+size = 5
+queue = [None] * size
+front = 0
+rear = -1
+count = 0
 
+# Enqueue at rear
+def enqueue_rear(x):
+    global rear, count
+    if count == size:
+        print("Queue Full")
+        return
+    rear = (rear + 1) % size
+    queue[rear] = x
+    count += 1
+
+# Enqueue at front
+def enqueue_front(x):
+    global front, count
+    if count == size:
+        print("Queue Full")
+        return
+    front = (front - 1 + size) % size
+    queue[front] = x
+    count += 1
+
+# Dequeue (only from front)
+def dequeue():
+    global front, count
+    if count == 0:
+        print("Queue Empty")
+        return None
+    removed = queue[front]
+    front = (front + 1) % size
+    count -= 1
+    return removed
+
+# Display queue
+def display():
+    if count == 0:
+        print("Queue Empty")
+        return
+    i = front
+    for _ in range(count):
+        print(queue[i], end=" ")
+        i = (i + 1) % size
+    print()
+
+# -----------------------------
+# Example Usage
+enqueue_rear(10)
+enqueue_rear(20)
+enqueue_front(5)
+display()           # 5 10 20
+
+print(dequeue())    # 5
+display()           # 10 20
+
+enqueue_front(2)
+enqueue_rear(30)
+display()           # 2 10 20 30
+```
 
 # 📌 6. Time Complexity
 
