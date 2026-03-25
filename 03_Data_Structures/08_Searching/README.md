@@ -181,7 +181,7 @@ Search 15: True
 * This list is called a **chain**
 
 
-## 🔹 Collision Resolution Example (Linear Probing)
+## 🔹 Collision Resolution (Linear Probing)
 
 👉 Another way to handle collision is **Linear Probing (Open Addressing)** <br>
 👉 If a slot is full, we **check the next available slot**
