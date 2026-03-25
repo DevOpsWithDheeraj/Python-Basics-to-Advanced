@@ -880,57 +880,206 @@ print(search(root, 12))  # False
 
 # 🔄 4. Tree Traversals
 
+👉 Tree traversal is the process of visiting all nodes in a tree in a specific order.
+
+✅ Traversals are mainly of two types:
+- Depth-First Traversal (DFS)
+- Breadth-First Traversal (BFS)
+
 ## 4.1 Depth First Traversal (DFS)
+👉 Depth First Traversal (DFS) is a tree or graph traversal technique where we explore as far as possible along each branch before backtracking.
+✅ DFS uses stack (can be recursion or explicit stack) to remember nodes.
 
 ### Types:
-
 ### 1. Inorder (LNR)
+👉 Inorder Traversal is a type of Depth-First Traversal (DFS) where we visit nodes in the order:
+L → N → R 
+- L = Left subtree
+- N = Node (root)
+- R = Right subtree
+✅ In a Binary Search Tree (BST), Inorder traversal gives nodes in sorted order.
 
 ```python
-def inorder(root):
-    if root:
-        inorder(root.left)
-        print(root.data)
-        inorder(root.right)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Sample BST:
+#       4
+#      / \
+#     2   6
+#    / \ / \
+#   1  3 5  7
+
+root = Node(4)
+root.left = Node(2)
+root.right = Node(6)
+root.left.left = Node(1)
+root.left.right = Node(3)
+root.right.left = Node(5)
+root.right.right = Node(7)
+
+# Inorder Traversal (LNR)
+def inorder(node):
+    if node:
+        inorder(node.left)
+        print(node.data, end=" ")
+        inorder(node.right)
+
+print("Inorder Traversal: ", end="")
+inorder(root)
+```
+
+### Output:
+```
+Inorder Traversal: 1 2 3 4 5 6 7
 ```
 
 ### 2. Preorder (NLR)
+👉 Preorder Traversal is a type of Depth-First Traversal (DFS) where nodes are visited in the order:
+
+N → L → R
+
+- N = Node (root)
+- L = Left subtree
+- R = Right subtree
+
+✅ Useful for copying a tree, creating prefix expressions, or saving tree structure.
 
 ```python
-def preorder(root):
-    if root:
-        print(root.data)
-        preorder(root.left)
-        preorder(root.right)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Sample tree:
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+# Preorder Traversal (NLR)
+def preorder(node):
+    if node:
+        print(node.data, end=" ")
+        preorder(node.left)
+        preorder(node.right)
+
+print("Preorder Traversal: ", end="")
+preorder(root)
+```
+
+### Output:
+```
+Preorder Traversal: 1 2 4 5 3
 ```
 
 ### 3. Postorder (LRN)
+👉 Postorder Traversal is a type of Depth-First Traversal (DFS) where nodes are visited in the order:
+
+L → R → N
+
+- L = Left subtree
+- R = Right subtree
+- N = Node (root)
+
+✅ Useful for deleting a tree, evaluating postfix expressions, or freeing memory.
 
 ```python
-def postorder(root):
-    if root:
-        postorder(root.left)
-        postorder(root.right)
-        print(root.data)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Sample tree:
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+# Postorder Traversal (LRN)
+def postorder(node):
+    if node:
+        postorder(node.left)
+        postorder(node.right)
+        print(node.data, end=" ")
+
+print("Postorder Traversal: ", end="")
+postorder(root)
 ```
 
+### Output:
+```
+Postorder Traversal: 4 5 2 3 1
+```
 
 ## 4.2 Breadth First Traversal (Level Order)
+
+👉 Breadth-First Traversal (BFS) visits nodes level by level, starting from the root, going left to right at each level.
+✅ Also called Level Order Traversal.
+✅ Uses a queue to keep track of nodes.
 
 ```python
 from collections import deque
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Sample tree:
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+# Level Order Traversal (BFS)
 def level_order(root):
-    q = deque([root])
-    while q:
-        node = q.popleft()
-        print(node.data)
+    if not root:
+        return
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        print(node.data, end=" ")
         if node.left:
-            q.append(node.left)
+            queue.append(node.left)
         if node.right:
-            q.append(node.right)
+            queue.append(node.right)
+
+print("Level Order Traversal: ", end="")
+level_order(root)
 ```
 
+### Output:
+```
+Level Order Traversal: 1 2 3 4 5
+```
 
 # ⚡ 5. Time Complexity
 
