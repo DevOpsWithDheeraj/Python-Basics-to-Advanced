@@ -1,7 +1,4 @@
-
-# 🔗 Linked List 
-
-## 📌 What is a Linked List?
+# 📌 What is a Linked List?
 
 A **Linked List** is a linear data structure where elements (called **nodes**) are stored **non-contiguously** in memory. 
 
