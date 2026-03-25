@@ -104,14 +104,18 @@ Instead of searching, we compute the index using a function.
 ### 🧠 Example:
 
 ```python
-hash_table = {}
+data = {
+    "name": "Dheeraj",
+    "role": "DevOps",
+    "city": "Kolkata"
+}
 
-# Insert
-hash_table["apple"] = 10
-hash_table["banana"] = 20
+key = input("Enter key to search: ")
 
-# Search
-print(hash_table["apple"])  # Output: 10
+if key in data:
+    print("Value:", data[key])
+else:
+    print("Key not found")
 ```
 
 ### ⏱ Time Complexity:
