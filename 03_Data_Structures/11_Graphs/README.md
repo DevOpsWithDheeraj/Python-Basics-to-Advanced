@@ -608,13 +608,125 @@ A B D E C F
 
 # 🔷 Important Graph Algorithms
 
-## 1. Dijkstra’s Algorithm
+## 1. Dijkstra’s Algorithm (Shortest Path Algorithm)
 
-* Finds **shortest path**
-* Works for weighted graphs
+**Definition:**
+* Dijkstra’s Algorithm is used to find the **shortest path from a source vertex to all other vertices** in a **weighted graph** (with **non-negative weights**).
 
 
-## 2. Floyd-Warshall
+### 🔷 Key Idea
+It works by:
+* Picking the **closest unvisited node**
+* Updating distances of its neighbors
+* Repeating until all nodes are visited
+
+
+### 🔷 Steps of the Algorithm
+1. Assign:
+   * Distance = **0** to source node
+   * Distance = **∞ (infinity)** to all other nodes
+2. Mark all nodes as **unvisited**
+3. Select the node with the **smallest distance**
+4. Update distances of its adjacent nodes:
+   ```
+   new_distance = current_distance + edge_weight
+   ```
+5. If new distance is smaller → update it
+6. Mark the node as **visited**
+7. Repeat until all nodes are visited
+
+
+### 🔷 Example
+Consider this graph:
+```
+Vertices: A, B, C, D
+
+Edges:
+A → B = 1
+A → C = 4
+B → C = 2
+B → D = 5
+C → D = 1
+```
+
+### 🔷 Step-by-Step Execution
+
+#### Initial State:
+
+```
+Distance:
+A = 0
+B = ∞
+C = ∞
+D = ∞
+```
+
+#### Step 1: Visit A
+
+* Update neighbors:
+
+  * B = 0 + 1 = 1
+  * C = 0 + 4 = 4
+
+```
+A = 0, B = 1, C = 4, D = ∞
+```
+
+#### Step 2: Visit B (smallest = 1)
+
+* Update neighbors:
+
+  * C = min(4, 1 + 2 = 3) → 3
+  * D = 1 + 5 = 6
+
+```
+A = 0, B = 1, C = 3, D = 6
+```
+
+#### Step 3: Visit C (smallest = 3)
+
+* Update neighbor:
+
+  * D = min(6, 3 + 1 = 4) → 4
+
+```
+A = 0, B = 1, C = 3, D = 4
+```
+
+#### Step 4: Visit D
+
+No updates needed.
+
+### 🔷 Final Shortest Distances from A
+
+| Vertex | Distance |
+| ------ | -------- |
+| A      | 0        |
+| B      | 1        |
+| C      | 3        |
+| D      | 4        |
+
+### 🔷 Shortest Paths
+
+* A → B = 1
+* A → B → C = 3
+* A → B → C → D = 4
+
+### 🔷 Time Complexity
+* Using simple array: **O(V²)**
+* Using priority queue (min-heap): **O((V + E) log V)**
+
+
+### 🔷 Important Notes
+* Works **only for non-negative weights**
+* Used in:
+  * Google Maps / GPS navigation
+  * Network routing
+  * Shortest path problems
+
+
+
+## 2. BellmanFord Algorithm
 
 * All-pairs shortest path
 
