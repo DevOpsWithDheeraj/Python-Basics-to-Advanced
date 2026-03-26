@@ -144,23 +144,89 @@ graph = {
 
 ## 6. Acyclic Graph
 
-* No cycles present
+👉 An Acyclic Graph is a graph that does NOT contain any cycle (loop). <br>
+
+➡️ This means you cannot start at a node and come back to the same node by following edges.
 
 👉 Special case:
-
 * **DAG (Directed Acyclic Graph)**
 
+Graph:
+```
+Vertices = {A, B, C, D}
+Edges = {(A → B), (B → C), (C → D)}
+```
+👉 Path:
+```
+A → B → C → D
+```
+
+Python Representation (Adjacency List):
+```python
+graph = {
+    'A': ['B'],
+    'B': ['C'],
+    'C': ['D'],
+    'D': []
+}
+```
 
 ## 7. Connected Graph
 
-* Every node is reachable from any other node
+- A Connected Graph is a graph in which there is a path between every pair of vertices. <br>
 
+➡️ This means every node is reachable from any other node.
 
+Example:
+Graph:
+Vertices = {A, B, C, D}
+Edges = {(A, B), (B, C), (C, D)}
+
+👉 Paths exist:
+A → B → C → D
+B → C
+A → C (via B)
+✅ All nodes are connected
+
+Python Representation (Adjacency List):
+```python
+graph = {
+    'A': ['B'],
+    'B': ['A', 'C'],
+    'C': ['B', 'D'],
+    'D': ['C']
+}
+```
 
 ## 8. Disconnected Graph
 
-* Some nodes are not connected
+A Disconnected Graph is a graph in which not all vertices are reachable from each other. <br>
 
+➡️ This means the graph has two or more separate parts (components) with no connection between them.
+
+Example:
+Graph:
+Vertices = {A, B, C, D}
+Edges = {(A, B), (C, D)}
+
+👉 Components:
+- Component 1 → A — B
+- Component 2 → C — D
+❌ No path between A and C
+
+Python Representation (Adjacency List):
+```
+graph = {
+    'A': ['B'],
+    'B': ['A'],
+    'C': ['D'],
+    'D': ['C']
+}
+```
+🔹 Explanation
+- A is connected only to B 
+- C is connected only to D
+- 👉 No connection between (A, B) and (C, D)
 
 
 ## 9. Complete Graph
