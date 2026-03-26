@@ -17,16 +17,6 @@ G = (V, E)
 * **V** = set of vertices
 * **E** = set of edges
 
----
-
-# 🔷 Real-Life Examples
-
-* Social Networks (users = nodes, friendships = edges)
-* Maps (cities = nodes, roads = edges)
-* Internet (computers = nodes, connections = edges)
-
----
-
 # 🔷 Types of Graphs
 
 ## 1. Undirected Graph
@@ -51,8 +41,6 @@ graph = {
 }
 ```
 
----
-
 ## 2. Directed Graph (Digraph)
 
 * Edges have **direction**
@@ -73,7 +61,6 @@ graph = {
 }
 ```
 
----
 
 ## 3. Weighted Graph
 
@@ -94,13 +81,10 @@ graph = {
 }
 ```
 
----
-
 ## 4. Unweighted Graph
 
 * All edges have equal weight
 
----
 
 ## 5. Cyclic Graph
 
@@ -112,8 +96,6 @@ Example:
 A → B → C → A
 ```
 
----
-
 ## 6. Acyclic Graph
 
 * No cycles present
@@ -122,32 +104,31 @@ A → B → C → A
 
 * **DAG (Directed Acyclic Graph)**
 
----
 
 ## 7. Connected Graph
 
 * Every node is reachable from any other node
 
----
+
 
 ## 8. Disconnected Graph
 
 * Some nodes are not connected
 
----
+
 
 ## 9. Complete Graph
 
 * Every node is connected to every other node
 
----
+
 
 ## 10. Bipartite Graph
 
 * Nodes divided into 2 sets
 * Edges only between sets (not within)
 
----
+
 
 # 🔷 Graph Representation
 
@@ -174,7 +155,7 @@ graph = [
 
 * Space complexity: O(V²)
 
----
+
 
 ## 2. Adjacency List (Most Used)
 
@@ -192,7 +173,7 @@ graph = {
 
 * Space efficient: O(V + E)
 
----
+
 
 # 🔷 Graph Traversal Algorithms
 
@@ -216,7 +197,6 @@ def bfs(graph, start):
             queue.extend(graph[node])
 ```
 
----
 
 ## 2. Depth-First Search (DFS)
 
@@ -232,7 +212,6 @@ def dfs(graph, node, visited=set()):
             dfs(graph, neighbor, visited)
 ```
 
----
 
 # 🔷 Important Graph Algorithms
 
@@ -241,32 +220,27 @@ def dfs(graph, node, visited=set()):
 * Finds **shortest path**
 * Works for weighted graphs
 
----
 
 ## 2. Floyd-Warshall
 
 * All-pairs shortest path
 
----
 
 ## 3. Prim’s Algorithm
 
 * Minimum Spanning Tree (MST)
 
----
 
 ## 4. Kruskal’s Algorithm
 
 * MST using greedy approach
 
----
 
 ## 5. Topological Sorting
 
 * Used in DAGs
 * Ordering of tasks
 
----
 
 # 🔷 Applications of Graphs
 
@@ -276,7 +250,6 @@ def dfs(graph, node, visited=set()):
 * Network Routing
 * Dependency Resolution (like package managers)
 
----
 
 # 🔷 Time & Space Complexity
 
@@ -288,7 +261,6 @@ def dfs(graph, node, visited=set()):
 | Adjacency Matrix Space | O(V²)      |
 | Adjacency List Space   | O(V + E)   |
 
----
 
 # 🔥 Quick Summary
 
@@ -298,4 +270,3 @@ def dfs(graph, node, visited=set()):
 * Traversed using **BFS & DFS**
 * Used in **real-world network problems**
 
----
