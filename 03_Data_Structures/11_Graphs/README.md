@@ -44,7 +44,10 @@ graph = {
 
 ## 2. Directed Graph (Digraph)
 
-* Edges have **direction**
+- A Directed Graph (Digraph) is a graph in which edges have a direction.
+
+- Each edge is represented as an ordered pair (u, v)
+👉 This means u → v (from u to v), but v → u is not necessarily true.
 
 Example:
 
