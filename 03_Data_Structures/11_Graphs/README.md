@@ -453,12 +453,34 @@ matrix = [
 
 # 🔷 Graph Traversal Algorithms
 
-## 1. Breadth-First Search (BFS)
+## 🔹 1. Breadth-First Search (BFS)
 
-* Level-by-level traversal
-* Uses **Queue**
+- **Breadth-First Search (BFS)** is a graph traversal algorithm that visits nodes **level by level** starting from a source node.
 
-```python
+- It explores all **neighbors first**, then moves to the next level.
+
+
+##  Key Idea
+
+👉 Uses a **Queue (FIFO)**
+
+* Visit node
+* Add its neighbors to queue
+* Repeat until queue is empty
+
+
+## Algorithm Steps
+1. Start from a **source node**
+2. Mark it as **visited**
+3. Add it to **queue**
+4. While queue is not empty:
+
+   * Remove node from queue
+   * Visit it
+   * Add all **unvisited neighbors** to queue
+
+## Python Example
+```python id="bfs_graph"
 from collections import deque
 
 def bfs(graph, start):
@@ -467,26 +489,121 @@ def bfs(graph, start):
 
     while queue:
         node = queue.popleft()
+        
         if node not in visited:
             print(node, end=" ")
             visited.add(node)
-            queue.extend(graph[node])
+            
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+
+# Example graph
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+bfs(graph, 'A')
 ```
 
+## Output
+```text id="bfs_graph_output"
+A B C D E F
+```
 
-## 2. Depth-First Search (DFS)
+## Key Points
+* Uses **Queue (FIFO)**
+* Traverses **level by level**
+* Guarantees **shortest path** in unweighted graph
 
-* Goes deep first
-* Uses **Stack / Recursion**
+## Applications
+* Shortest path (unweighted graph)
+* Network broadcasting
+* Web crawling
+* Social networks
 
-```python
+## 🔹 Time Complexity
+
+| Case | Complexity |
+| ---- | ---------- |
+| BFS  | O(V + E)   |
+
+(V = vertices, E = edges)
+
+
+
+## 🔹2. Depth-First Search (DFS)
+
+* **Depth-First Search (DFS)** is a graph traversal algorithm that explores **as deep as possible along a branch before backtracking**.
+
+* It goes **node → neighbor → neighbor’s neighbor** until no further path, then comes back.
+
+
+## Key Idea
+👉 Uses a **Stack (LIFO)**
+* Can be implemented using **recursion** (implicit stack)
+* Or using an **explicit stack**
+
+## Algorithm Steps
+1. Start from a **source node**
+2. Mark it as **visited**
+3. Visit the node
+4. Recursively visit all **unvisited neighbors**
+5. Backtrack when no neighbor is left
+
+
+## Python Example (Recursive DFS)
+```python id="dfs_graph"
 def dfs(graph, node, visited=set()):
     if node not in visited:
         print(node, end=" ")
         visited.add(node)
+        
         for neighbor in graph[node]:
             dfs(graph, neighbor, visited)
+
+# Example graph
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+dfs(graph, 'A')
 ```
+
+## Output
+```text id="dfs_graph_output"
+A B D E C F
+```
+
+## Key Points
+* Uses **Stack (LIFO)**
+* Goes **deep first**, then backtracks
+* Does **not guarantee shortest path**
+
+## Applications
+* Path finding
+* Cycle detection
+* Topological sorting
+* Solving puzzles (maze, Sudoku)
+
+
+## Time Complexity
+
+| Case | Complexity |
+| ---- | ---------- |
+| DFS  | O(V + E)   |
+
+(V = vertices, E = edges)
 
 
 # 🔷 Important Graph Algorithms
