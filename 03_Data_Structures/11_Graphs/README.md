@@ -76,33 +76,70 @@ graph = {
 - Capacity, etc.
 
 Example:
-
 ```
-A --(5)--> B
+Vertices = {A, B, C}
+Edges = {(A, B, 5), (A, C, 2), (B, C, 3)}
 ```
 
-Python:
+Python Representation (Adjacency List):
 
 ```python
 graph = {
-    'A': [('B', 5)],
-    'B': []
+    'A': [('B', 5), ('C', 2)],
+    'B': [('C', 3)],
+    'C': []
 }
 ```
 
 ## 4. Unweighted Graph
 
-* All edges have equal weight
+- An Unweighted Graph is a graph in which edges do not have any weight or cost.
+- All edges are considered equal
+- Each connection has the same importance or distance (usually treated as 1)
 
+Example:
+```
+Graph:
+
+Vertices = {A, B, C, D}
+Edges = {(A, B), (A, C), (B, D)}
+```
+
+Python Representation (Adjacency List):
+```python
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D'],
+    'C': [],
+    'D': []
+}
+```
 
 ## 5. Cyclic Graph
 
-* Contains at least one **cycle**
+- A Cyclic Graph is a graph that contains at least one cycle (loop).
+
+- A cycle is a path where you can start from a node and come back to the same node by following edges.
 
 Example:
+```
+Graph:
 
+Vertices = {A, B, C}
+Edges = {(A, B), (B, C), (C, A)}
+```
+Cycle formed:
 ```
 A → B → C → A
+```
+
+Python Representation (Adjacency List):
+```
+graph = {
+    'A': ['B'],
+    'B': ['C'],
+    'C': ['A']
+}
 ```
 
 ## 6. Acyclic Graph
