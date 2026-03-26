@@ -308,8 +308,10 @@ B → A, D
 ## 🔹 Example
 
 ### Graph:
+```
 Vertices = {A, B, C, D}
 Edges = {(A, B), (A, C), (B, D)}
+```
 
 ### 🔹 Adjacency List Representation
 ```
