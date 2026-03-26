@@ -305,7 +305,7 @@ A → B, C
 B → A, D
 ```
 
-## 🔹 Example
+## Example
 
 ### Graph:
 ```
@@ -313,7 +313,7 @@ Vertices = {A, B, C, D}
 Edges = {(A, B), (A, C), (B, D)}
 ```
 
-### 🔹 Adjacency List Representation
+###  Adjacency List Representation
 ```
 A → B, C
 B → A, D
@@ -321,7 +321,7 @@ C → A
 D → B
 ```
 
-## 🔹 Python Example
+## Python Example
 ```python id="adj_list_code"
 graph = {
     'A': ['B', 'C'],
@@ -335,7 +335,7 @@ for node in graph:
     print(node, "->", graph[node])
 ```
 
-## 🔹 Output
+## Output
 ```text id="adj_list_output"
 A -> ['B', 'C']
 B -> ['A', 'D']
@@ -343,21 +343,21 @@ C -> ['A']
 D -> ['B']
 ```
 
-## 🔹 Explanation
+## Explanation
 * **A → B, C** → A is connected to B and C
 * **B → A, D** → B is connected to A and D
 * Only **existing edges are stored**
 
-## 🔹 Advantages
-✔ Saves **memory** (efficient for sparse graphs)
-✔ Easy to **traverse neighbors**
-✔ Flexible and widely used
+## Advantages
+* Saves **memory** (efficient for sparse graphs)
+* Easy to **traverse neighbors**
+* Flexible and widely used
 
-## 🔹 Disadvantages
-❌ Checking if edge exists → may take **O(n)**
-❌ Slightly complex compared to matrix
+## Disadvantages
+* Checking if edge exists → may take **O(n)**
+* Slightly complex compared to matrix
 
-## 🔹 Time Complexity
+## Time Complexity
 | Operation      | Complexity |
 | -------------- | ---------- |
 | Add edge       | O(1)       |
@@ -366,7 +366,7 @@ D -> ['B']
 | Traverse graph | O(V + E)   |
 
 
-## 2. Adjacency Matrix
+## 🔹 2. Adjacency Matrix
 
 * 2D array
 * `matrix[i][j] = 1` if edge exists
