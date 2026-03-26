@@ -179,14 +179,17 @@ graph = {
 
 Example:
 Graph:
+```
 Vertices = {A, B, C, D}
 Edges = {(A, B), (B, C), (C, D)}
-
+```
 👉 Paths exist:
+```
 A → B → C → D
 B → C
 A → C (via B)
 ✅ All nodes are connected
+```
 
 Python Representation (Adjacency List):
 ```python
@@ -205,14 +208,15 @@ A Disconnected Graph is a graph in which not all vertices are reachable from eac
 ➡️ This means the graph has two or more separate parts (components) with no connection between them.
 
 Example:
-Graph:
+```
 Vertices = {A, B, C, D}
 Edges = {(A, B), (C, D)}
-
+```
 👉 Components:
 - Component 1 → A — B
 - Component 2 → C — D
-❌ No path between A and C
+- ❌ No path between A and C
+
 
 Python Representation (Adjacency List):
 ```
