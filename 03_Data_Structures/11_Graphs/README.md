@@ -21,7 +21,7 @@ G = (V, E)
 
 ## 1. Undirected Graph
 
-- An Undirected Graph is a graph in which edges have no direction.
+- An Undirected Graph is a graph in which **edges have no direction**.
 - This means the connection between two vertices works both ways.
 - If there is an edge between A and B, then: A → B and B → A (both are same)
 
