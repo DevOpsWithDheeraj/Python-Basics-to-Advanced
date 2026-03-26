@@ -724,11 +724,207 @@ No updates needed.
   * Network routing
   * Shortest path problems
 
+### 🔷 Python Code (Using heapq)
+```python
+import heapq
+
+def dijkstra(graph, start):
+    # Initialize distances
+    distances = {node: float('inf') for node in graph}
+    distances[start] = 0
+
+    # Priority queue (min-heap)
+    pq = [(0, start)]  # (distance, node)
+
+    while pq:
+        current_distance, current_node = heapq.heappop(pq)
+
+        # Skip if we already found a better path
+        if current_distance > distances[current_node]:
+            continue
+
+        # Check neighbors
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
+
+            # Relaxation step
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(pq, (distance, neighbor))
+
+    return distances
+
+
+# Example graph (Adjacency List)
+graph = {
+    'A': [('B', 1), ('C', 4)],
+    'B': [('C', 2), ('D', 5)],
+    'C': [('D', 1)],
+    'D': []
+}
+
+# Run Dijkstra
+result = dijkstra(graph, 'A')
+
+# Print result
+for node, dist in result.items():
+    print(f"Distance from A to {node} is {dist}")
+```
+
+### 🔷 Output
+```
+Distance from A to A is 0
+Distance from A to B is 1
+Distance from A to C is 3
+Distance from A to D is 4
+```
 
 
 ## 2. BellmanFord Algorithm
 
-* All-pairs shortest path
+**Definition:**
+* Bellman–Ford is a shortest path algorithm that finds the **minimum distance from a source vertex to all other vertices**, even when the graph has **negative edge weights**.
+
+
+### 🔷 Why Bellman–Ford?
+
+* ✅ Works with **negative weights**
+* ✅ Can **detect negative weight cycles**
+* ❌ Slower than Dijkstra
+
+
+### 🔷 Core Idea
+
+Instead of greedily picking the nearest node, it:
+
+* **Relaxes all edges repeatedly (V − 1 times)**
+* Ensures shortest paths are found step by step
+
+
+### 🔷 Algorithm Steps
+
+1. Initialize:
+
+   * Distance[source] = 0
+   * All others = ∞
+2. Repeat **V − 1 times**:
+
+   * For every edge (u → v, weight):
+
+     ```
+     if dist[u] + weight < dist[v]:
+         dist[v] = dist[u] + weight
+     ```
+3. Check for **negative cycle**:
+
+   * If still possible to relax → cycle exists
+
+
+### 🔷 Example
+
+```id="y5x7gk"
+Vertices: A, B, C, D
+
+Edges:
+A → B = 1
+A → C = 4
+B → C = -2
+B → D = 5
+C → D = 1
+```
+
+
+### 🔷 Step-by-Step Idea
+
+* After 1st iteration → distances start improving
+* After V−1 iterations → shortest paths finalized
+* Final result from A:
+
+  ```
+  A = 0
+  B = 1
+  C = -1
+  D = 0
+  ```
+
+
+### 🔷 Python Code
+
+```python id="3pq1wb"
+def bellman_ford(graph, vertices, start):
+    # Step 1: Initialize distances
+    dist = {v: float('inf') for v in vertices}
+    dist[start] = 0
+
+    # Step 2: Relax edges V-1 times
+    for _ in range(len(vertices) - 1):
+        for u, v, weight in graph:
+            if dist[u] != float('inf') and dist[u] + weight < dist[v]:
+                dist[v] = dist[u] + weight
+
+    # Step 3: Detect negative cycle
+    for u, v, weight in graph:
+        if dist[u] != float('inf') and dist[u] + weight < dist[v]:
+            print("Graph contains a negative weight cycle")
+            return None
+
+    return dist
+
+
+# Example edges (Edge List)
+graph = [
+    ('A', 'B', 1),
+    ('A', 'C', 4),
+    ('B', 'C', -2),
+    ('B', 'D', 5),
+    ('C', 'D', 1)
+]
+
+vertices = ['A', 'B', 'C', 'D']
+
+# Run algorithm
+result = bellman_ford(graph, vertices, 'A')
+
+# Print result
+if result:
+    for node, distance in result.items():
+        print(f"Distance from A to {node} is {distance}")
+```
+
+
+### 🔷 Output
+
+```id="b5b3p6"
+Distance from A to A is 0
+Distance from A to B is 1
+Distance from A to C is -1
+Distance from A to D is 0
+```
+
+
+### 🔷 Time Complexity
+
+* **O(V × E)**
+  (V = vertices, E = edges)
+
+
+### 🔷 Dijkstra vs Bellman–Ford
+
+| Feature                  | Dijkstra      | Bellman–Ford        |
+| ------------------------ | ------------- | ------------------- |
+| Negative weights         | ❌ Not allowed | ✅ Allowed           |
+| Negative cycle detection | ❌             | ✅                   |
+| Time complexity          | Faster        | Slower              |
+| Approach                 | Greedy        | Dynamic Programming |
+
+### 🔷 When to Use?
+
+* Use **Dijkstra** → when all weights are positive
+* Use **Bellman–Ford** → when:
+
+  * Negative edges exist
+  * Need to detect negative cycles
+
 
 
 ## 3. Prim’s Algorithm
