@@ -1255,10 +1255,354 @@ Total Cost: 7
 
 
 
-## 5. Topological Sorting
+## 5. Kosaraju’s Algorithm (Strongly Connected Components)
 
-* Used in DAGs
-* Ordering of tasks
+**Definition:**
+Kosaraju’s Algorithm is used to find **Strongly Connected Components (SCCs)** in a **directed graph**.
+
+👉 **Strongly Connected Component (SCC):**
+A group of vertices where **every vertex is reachable from every other vertex** in the same group.
+
+
+### 🔷 Key Idea
+
+It uses **two Depth-First Searches (DFS)**:
+
+1. First DFS → to get nodes in **finishing time order**
+2. Reverse the graph
+3. Second DFS → to collect SCCs in that order
+
+
+### 🔷 Steps of the Algorithm
+
+1. Perform **DFS on original graph**
+
+   * Push nodes into a stack based on **finishing time**
+2. **Reverse (transpose)** the graph (reverse all edges)
+3. Pop nodes from stack one by one:
+
+   * Perform DFS on reversed graph
+   * Each DFS call gives **one SCC**
+
+
+### 🔷 Example
+
+```id="5a0z1n"
+Vertices: 0, 1, 2, 3, 4
+
+Edges:
+0 → 1
+1 → 2
+2 → 0
+1 → 3
+3 → 4
+```
+
+
+### 🔷 Understanding SCCs
+
+* **SCC 1:** {0, 1, 2} (all connected mutually)
+* **SCC 2:** {3}
+* **SCC 3:** {4}
+
+
+### 🔷 Python Code
+
+```python id="y98x6t"
+from collections import defaultdict
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = defaultdict(list)
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    # Step 1: Fill stack with finishing order
+    def fill_order(self, v, visited, stack):
+        visited[v] = True
+        for neighbor in self.graph[v]:
+            if not visited[neighbor]:
+                self.fill_order(neighbor, visited, stack)
+        stack.append(v)
+
+    # Step 2: Transpose graph
+    def transpose(self):
+        g = Graph(self.V)
+        for u in self.graph:
+            for v in self.graph[u]:
+                g.add_edge(v, u)
+        return g
+
+    # DFS for SCC
+    def dfs(self, v, visited, component):
+        visited[v] = True
+        component.append(v)
+        for neighbor in self.graph[v]:
+            if not visited[neighbor]:
+                self.dfs(neighbor, visited, component)
+
+    # Kosaraju Algorithm
+    def kosaraju(self):
+        stack = []
+        visited = [False] * self.V
+
+        # Step 1
+        for i in range(self.V):
+            if not visited[i]:
+                self.fill_order(i, visited, stack)
+
+        # Step 2
+        transposed = self.transpose()
+
+        # Step 3
+        visited = [False] * self.V
+        sccs = []
+
+        while stack:
+            v = stack.pop()
+            if not visited[v]:
+                component = []
+                transposed.dfs(v, visited, component)
+                sccs.append(component)
+
+        return sccs
+
+
+# Example usage
+g = Graph(5)
+g.add_edge(0, 1)
+g.add_edge(1, 2)
+g.add_edge(2, 0)
+g.add_edge(1, 3)
+g.add_edge(3, 4)
+
+sccs = g.kosaraju()
+
+print("Strongly Connected Components:")
+for scc in sccs:
+    print(scc)
+```
+
+
+### 🔷 Output
+
+```id="b6g3sh"
+Strongly Connected Components:
+[0, 2, 1]
+[3]
+[4]
+```
+
+
+### 🔷 Time Complexity
+
+* **O(V + E)**
+  (V = vertices, E = edges)
+
+
+### 🔷 Important Points
+
+* Works only for **directed graphs**
+* Uses **DFS twice**
+* Efficient for finding **components in large graphs**
+
+
+### 🔷 Real-Life Applications
+
+* Social networks (mutual connections)
+* Web page linking analysis
+* Compiler optimization
+* Detecting cycles in directed systems
+
+
+### 🔷 Kosaraju vs Tarjan
+
+| Feature               | Kosaraju | Tarjan           |
+| --------------------- | -------- | ---------------- |
+| DFS passes            | 2        | 1                |
+| Complexity            | O(V + E) | O(V + E)         |
+| Ease of understanding | Easy     | Slightly complex |
+
+
+
+## 6. Tarjan’s Algorithm (Strongly Connected Components)
+
+**Definition:**
+Tarjan’s Algorithm is used to find **Strongly Connected Components (SCCs)** in a **directed graph** using **a single DFS traversal**.
+
+
+### 🔷 Why Tarjan?
+
+* ✅ Finds SCCs in **one DFS pass**
+* ✅ More efficient in practice than Kosaraju
+* ✅ No need to reverse the graph
+
+
+### 🔷 Core Idea
+
+Each node maintains:
+
+* **Discovery time (`disc`)** → when node is first visited
+* **Low value (`low`)** → lowest discovery time reachable
+* A **stack** → to track current DFS path
+
+👉 If for a node:
+
+```
+low[node] == disc[node]
+```
+
+→ It is the **head of an SCC**
+
+
+### 🔷 Steps of the Algorithm
+
+1. Initialize:
+
+   * `disc[] = -1`, `low[] = -1`
+   * Empty stack
+2. Perform DFS:
+
+   * Assign `disc[node] = low[node] = time`
+   * Push node into stack
+3. For each neighbor:
+
+   * If not visited → DFS and update low
+   * If in stack → update low
+4. If `low[node] == disc[node]`:
+
+   * Pop nodes from stack → form SCC
+
+
+### 🔷 Example
+
+```id="b5d9ml"
+Vertices: 0, 1, 2, 3, 4
+
+Edges:
+0 → 1
+1 → 2
+2 → 0
+1 → 3
+3 → 4
+```
+
+👉 SCCs:
+
+* {0, 1, 2}
+* {3}
+* {4}
+
+
+### 🔷 Python Code
+
+```python id="0a6vzz"
+from collections import defaultdict
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.graph = defaultdict(list)
+        self.time = 0
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    def tarjan_scc(self):
+        disc = [-1] * self.V
+        low = [-1] * self.V
+        stack = []
+        in_stack = [False] * self.V
+        sccs = []
+
+        def dfs(u):
+            disc[u] = low[u] = self.time
+            self.time += 1
+            stack.append(u)
+            in_stack[u] = True
+
+            for v in self.graph[u]:
+                if disc[v] == -1:
+                    dfs(v)
+                    low[u] = min(low[u], low[v])
+                elif in_stack[v]:
+                    low[u] = min(low[u], disc[v])
+
+            # If u is root of SCC
+            if low[u] == disc[u]:
+                component = []
+                while True:
+                    node = stack.pop()
+                    in_stack[node] = False
+                    component.append(node)
+                    if node == u:
+                        break
+                sccs.append(component)
+
+        for i in range(self.V):
+            if disc[i] == -1:
+                dfs(i)
+
+        return sccs
+
+
+# Example usage
+g = Graph(5)
+g.add_edge(0, 1)
+g.add_edge(1, 2)
+g.add_edge(2, 0)
+g.add_edge(1, 3)
+g.add_edge(3, 4)
+
+sccs = g.tarjan_scc()
+
+print("Strongly Connected Components:")
+for scc in sccs:
+    print(scc)
+```
+
+
+### 🔷 Output
+
+```id="q0m9zz"
+Strongly Connected Components:
+[2, 1, 0]
+[4]
+[3]
+```
+
+
+### 🔷 Time Complexity
+
+* **O(V + E)**
+  👉 Single DFS traversal
+
+
+### 🔷 Tarjan vs Kosaraju
+
+| Feature        | Tarjan           | Kosaraju |
+| -------------- | ---------------- | -------- |
+| DFS passes     | 1                | 2        |
+| Graph reversal | ❌ Not needed     | ✅ Needed |
+| Complexity     | O(V + E)         | O(V + E) |
+| Implementation | Slightly complex | Easier   |
+
+
+### 🔷 Real-Life Applications
+
+* Detecting **cycles in directed graphs**
+* Social network analysis
+* Compiler design (dependency resolution)
+* Network connectivity problems
+
+
+### 🔷 Easy Memory Trick 🧠
+
+👉 **“Low == Disc → SCC found”**
+
+* When a node **cannot go back further**, it becomes the **root of SCC**
 
 
 # 🔷 Applications of Graphs
@@ -1268,6 +1612,7 @@ Total Cost: 7
 * Recommendation Systems
 * Network Routing
 * Dependency Resolution (like package managers)
+
 
 
 # 🔷 Time & Space Complexity
