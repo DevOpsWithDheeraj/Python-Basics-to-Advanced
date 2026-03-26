@@ -291,7 +291,23 @@ graph = {
 
 # 🔷 Graph Representation
 
-## 1. Adjacency Matrix
+## 1. Adjacency List (Most Used)
+
+* Dictionary or list of lists
+
+```python
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A'],
+    'C': ['A']
+}
+```
+
+### Pros:
+
+* Space efficient: O(V + E)
+
+## 2. Adjacency Matrix
 
 * 2D array
 * `matrix[i][j] = 1` if edge exists
@@ -313,25 +329,6 @@ graph = [
 ### Cons:
 
 * Space complexity: O(V²)
-
-
-
-## 2. Adjacency List (Most Used)
-
-* Dictionary or list of lists
-
-```python
-graph = {
-    'A': ['B', 'C'],
-    'B': ['A'],
-    'C': ['A']
-}
-```
-
-### Pros:
-
-* Space efficient: O(V + E)
-
 
 
 # 🔷 Graph Traversal Algorithms
