@@ -236,15 +236,57 @@ C is connected only to D
 
 ## 9. Complete Graph
 
-* Every node is connected to every other node
+👉 A Complete Graph is a graph in which every pair of distinct vertices is connected by an edge. <br>
 
+➡️ This means each node is directly connected to every other node.
 
+🔹 Example
+```
+Vertices = {A, B, C}
+Edges = {(A, B), (A, C), (B, C)}
+```
+👉 Every node is connected to every other node
+
+Python Representation (Adjacency List):
+```
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'C'],
+    'C': ['A', 'B']
+}
+```
+
+🔹 Explanation
+```
+A ↔ B, A ↔ C
+B ↔ C
+```
+👉 No missing edges → Complete Graph
 
 ## 10. Bipartite Graph
 
-* Nodes divided into 2 sets
-* Edges only between sets (not within)
+A Bipartite Graph is a graph in which vertices can be divided into two disjoint sets such that:
+- No two vertices within the same set are connected
+- All edges connect one set to the other set only
 
+Sets:
+- U = {A, B}
+- V = {1, 2}
+
+Edges:
+(A, 1), (A, 2), (B, 1)
+
+👉 No edge between A–B or 1–2
+
+Python Representation (Adjacency List):
+```
+graph = {
+    'A': ['1', '2'],
+    'B': ['1'],
+    '1': ['A', 'B'],
+    '2': ['A']
+}
+```
 
 
 # 🔷 Graph Representation
