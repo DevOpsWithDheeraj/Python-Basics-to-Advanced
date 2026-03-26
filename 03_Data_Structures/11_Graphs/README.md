@@ -291,21 +291,78 @@ graph = {
 
 # 🔷 Graph Representation
 
-## 1. Adjacency List (Most Used)
+## 🔹 1. Adjacency List (Most Used)
 
-* Dictionary or list of lists
+- An **Adjacency List** is a way to represent a graph where **each vertex stores a list of its neighboring vertices**.
 
-```python
-graph = {
-    'A': ['B', 'C'],
-    'B': ['A'],
-    'C': ['A']
-}
+- Instead of storing all possible edges (like matrix), we store **only existing connections**.
+
+- For every node, keep a **list of nodes it is connected to**
+
+Example format:
+```
+A → B, C
+B → A, D
 ```
 
-### Pros:
+## 🔹 Example
 
-* Space efficient: O(V + E)
+### Graph:
+Vertices = {A, B, C, D}
+Edges = {(A, B), (A, C), (B, D)}
+
+### 🔹 Adjacency List Representation
+```
+A → B, C
+B → A, D
+C → A
+D → B
+```
+
+## 🔹 Python Example
+```python id="adj_list_code"
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D'],
+    'C': ['A'],
+    'D': ['B']
+}
+
+# Print adjacency list
+for node in graph:
+    print(node, "->", graph[node])
+```
+
+## 🔹 Output
+```text id="adj_list_output"
+A -> ['B', 'C']
+B -> ['A', 'D']
+C -> ['A']
+D -> ['B']
+```
+
+## 🔹 Explanation
+* **A → B, C** → A is connected to B and C
+* **B → A, D** → B is connected to A and D
+* Only **existing edges are stored**
+
+## 🔹 Advantages
+✔ Saves **memory** (efficient for sparse graphs)
+✔ Easy to **traverse neighbors**
+✔ Flexible and widely used
+
+## 🔹 Disadvantages
+❌ Checking if edge exists → may take **O(n)**
+❌ Slightly complex compared to matrix
+
+## 🔹 Time Complexity
+| Operation      | Complexity |
+| -------------- | ---------- |
+| Add edge       | O(1)       |
+| Remove edge    | O(n)       |
+| Check edge     | O(n)       |
+| Traverse graph | O(V + E)   |
+
 
 ## 2. Adjacency Matrix
 
