@@ -368,26 +368,87 @@ D -> ['B']
 
 ## 🔹 2. Adjacency Matrix
 
-* 2D array
-* `matrix[i][j] = 1` if edge exists
+- An **Adjacency Matrix** is a way to represent a graph using a **2D matrix (rows × columns)**.
+
+- If there is an edge between two vertices, we store **1 (or weight)**, otherwise **0**.
+
+- For a graph with **n vertices**, we create an **n × n matrix**
+
+* **matrix[i][j] = 1** → edge exists
+* **matrix[i][j] = 0** → no edge
+
+## Example
+### Graph:
+```
+Vertices = {A, B, C, D}
+Edges = {(A, B), (A, C), (B, D)}
+```
+
+### Adjacency Matrix
+|   | A | B | C | D |
+| - | - | - | - | - |
+| A | 0 | 1 | 1 | 0 |
+| B | 1 | 0 | 0 | 1 |
+| C | 1 | 0 | 0 | 0 |
+| D | 0 | 1 | 0 | 0 |
+
+## Python Example
+```python id="adj_matrix_code"
+# A, B, C, D mapped to 0,1,2,3
+
+matrix = [
+    [0, 1, 1, 0],  # A
+    [1, 0, 0, 1],  # B
+    [1, 0, 0, 0],  # C
+    [0, 1, 0, 0]   # D
+]
+
+# Print matrix
+for row in matrix:
+    print(row)
+```
+
+## Output
+```text id="adj_matrix_output"
+[0, 1, 1, 0]
+[1, 0, 0, 1]
+[1, 0, 0, 0]
+[0, 1, 0, 0]
+```
+## Explanation
+* A → B, C → so row A has 1 at B and C
+* B → A, D → row B has 1 at A and D
+* Matrix is **symmetric** (undirected graph)
+
+## 🔹 For Weighted Graph
+
+👉 Instead of 1, we store **weights**
 
 Example:
-
 ```python
-graph = [
- [0, 1, 0],
- [1, 0, 1],
- [0, 1, 0]
+matrix = [
+    [0, 5, 2],
+    [5, 0, 3],
+    [2, 3, 0]
 ]
 ```
 
-### Pros:
+## Advantages
+* Easy to **check edge existence → O(1)**
+* Simple representation
+* Good for **dense graphs**
 
-* Fast edge lookup: O(1)
+## Disadvantages
+* Uses more **memory → O(V²)**
+* Not efficient for sparse graphs
 
-### Cons:
+## Time Complexity
+| Operation  | Complexity |
+| ---------- | ---------- |
+| Add edge   | O(1)       |
+| Check edge | O(1)       |
+| Traverse   | O(V²)      |
 
-* Space complexity: O(V²)
 
 
 # 🔷 Graph Traversal Algorithms
