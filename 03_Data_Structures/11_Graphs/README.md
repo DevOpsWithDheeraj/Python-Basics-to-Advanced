@@ -1077,9 +1077,182 @@ Minimum Cost of MST: 7
 | Best for       | Dense graphs | Sparse graphs |
 
 
-## 4. Kruskal’s Algorithm
+## 4. Kruskal’s Algorithm (Minimum Spanning Tree)
 
-* MST using greedy approach
+**Definition:**
+Kruskal’s Algorithm is used to find a **Minimum Spanning Tree (MST)** of a **weighted, undirected graph**.
+
+👉 It builds the MST by **selecting edges in increasing order of weight**, while avoiding cycles.
+
+### 🔷 Key Idea
+
+* Sort all edges by **weight (smallest first)**
+* Keep adding edges **if they don’t form a cycle**
+* Use **Disjoint Set (Union-Find)** to detect cycles efficiently
+
+
+### 🔷 Steps of the Algorithm
+
+1. Sort all edges in **ascending order of weight**
+2. Initialize **Disjoint Set (parent array)**
+3. For each edge (u, v):
+
+   * If `u` and `v` belong to **different sets**:
+
+     * Add edge to MST
+     * Perform **union(u, v)**
+4. Stop when **(V − 1) edges** are selected
+
+
+
+### 🔷 Example
+
+```id="2jrs1u"
+Vertices: A, B, C, D
+
+Edges:
+A — B = 2
+A — C = 3
+B — C = 1
+B — D = 4
+C — D = 5
+```
+
+
+### 🔷 Step-by-Step Execution
+
+#### Step 1: Sort Edges
+
+```id="6e5d5h"
+(B-C=1), (A-B=2), (A-C=3), (B-D=4), (C-D=5)
+```
+
+
+
+#### Step 2: Pick edges one by one
+
+* Pick **B-C (1)** ✅ (no cycle)
+* Pick **A-B (2)** ✅ (no cycle)
+* Pick **A-C (3)** ❌ (forms cycle → skip)
+* Pick **B-D (4)** ✅
+
+
+
+### 🔷 Final MST
+
+```id="cahf6n"
+B — C = 1
+A — B = 2
+B — D = 4
+```
+
+👉 **Total Weight = 7**
+
+
+### 🔷 Python Code (Union-Find)
+
+```python id="c9xg3l"
+# Find with path compression
+def find(parent, node):
+    if parent[node] != node:
+        parent[node] = find(parent, parent[node])
+    return parent[node]
+
+# Union
+def union(parent, rank, u, v):
+    root_u = find(parent, u)
+    root_v = find(parent, v)
+
+    if root_u != root_v:
+        if rank[root_u] > rank[root_v]:
+            parent[root_v] = root_u
+        elif rank[root_u] < rank[root_v]:
+            parent[root_u] = root_v
+        else:
+            parent[root_v] = root_u
+            rank[root_u] += 1
+
+
+def kruskal(vertices, edges):
+    parent = {v: v for v in vertices}
+    rank = {v: 0 for v in vertices}
+
+    # Sort edges by weight
+    edges.sort(key=lambda x: x[2])
+
+    mst = []
+    total_cost = 0
+
+    for u, v, weight in edges:
+        if find(parent, u) != find(parent, v):
+            union(parent, rank, u, v)
+            mst.append((u, v, weight))
+            total_cost += weight
+
+    return mst, total_cost
+
+
+# Example graph (Edge List)
+vertices = ['A', 'B', 'C', 'D']
+edges = [
+    ('A', 'B', 2),
+    ('A', 'C', 3),
+    ('B', 'C', 1),
+    ('B', 'D', 4),
+    ('C', 'D', 5)
+]
+
+mst, cost = kruskal(vertices, edges)
+
+print("MST Edges:", mst)
+print("Total Cost:", cost)
+```
+
+
+
+### 🔷 Output
+
+```id="06k4pn"
+MST Edges: [('B', 'C', 1), ('A', 'B', 2), ('B', 'D', 4)]
+Total Cost: 7
+```
+
+
+
+### 🔷 Time Complexity
+
+* Sorting edges: **O(E log E)**
+* Union-Find operations: **≈ O(E α(V))** (almost constant)
+
+👉 Overall: **O(E log E)**
+
+
+
+### 🔷 Important Notes
+
+* Works for **undirected graphs only**
+* May produce **forest** if graph is disconnected
+* Uses **greedy approach**
+
+
+
+### 🔷 Kruskal vs Prim (Quick View)
+
+| Feature        | Kruskal       | Prim         |
+| -------------- | ------------- | ------------ |
+| Approach       | Edge-based    | Node-based   |
+| Data Structure | Disjoint Set  | Min-Heap     |
+| Best for       | Sparse graphs | Dense graphs |
+
+
+
+### 🔷 Interview Insight (Very Important)
+
+👉 **Golden Difference:**
+
+* **Kruskal → builds MST edge by edge globally**
+* **Prim → grows MST from a starting node**
+
 
 
 ## 5. Topological Sorting
