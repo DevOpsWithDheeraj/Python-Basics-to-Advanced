@@ -927,9 +927,154 @@ Distance from A to D is 0
 
 
 
-## 3. Prim’s Algorithm
+## 3. Prim’s Algorithm (Minimum Spanning Tree)
 
-* Minimum Spanning Tree (MST)
+**Definition:**
+Prim’s Algorithm is used to find a **Minimum Spanning Tree (MST)** of a **connected, weighted, undirected graph**.
+
+👉 **Minimum Spanning Tree:** A subset of edges that:
+* Connects all vertices
+* Has **no cycles**
+* Has **minimum total weight**
+
+
+### 🔷 Key Idea
+
+* Start from any vertex
+* At each step, pick the **minimum weight edge** that connects:
+
+  * A **visited node** → an **unvisited node**
+
+
+### 🔷 Steps of the Algorithm
+
+1. Start from any node (say A)
+2. Mark it as **visited**
+3. Add all its edges to a **priority queue (min-heap)**
+4. Pick the **smallest edge**
+5. If it connects to an unvisited node:
+
+   * Add it to MST
+   * Mark node visited
+6. Repeat until all vertices are included
+
+
+### 🔷 Example
+
+```id="3r5r0u"
+Vertices: A, B, C, D
+
+Edges:
+A — B = 2
+A — C = 3
+B — C = 1
+B — D = 4
+C — D = 5
+```
+
+
+### 🔷 Step-by-Step Execution
+
+#### Step 1: Start from A
+
+* Edges: (A-B=2), (A-C=3)
+
+👉 Pick smallest → **A-B (2)**
+
+
+#### Step 2: Visited = {A, B}
+
+* New edges: (B-C=1), (B-D=4), (A-C=3)
+
+👉 Pick smallest → **B-C (1)**
+
+
+#### Step 3: Visited = {A, B, C}
+
+* New edges: (C-D=5), (B-D=4)
+
+👉 Pick smallest → **B-D (4)**
+
+
+### 🔷 Final MST
+
+Edges in MST:
+
+```
+A — B = 2
+B — C = 1
+B — D = 4
+```
+
+👉 **Total Weight = 7**
+
+
+### 🔷 Python Code (Using Min-Heap)
+
+```python id="5b2o0p"
+import heapq
+
+def prim(graph, start):
+    visited = set()
+    min_heap = [(0, start)]  # (weight, node)
+    mst_cost = 0
+
+    while min_heap:
+        weight, node = heapq.heappop(min_heap)
+
+        if node in visited:
+            continue
+
+        visited.add(node)
+        mst_cost += weight
+
+        for neighbor, edge_weight in graph[node]:
+            if neighbor not in visited:
+                heapq.heappush(min_heap, (edge_weight, neighbor))
+
+    return mst_cost
+
+
+# Graph (Adjacency List)
+graph = {
+    'A': [('B', 2), ('C', 3)],
+    'B': [('A', 2), ('C', 1), ('D', 4)],
+    'C': [('A', 3), ('B', 1), ('D', 5)],
+    'D': [('B', 4), ('C', 5)]
+}
+
+# Run Prim's Algorithm
+cost = prim(graph, 'A')
+print("Minimum Cost of MST:", cost)
+```
+
+
+### 🔷 Output
+
+```id="a5nn82"
+Minimum Cost of MST: 7
+```
+
+
+### 🔷 Time Complexity
+
+* Using Min-Heap: **O(E log V)**
+* Using simple array: **O(V²)**
+  
+
+### 🔷 Important Notes
+
+* Works only for **undirected graphs**
+* Graph must be **connected**
+* Gives **Minimum Spanning Tree**, not shortest path
+
+### 🔷 Prim’s vs Kruskal’s
+
+| Feature        | Prim’s       | Kruskal’s     |
+| -------------- | ------------ | ------------- |
+| Approach       | Node-based   | Edge-based    |
+| Data Structure | Min-Heap     | Disjoint Set  |
+| Best for       | Dense graphs | Sparse graphs |
 
 
 ## 4. Kruskal’s Algorithm
