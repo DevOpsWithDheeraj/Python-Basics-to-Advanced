@@ -45,26 +45,25 @@ graph = {
 ## 2. Directed Graph (Digraph)
 
 - A Directed Graph (Digraph) is a graph in which edges have a direction.
-
 - Each edge is represented as an ordered pair (u, v)
-👉 This means u → v (from u to v), but v → u is not necessarily true.
+- This means u → v (from u to v), but v → u is not necessarily true.
 
 Example:
 
 ```
-A → B → C
+Vertices = {A, B, C, D}
+Edges = {(A → B), (A → C), (B → D)}
 ```
 
-Python:
-
+Python Representation (Adjacency List):
 ```python
 graph = {
-    'A': ['B'],
-    'B': ['C'],
-    'C': []
+    'A': ['B', 'C'],      # A → B, A → C
+    'B': ['D'],           # B → D
+    'C': [],          
+    'D': []
 }
 ```
-
 
 ## 3. Weighted Graph
 
