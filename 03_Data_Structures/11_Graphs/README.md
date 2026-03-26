@@ -67,7 +67,13 @@ graph = {
 
 ## 3. Weighted Graph
 
-* Each edge has a **weight (cost/distance)**
+👉 A Weighted Graph is a graph in which each edge has an associated value (weight). <br>
+
+➡️ The weight can represent: <br>
+- Distance (km)
+- Cost (₹)
+- Time (minutes)
+- Capacity, etc.
 
 Example:
 
