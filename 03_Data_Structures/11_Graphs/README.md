@@ -228,10 +228,11 @@ graph = {
 }
 ```
 🔹 Explanation
-- A is connected only to B 
-- C is connected only to D
-- 👉 No connection between (A, B) and (C, D)
-
+```
+A is connected only to B 
+C is connected only to D
+👉 No connection between (A, B) and (C, D)
+```
 
 ## 9. Complete Graph
 
