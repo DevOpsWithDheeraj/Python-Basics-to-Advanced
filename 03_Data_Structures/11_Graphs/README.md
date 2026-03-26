@@ -21,23 +21,24 @@ G = (V, E)
 
 ## 1. Undirected Graph
 
-* Edges have **no direction**
-* Connection is mutual
+- An Undirected Graph is a graph in which edges have no direction.
+- This means the connection between two vertices works both ways.
+- If there is an edge between A and B, then: A → B and B → A (both are same)
 
 Example:
-
 ```
-A — B
-B — C
+Vertices = {A, B, C, D}
+Edges = {(A, B), (A, C), (B, D)}
 ```
 
-Python Representation:
+Python Representation (Adjacency List):
 
 ```python
 graph = {
-    'A': ['B'],
-    'B': ['A', 'C'],
-    'C': ['B']
+    'A': ['B', 'C'],
+    'B': ['A', 'D'],
+    'C': ['A'],
+    'D': ['B']
 }
 ```
 
