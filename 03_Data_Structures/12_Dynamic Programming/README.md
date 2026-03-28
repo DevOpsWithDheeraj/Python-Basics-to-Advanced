@@ -347,7 +347,7 @@ dp[i] = dp[i-1] + dp[i-2]
 * `dp[0] = 1` → 1 way (stay at ground)
 * `dp[1] = 1` → only 1 step possible
 
-### 💻 Code (Bottom-Up Linear DP)
+### 💻 Code Climbing Stairs (Bottom-Up Linear DP)
 
 ```python
 def climb_stairs(n):
