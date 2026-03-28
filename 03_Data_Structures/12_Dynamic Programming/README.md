@@ -187,9 +187,9 @@ Call → Check dp → Compute → Store → Return
 
 ## 🔷 2. Bottom-Up Approach (Tabulation)
 
-* Bottom-Up Approach is a Dynamic Programming technique where a problem is solved by starting from the smallest subproblems and building up to the final solution iteratively, storing results in a table (array) to avoid recomputation.
+> Bottom-Up Approach is a Dynamic Programming technique where a problem is solved by starting from the smallest subproblems and building up to the final solution iteratively, storing results in a table (array) to avoid recomputation.
 
-* Bottom-Up Approach = Iteration + Tabulation (solve small → build big)
+> Bottom-Up Approach = Iteration + Tabulation (solve small → build big)
 
 ### 🔹 Steps in Bottom-Up Approach (Tabulation)
 
