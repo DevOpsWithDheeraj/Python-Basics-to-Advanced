@@ -111,7 +111,7 @@ print(fib(9))  # Output: 34
 
 Top-Down Approach is a Dynamic Programming technique where a problem is solved by breaking it into smaller subproblems using recursion, and storing the results (memoization) so that each subproblem is solved only once.
 
-### 🔷 Steps in Top-Down Approach (Memoization)
+### 🔹 Steps in Top-Down Approach (Memoization)
 
 Top-Down DP means: **solve using recursion + store results (memoization)**
 
@@ -174,7 +174,7 @@ def fib(n, dp={}):
 print(fib(9))  # Output: 34
 ```
 
-### 🔷 Flow Summary
+### 🔹 Flow Summary
 ```
 Call → Check dp → Compute → Store → Return
 ```
@@ -185,17 +185,17 @@ Call → Check dp → Compute → Store → Return
 * With DP → linear time
 
 
-## 🔹 2. Bottom-Up Approach (Tabulation)
+## 🔷 2. Bottom-Up Approach (Tabulation)
 
 * Bottom-Up Approach is a Dynamic Programming technique where a problem is solved by starting from the smallest subproblems and building up to the final solution iteratively, storing results in a table (array) to avoid recomputation.
 
 * Bottom-Up Approach = Iteration + Tabulation (solve small → build big)
 
-### 🔷 Steps in Bottom-Up Approach (Tabulation)
+### 🔹 Steps in Bottom-Up Approach (Tabulation)
 
 Bottom-Up DP means: **solve small subproblems first and build up to the final answer (iteratively)**
 
-### 🔷 Step-by-Step Process
+### 🔹 Step-by-Step Process
 
 1. **Define the Problem Relation (Recurrence)**
 
@@ -248,7 +248,7 @@ Bottom-Up DP means: **solve small subproblems first and build up to the final an
      return dp[n]
      ```
 
-### 🔷 Example (Fibonacci)
+### 🔹 Example (Fibonacci)
 
 ```python id="3r7kqg"
 def fib(n):
@@ -268,7 +268,7 @@ print(fib(6))  # Output: 8
 
 ---
 
-### 🔷 Flow Summary
+### 🔹 Flow Summary
 
 ```text id="0tpcz6"
 Start from base → Fill table → Reach final answer
