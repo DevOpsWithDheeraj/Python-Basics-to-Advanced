@@ -109,22 +109,67 @@ print(fib(9))  # Output: 34
 
 ## 🔹 1. Top-Down Approach (Memoization)
 
-* Uses **recursion**
-* Stores results in a cache (dictionary/array)
-* Avoids recomputation
+Top-Down Approach is a Dynamic Programming technique where a problem is solved by breaking it into smaller subproblems using recursion, and storing the results (memoization) so that each subproblem is solved only once.
 
-## 📌 Example: Fibonacci (Memoization)
+### 🔷 Steps in Top-Down Approach (Memoization)
+
+Top-Down DP means: **solve using recursion + store results (memoization)**
+
+1. **Define the Problem Recursively**
+
+   * Express the problem in terms of smaller subproblems
+   * Example:
+
+     ```
+     fib(n) = fib(n-1) + fib(n-2)
+     ```
+
+2. **Create a Storage (Memo Table)**
+
+   * Use a **dictionary / array** to store computed results
+   * This avoids recomputation
+
+3. **Check Before Computing**
+
+   * Before solving a subproblem:
+
+     ```
+     if n in dp:
+         return dp[n]
+     ```
+   * If already solved → reuse it
+
+
+4. **Solve Recursively**
+
+   * If not in memory, compute using recursion
+   * Break into smaller subproblems
+
+
+5. **Store the Result (Memoize)**
+
+   * Save the computed value:
+
+     ```
+     dp[n] = result
+     ```
+
+6. **Return the Result**
+
+   * Return stored or computed value
+
+### 🔷 Example (Fibonacci)
 
 ```python
 def fib(n, dp={}):
     if n in dp:
         return dp[n]
+    
     if n <= 1:
         return n
+    
     dp[n] = fib(n-1, dp) + fib(n-2, dp)
     return dp[n]
-
-print(fib(6))  # Output: 8
 ```
 
 ### ✔️ Explanation:
@@ -132,7 +177,6 @@ print(fib(6))  # Output: 8
 * Without DP → exponential time
 * With DP → linear time
 
----
 
 ## 🔹 2. Bottom-Up Approach (Tabulation)
 
