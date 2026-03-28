@@ -1,7 +1,7 @@
 
 # 🔷 1. What is Dynamic Programming (DP)?
 
-**Definition:**
+**Definition:** <br>
 Dynamic Programming is an algorithmic technique used to solve problems by **breaking them into smaller overlapping subproblems**, solving each subproblem **only once**, and **storing the result** to avoid repeated computation.
 
 
