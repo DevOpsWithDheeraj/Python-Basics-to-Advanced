@@ -678,66 +678,219 @@ def knapsack(weights, values, W):
 
 ## 🔸 4. Longest Common Subsequence (LCS)
 
-Used in string comparison
+**LCS** is a Dynamic Programming problem where:
 
-### 📌 Example:
+👉 You are given **two strings**, and you need to find the
+**longest sequence of characters that appear in both strings in the same order (not necessarily continuous).**
+
+
+### 🧠 Key Idea
+
+* Characters must be in **same order**
+* They **don’t need to be adjacent**
+
+
+### 🔍 Example
+
+```text
+String 1: "abcde"
+String 2: "ace"
+```
+
+👉 Common subsequences:
+
+* "a", "c", "e", "ac", "ae", "ce", "ace"
+
+👉 **Longest = "ace"**
+👉 Length = **3**
+
+
+### ⚙️ DP Logic
+
+Let:
+
+* `dp[i][j]` = LCS length of first `i` chars of string1 and first `j` chars of string2
+
+
+### 🔁 Recurrence
+
+If characters match:
+
+```
+dp[i][j] = 1 + dp[i-1][j-1]
+```
+
+If not:
+
+```
+dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+```
+
+## 💻 Code (Simple Strings)
 
 ```python
-def lcs(X, Y):
-    m, n = len(X), len(Y)
+def lcs(s1, s2):
+    m, n = len(s1), len(s2)
     dp = [[0]*(n+1) for _ in range(m+1)]
-    
+
     for i in range(1, m+1):
         for j in range(1, n+1):
-            if X[i-1] == Y[j-1]:
+            if s1[i-1] == s2[j-1]:
                 dp[i][j] = 1 + dp[i-1][j-1]
             else:
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1])
-    
+
     return dp[m][n]
+
+
+print(lcs("abcde", "ace"))  # Output: 3
 ```
+
+## 📌 Key Points
+
+* LCS is a **Grid DP problem**
+* Time Complexity: **O(m × n)**
+* Used in:
+
+  * Text comparison
+  * Version control (Git diff)
+  * DNA sequence matching
+
 
 ## 🔸 5. Subset / Partition DP
 
-### 📌 Example: Subset Sum
+**Subset / Partition DP** is used when:
+
+👉 You are given an array and need to decide:
+
+* Can we form a **subset** with a given sum?
+* Can we **divide the array into parts** with equal or specific sums?
+
+### 🧠 Core Idea
+
+Let:
+
+* `dp[i][s]` = **True/False** → can we form sum `s` using first `i` elements?
+
+👉 Each element has 2 choices:
+
+* ✅ Include it
+* ❌ Exclude it
+
+### 🔍 Example 1: Subset Sum Problem
+
+#### ❓ Problem
+
+```text
+Array = [2, 3, 7, 8, 10]
+Target Sum = 11
+```
+
+👉 Can we form sum = 11?
+
+✔ Yes → **3 + 8 = 11**
+
+
+#### 🔁 Recurrence
+
+If we don’t take:
+
+```
+dp[i][s] = dp[i-1][s]
+```
+
+If we take:
+
+```
+dp[i][s] = dp[i-1][s - arr[i]]
+```
+
+👉 Final:
+
+```
+dp[i][s] = take OR not_take
+```
+
+#### 💻 Code (Subset Sum Problem)
 
 ```python
 def subset_sum(arr, target):
     n = len(arr)
     dp = [[False]*(target+1) for _ in range(n+1)]
-    
+
+    # Base case
     for i in range(n+1):
         dp[i][0] = True
-    
+
     for i in range(1, n+1):
-        for j in range(1, target+1):
-            if arr[i-1] <= j:
-                dp[i][j] = dp[i-1][j-arr[i-1]] or dp[i-1][j]
+        for s in range(1, target+1):
+            if arr[i-1] <= s:
+                dp[i][s] = dp[i-1][s] or dp[i-1][s - arr[i-1]]
             else:
-                dp[i][j] = dp[i-1][j]
-    
+                dp[i][s] = dp[i-1][s]
+
     return dp[n][target]
+
+
+print(subset_sum([2,3,7,8,10], 11))  # True
 ```
 
-## 🔸 6. DP on Trees
 
-Used in tree structures (DFS + DP)
+### 🔍 Example 2: Equal Partition Problem
 
-👉 Example: Maximum path sum in a tree
+#### ❓ Problem
 
-
-## 🔸 7. DP with Bitmasking
-
-Used when dealing with subsets
-
-👉 Example: Traveling Salesman Problem (TSP)
+👉 Can we divide array into **two subsets with equal sum?**
 
 
-## 🔸 8. Digit DP
+#### 🧠 Trick
 
-Used in number problems with constraints
+1. Find total sum
+2. If sum is odd → ❌ Not possible
+3. If even → check subset sum = `sum/2`
 
-👉 Example: Count numbers with certain digit properties
+
+#### 💻 Code (Equal Partition Problem)
+
+```python
+def can_partition(nums):
+    total = sum(nums)
+
+    if total % 2 != 0:
+        return False
+
+    target = total // 2
+
+    dp = [False] * (target + 1)
+    dp[0] = True
+
+    for num in nums:
+        for s in range(target, num - 1, -1):
+            dp[s] = dp[s] or dp[s - num]
+
+    return dp[target]
+
+
+print(can_partition([1, 5, 11, 5]))  # True
+```
+
+
+### 📊 Key Patterns
+
+| Problem            | Goal                       |
+| ------------------ | -------------------------- |
+| Subset Sum         | Can we form a target sum?  |
+| Equal Partition    | Split into equal halves    |
+| Count Subsets      | Number of subsets with sum |
+| Minimum Difference | Closest partition          |
+
+
+### 📌 Key Takeaways
+
+* Based on **include/exclude decision**
+* Usually uses **boolean DP**
+* Time Complexity: **O(n × target)**
+* Space Optimization possible using **1D DP**
 
 
 # 🔷 5. Time & Space Complexity
