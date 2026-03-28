@@ -174,6 +174,11 @@ def fib(n, dp={}):
 print(fib(9))  # Output: 34
 ```
 
+### 🔷 Flow Summary
+```
+Call → Check dp → Compute → Store → Return
+```
+
 ### ✔️ Explanation:
 
 * Without DP → exponential time
@@ -182,23 +187,89 @@ print(fib(9))  # Output: 34
 
 ## 🔹 2. Bottom-Up Approach (Tabulation)
 
-* Uses **iteration**
-* Builds solution from smallest subproblems
+### 🔷 Steps in Bottom-Up Approach (Tabulation)
 
-### 📌 Example: Fibonacci (Tabulation)
+Bottom-Up DP means: **solve small subproblems first and build up to the final answer (iteratively)**
 
-```python
+### 🔷 Step-by-Step Process
+
+1. **Define the Problem Relation (Recurrence)**
+
+   * Identify how the solution depends on smaller subproblems
+   * Example:
+
+     ```
+     fib(n) = fib(n-1) + fib(n-2)
+     ```
+
+2. **Create a DP Table (Array / List)**
+
+   * Allocate memory to store results of subproblems
+   * Example:
+
+     ```python
+     dp = [0] * (n + 1)
+     ```
+
+3. **Initialize Base Cases**
+
+   * Set initial known values
+   * Example:
+
+     ```python
+     dp[0] = 0
+     dp[1] = 1
+     ```
+     
+4. **Fill the Table Iteratively**
+
+   * Start from smallest subproblem and move upward
+   * Example:
+
+     ```python
+     for i in range(2, n + 1):
+         dp[i] = dp[i-1] + dp[i-2]
+     ```
+
+5. **Build Solution Step-by-Step**
+
+   * Each value uses already computed values
+   * No recursion involved
+
+6. **Return Final Answer**
+
+   * The required result is stored in:
+
+     ```python
+     return dp[n]
+     ```
+
+### 🔷 Example (Fibonacci)
+
+```python id="3r7kqg"
 def fib(n):
+    if n <= 1:
+        return n
+
     dp = [0] * (n + 1)
     dp[1] = 1
-    
+
     for i in range(2, n + 1):
         dp[i] = dp[i-1] + dp[i-2]
-    
+
     return dp[n]
 
 print(fib(6))  # Output: 8
 ```
+
+---
+
+### 🔷 Flow Summary
+
+```text id="0tpcz6"
+Start from base → Fill table → Reach final answer
+```
+
 
 
 # 🔷 3. Types of Dynamic Programming Problems
