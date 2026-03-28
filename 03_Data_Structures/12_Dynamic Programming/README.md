@@ -300,23 +300,116 @@ Return final answer
 
 ## 🔸 1. Linear DP
 
-Problems where state depends on previous states in a sequence
+**Linear DP** is a type of dynamic programming where:
 
-### 📌 Example: Fibonacci, Climbing Stairs
+* The problem is solved **in a linear sequence (1D)**
+* Each state depends on **a fixed number of previous states**
+* Usually uses a **1D array (dp[])**
+
+👉 In simple words:
+> You build the solution step-by-step from **left to right**, using previously computed values.
+
+### 🧠 Example Problem: Climbing Stairs
+
+#### ❓ Problem Statement
+
+You are climbing a staircase with `n` steps.
+Each time, you can climb either:
+
+* 1 step
+* 2 steps
+
+👉 Find the total number of distinct ways to reach the top.
+
+### 🔍 Understanding the Logic
+
+Let:
+
+* `dp[i]` = number of ways to reach step `i`
+
+Then:
+
+* To reach step `i`, you can come from:
+
+  * Step `i-1` (1 step jump)
+  * Step `i-2` (2 step jump)
+
+So,
+
+👉 **Recurrence Relation:**
+
+```
+dp[i] = dp[i-1] + dp[i-2]
+```
+
+### ⚙️ Base Cases
+
+* `dp[0] = 1` → 1 way (stay at ground)
+* `dp[1] = 1` → only 1 step possible
+
+### 💻 Code (Bottom-Up Linear DP)
 
 ```python
 def climb_stairs(n):
-    if n <= 2:
-        return n
+    if n <= 1:
+        return 1
+
+    dp = [0] * (n + 1)
     
-    dp = [0]*(n+1)
-    dp[1], dp[2] = 1, 2
-    
-    for i in range(3, n+1):
-        dp[i] = dp[i-1] + dp[i-2]
-    
+    dp[0] = 1
+    dp[1] = 1
+
+    for i in range(2, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+
     return dp[n]
+
+print(climb_stairs(5))  # Output: 8
 ```
+
+### 🔄 Step-by-Step Example (n = 5)
+
+| Step (i) | dp[i] | Explanation |
+| -------- | ----- | ----------- |
+| 0        | 1     | Base case   |
+| 1        | 1     | Base case   |
+| 2        | 2     | (1+1)       |
+| 3        | 3     | (2+1)       |
+| 4        | 5     | (3+2)       |
+| 5        | 8     | (5+3)       |
+
+### ⚡ Optimized Version (Space Optimization)
+
+Since we only need last two values:
+
+```python
+def climb_stairs(n):
+    if n <= 1:
+        return 1
+
+    prev2 = 1  # dp[0]
+    prev1 = 1  # dp[1]
+
+    for i in range(2, n + 1):
+        curr = prev1 + prev2
+        prev2 = prev1
+        prev1 = curr
+
+    return prev1
+
+print(climb_stairs(5))  # Output: 8
+```
+
+### 📌 Key Takeaways
+
+* Linear DP uses **1D progression**
+* Each state depends on **previous states**
+* Climbing stairs is similar to **Fibonacci sequence**
+* Time Complexity: **O(n)**
+* Space Complexity:
+
+  * Normal DP: **O(n)**
+  * Optimized: **O(1)**
 
 
 ## 🔸 2. Grid-Based DP
