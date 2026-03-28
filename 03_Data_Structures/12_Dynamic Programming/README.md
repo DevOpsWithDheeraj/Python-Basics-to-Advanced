@@ -71,7 +71,7 @@ def fib(n, dp={}):
     dp[n] = fib(n-1, dp) + fib(n-2, dp)
     return dp[n]
 
-print(fib(6))  # Output: 8
+print(fib(9))  # Output: 34
 ```
 
 
