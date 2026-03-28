@@ -5,25 +5,25 @@
 Dynamic Programming is an algorithmic technique used to solve problems by **breaking them into smaller overlapping subproblems**, solving each subproblem **only once**, and **storing the result** to avoid repeated computation.
 
 
-### 🔷 Key Idea
+## 🔷 Key Idea
 
 👉 “**Don’t repeat work — store and reuse results**”
 
 Dynamic Programming is mainly used when:
 
-#### ✅ 1. Overlapping Subproblems
+### ✅ 1. Overlapping Subproblems
 
-Same subproblem occurs multiple times
+Same subproblem occurs multiple times <br>
 👉 Example: Fibonacci
 
-#### ✅ 2. Optimal Substructure
+### ✅ 2. Optimal Substructure
 
-Optimal solution can be built from optimal solutions of subproblems
+Optimal solution can be built from optimal solutions of subproblems <br>
 👉 Example: Shortest path
 
 
 
-### 🔷 Two Approaches in DP
+## 🔷 Two Approaches in DP
 
 1. **Top-Down (Memoization)**
 
@@ -33,7 +33,7 @@ Optimal solution can be built from optimal solutions of subproblems
    * Build solution iteratively using a table
 
 
-### 🔷 Example: Fibonacci Number
+## 🔷 Example: Fibonacci Number
 
 👉 Problem: Find nth Fibonacci number
 Formula:
@@ -43,7 +43,7 @@ F(n) = F(n-1) + F(n-2)
 ```
 
 
-### 🔷 Normal Recursion (Inefficient)
+## 🔷 Normal Recursion (Inefficient)
 
 ```python
 def fib(n):
@@ -55,9 +55,9 @@ def fib(n):
 ❌ Time Complexity: **O(2ⁿ)** (very slow due to repeated calls)
 
 
-### 🔷 Dynamic Programming Solution
+## 🔷 Dynamic Programming Solution
 
-#### ✅ Top-Down (Memoization)
+### ✅ Top-Down (Memoization)
 
 ```python
 def fib(n, dp={}):
@@ -74,7 +74,7 @@ print(fib(6))  # Output: 8
 ```
 
 
-#### ✅ Bottom-Up (Tabulation)
+### ✅ Bottom-Up (Tabulation)
 
 ```python
 def fib(n):
@@ -93,7 +93,7 @@ print(fib(6))  # Output: 8
 ```
 
 
-### 🔷 Why DP is Better?
+## 🔷 Why DP is Better?
 
 | Approach            | Time Complexity |
 | ------------------- | --------------- |
@@ -104,9 +104,7 @@ print(fib(6))  # Output: 8
 
 
 
-# 🔷 3. Two Main Approaches of DP
-
----
+# 🔷 2. Two Main Approaches of DP
 
 ## 🔹 1. Top-Down Approach (Memoization)
 
@@ -114,7 +112,7 @@ print(fib(6))  # Output: 8
 * Stores results in a cache (dictionary/array)
 * Avoids recomputation
 
-### 📌 Example: Fibonacci (Memoization)
+## 📌 Example: Fibonacci (Memoization)
 
 ```python
 def fib(n, dp={}):
@@ -155,11 +153,8 @@ def fib(n):
 print(fib(6))  # Output: 8
 ```
 
----
 
-# 🔷 4. Types of Dynamic Programming Problems
-
----
+# 🔷 3. Types of Dynamic Programming Problems
 
 ## 🔸 1. Linear DP
 
@@ -181,7 +176,6 @@ def climb_stairs(n):
     return dp[n]
 ```
 
----
 
 ## 🔸 2. Grid-Based DP
 
@@ -199,8 +193,6 @@ def unique_paths(m, n):
     
     return dp[m-1][n-1]
 ```
-
----
 
 ## 🔸 3. Knapsack DP
 
@@ -222,8 +214,6 @@ def knapsack(W, wt, val, n):
     return dp[n][W]
 ```
 
----
-
 ## 🔸 4. Longest Common Subsequence (LCS)
 
 Used in string comparison
@@ -244,8 +234,6 @@ def lcs(X, Y):
     
     return dp[m][n]
 ```
-
----
 
 ## 🔸 5. Subset / Partition DP
 
@@ -269,15 +257,12 @@ def subset_sum(arr, target):
     return dp[n][target]
 ```
 
----
-
 ## 🔸 6. DP on Trees
 
 Used in tree structures (DFS + DP)
 
 👉 Example: Maximum path sum in a tree
 
----
 
 ## 🔸 7. DP with Bitmasking
 
@@ -285,7 +270,6 @@ Used when dealing with subsets
 
 👉 Example: Traveling Salesman Problem (TSP)
 
----
 
 ## 🔸 8. Digit DP
 
@@ -293,7 +277,6 @@ Used in number problems with constraints
 
 👉 Example: Count numbers with certain digit properties
 
----
 
 # 🔷 5. Time & Space Complexity
 
@@ -303,7 +286,6 @@ Used in number problems with constraints
 | Memoization | O(n)            | O(n)             |
 | Tabulation  | O(n)            | O(n)             |
 
----
 
 # 🔷 6. Key Terms in DP
 
@@ -313,7 +295,6 @@ Used in number problems with constraints
 * **Memoization** → Storing results
 * **Tabulation** → Iterative table filling
 
----
 
 # 🔷 7. How to Solve DP Problems
 
@@ -323,7 +304,6 @@ Used in number problems with constraints
 4. Choose Top-down or Bottom-up
 5. Optimize space (if possible)
 
----
 
 # 🔷 9. Real-Life Applications
 
@@ -333,4 +313,3 @@ Used in number problems with constraints
 * Game strategies
 * Resource allocation
 
----
