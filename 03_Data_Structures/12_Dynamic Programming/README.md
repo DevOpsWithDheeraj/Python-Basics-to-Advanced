@@ -176,7 +176,17 @@ print(fib(9))  # Output: 34
 
 ### 🔹 Flow Summary
 ```
-Call → Check dp → Compute → Store → Return
+Start with main problem
+        ↓
+Break into smaller subproblems (recursion)
+        ↓
+Check if already solved (dp/memo)
+        ↓
+If not → solve recursively
+        ↓
+Store result in dp
+        ↓
+Return result
 ```
 
 ### ✔️ Explanation:
@@ -271,7 +281,17 @@ print(fib(6))  # Output: 8
 ### 🔹 Flow Summary
 
 ```text id="0tpcz6"
-Start from base → Fill table → Reach final answer
+Start from base cases
+        ↓
+Initialize dp table
+        ↓
+Solve small subproblems first
+        ↓
+Build up to larger problems (iteration)
+        ↓
+Store results in table
+        ↓
+Return final answer
 ```
 
 
