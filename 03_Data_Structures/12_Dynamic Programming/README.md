@@ -1,14 +1,99 @@
 
-# 🔷 1. What is Dynamic Programming?
+# 🔷 1. What is Dynamic Programming (DP)?
 
 **Definition:**
-Dynamic Programming is a method used to solve complex problems by:
+Dynamic Programming is an algorithmic technique used to solve problems by **breaking them into smaller overlapping subproblems**, solving each subproblem **only once**, and **storing the result** to avoid repeated computation.
 
-1. Breaking them into **smaller subproblems**
-2. Solving each subproblem **only once**
-3. Storing results (**memoization**) to avoid recomputation
 
----
+### 🔷 Key Idea
+
+👉 “**Don’t repeat work — store and reuse results**”
+
+Dynamic Programming is mainly used when:
+
+1. The problem has **Overlapping Subproblems**
+2. The problem has **Optimal Substructure**
+
+
+### 🔷 Two Approaches in DP
+
+1. **Top-Down (Memoization)**
+
+   * Use recursion + cache (dictionary/array)
+2. **Bottom-Up (Tabulation)**
+
+   * Build solution iteratively using a table
+
+
+### 🔷 Example: Fibonacci Number
+
+👉 Problem: Find nth Fibonacci number
+Formula:
+
+```
+F(n) = F(n-1) + F(n-2)
+```
+
+
+### 🔷 Normal Recursion (Inefficient)
+
+```python
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+```
+
+❌ Time Complexity: **O(2ⁿ)** (very slow due to repeated calls)
+
+
+### 🔷 Dynamic Programming Solution
+
+#### ✅ Top-Down (Memoization)
+
+```python
+def fib(n, dp={}):
+    if n in dp:
+        return dp[n]
+    
+    if n <= 1:
+        return n
+    
+    dp[n] = fib(n-1, dp) + fib(n-2, dp)
+    return dp[n]
+
+print(fib(6))  # Output: 8
+```
+
+
+#### ✅ Bottom-Up (Tabulation)
+
+```python
+def fib(n):
+    if n <= 1:
+        return n
+    
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    
+    for i in range(2, n + 1):
+        dp[i] = dp[i-1] + dp[i-2]
+    
+    return dp[n]
+
+print(fib(6))  # Output: 8
+```
+
+
+### 🔷 Why DP is Better?
+
+| Approach            | Time Complexity |
+| ------------------- | --------------- |
+| Recursion           | O(2ⁿ)           |
+| Dynamic Programming | O(n)            |
+
+👉 Huge performance improvement 🚀
+
 
 # 🔷 2. When to Use DP?
 
