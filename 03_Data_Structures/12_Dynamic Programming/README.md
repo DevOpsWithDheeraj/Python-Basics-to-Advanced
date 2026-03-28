@@ -90,7 +90,7 @@ def fib(n):
     
     return dp[n]
 
-print(fib(6))  # Output: 8
+print(fib(9))  # Output: 34
 ```
 
 
