@@ -414,20 +414,139 @@ print(climb_stairs(5))  # Output: 8
 
 ## 🔸 2. Grid-Based DP
 
-Used in matrix/grid traversal problems
+* **Grid-Based DP** is used when a problem is represented as a **2D grid (matrix)** and you need to compute values by moving across cells.
 
-### 📌 Example: Unique Paths
+* You solve each cell using results from **neighboring cells** (like top, left, or diagonal).
+
+
+### 🧠 Core Idea
+
+Let:
+
+* `dp[i][j]` = answer for cell `(i, j)`
+
+Then:
+
+* Each cell depends on previously computed cells like:
+
+  * Top → `(i-1, j)`
+  * Left → `(i, j-1)`
+  * Diagonal → `(i-1, j-1)` (in some problems)
+
+### 🔑 General Pattern
+
+```python
+for i in range(rows):
+    for j in range(cols):
+        dp[i][j] = function_of_neighbors(...)
+```
+
+### 🧩 Example 1: Unique Paths
+
+#### ❓ Problem
+
+Move from top-left to bottom-right in a grid.
+Allowed moves: ➡️ Right, ⬇️ Down
+
+
+#### 🔍 Recurrence
+
+```
+dp[i][j] = dp[i-1][j] + dp[i][j-1]
+```
+
+#### 💻 Code
 
 ```python
 def unique_paths(m, n):
     dp = [[1]*n for _ in range(m)]
-    
+
     for i in range(1, m):
         for j in range(1, n):
             dp[i][j] = dp[i-1][j] + dp[i][j-1]
-    
+
+    return dp[m-1][n-1]
+
+print(unique_paths(3, 3))  # 6
+```
+
+#### 📊 DP Table (3×3)
+
+```
+1  1  1
+1  2  3
+1  3  6
+```
+
+### 🧩 Example 2: Minimum Path Sum
+
+#### ❓ Problem
+
+Each cell has a cost. Find minimum cost path.
+
+
+#### 🔍 Recurrence
+
+```
+dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])
+```
+
+
+#### 💻 Code
+
+```python
+def min_path_sum(grid):
+    m, n = len(grid), len(grid[0])
+
+    dp = [[0]*n for _ in range(m)]
+    dp[0][0] = grid[0][0]
+
+    # First row
+    for j in range(1, n):
+        dp[0][j] = dp[0][j-1] + grid[0][j]
+
+    # First column
+    for i in range(1, m):
+        dp[i][0] = dp[i-1][0] + grid[i][0]
+
+    # Fill rest
+    for i in range(1, m):
+        for j in range(1, n):
+            dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])
+
     return dp[m-1][n-1]
 ```
+
+### ⚡ Space Optimization (1D DP)
+
+```python
+def unique_paths(m, n):
+    dp = [1]*n
+
+    for i in range(1, m):
+        for j in range(1, n):
+            dp[j] = dp[j] + dp[j-1]
+
+    return dp[-1]
+```
+
+### 🎯 Common Grid DP Patterns
+
+| Pattern        | Movement | Example            |
+| -------------- | -------- | ------------------ |
+| Right + Down   | → ↓      | Unique Paths       |
+| Min/Max Path   | → ↓      | Min Path Sum       |
+| Diagonal       | ↘️       | LCS, Edit Distance |
+| All Directions | ↑ ↓ ← →  | DP + BFS problems  |
+
+### 📌 Key Takeaways
+
+* Grid DP uses **2D DP array**
+* Each state depends on **neighboring cells**
+* Time Complexity: **O(m × n)**
+* Often optimized to **O(n) space**
+* Very common in **interviews & coding rounds**
+
 
 ## 🔸 3. Knapsack DP
 
