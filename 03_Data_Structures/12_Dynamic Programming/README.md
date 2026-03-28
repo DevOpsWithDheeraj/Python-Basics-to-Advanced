@@ -48,6 +48,9 @@ def fib(n):
     if n <= 1:
         return n
     return fib(n-1) + fib(n-2)
+
+# Call the function and print result
+print(fib(9))
 ```
 
 ❌ Time Complexity: **O(2ⁿ)** (very slow due to repeated calls)
