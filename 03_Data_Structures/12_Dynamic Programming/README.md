@@ -11,8 +11,16 @@ Dynamic Programming is an algorithmic technique used to solve problems by **brea
 
 Dynamic Programming is mainly used when:
 
-1. The problem has **Overlapping Subproblems**
-2. The problem has **Optimal Substructure**
+#### ✅ 1. Overlapping Subproblems
+
+Same subproblem occurs multiple times
+👉 Example: Fibonacci
+
+#### ✅ 2. Optimal Substructure
+
+Optimal solution can be built from optimal solutions of subproblems
+👉 Example: Shortest path
+
 
 
 ### 🔷 Two Approaches in DP
@@ -95,21 +103,6 @@ print(fib(6))  # Output: 8
 👉 Huge performance improvement 🚀
 
 
-# 🔷 2. When to Use DP?
-
-DP is applicable when a problem has:
-
-### ✅ 1. Overlapping Subproblems
-
-Same subproblem occurs multiple times
-👉 Example: Fibonacci
-
-### ✅ 2. Optimal Substructure
-
-Optimal solution can be built from optimal solutions of subproblems
-👉 Example: Shortest path
-
----
 
 # 🔷 3. Two Main Approaches of DP
 
