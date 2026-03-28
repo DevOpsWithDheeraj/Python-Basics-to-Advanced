@@ -12,11 +12,11 @@ Dynamic Programming is an algorithmic technique used to solve problems by **brea
 Dynamic Programming is mainly used when: 
 
 ### ✅ 1. Overlapping Subproblems
-Same subproblem occurs multiple times <br>
+* Same subproblem occurs multiple times <br>
 👉 Example: Fibonacci
 
 ### ✅ 2. Optimal Substructure
-Optimal solution can be built from optimal solutions of subproblems <br>
+* Optimal solution can be built from optimal solutions of subproblems <br>
 👉 Example: Shortest path
 
 
