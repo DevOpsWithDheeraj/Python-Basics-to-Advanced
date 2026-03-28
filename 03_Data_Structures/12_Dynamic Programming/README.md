@@ -547,23 +547,134 @@ print(min_path_sum(grid))  # Output: 7
 
 ## 🔸 3. Knapsack DP
 
-Used in optimization problems
+**Knapsack DP** is used for optimization problems where:
 
-### 📌 Example: 0/1 Knapsack
+* You have **items** with:
+
+  * `weight`
+  * `value (profit)`
+* You have a **bag (knapsack)** with limited capacity `W`
+
+👉 Goal: **Maximize total value without exceeding capacity**
+
+### 🧠 Types of Knapsack
+
+1. **0/1 Knapsack**
+
+   * You can either **take an item or skip it**
+   * ❌ Cannot take fractional or multiple times
+
+2. **Unbounded Knapsack**
+
+   * You can take an item **multiple times**
+
+👉 We’ll focus on **0/1 Knapsack (most important)**
+
+
+### 📊 Problem Example
+
+You have:
+
+| Item | Weight | Value |
+| ---- | ------ | ----- |
+| 1    | 1      | 1     |
+| 2    | 3      | 4     |
+| 3    | 4      | 5     |
+| 4    | 5      | 7     |
+
+Knapsack Capacity = **7**
+
+👉 Find maximum value you can carry.
+
+### 🔍 DP Idea
+
+Let:
+
+* `dp[i][w]` = maximum value using first `i` items with capacity `w`
+
+### 🔁 Recurrence Relation
+
+If we **don’t take item i**:
+
+```
+dp[i][w] = dp[i-1][w]
+```
+
+If we **take item i** (only if weight allows):
+
+```
+dp[i][w] = value[i] + dp[i-1][w - weight[i]]
+```
+
+👉 Final:
+
+```
+dp[i][w] = max(take, not_take)
+```
+
+### 💻 Code (0/1 Knapsack)
 
 ```python
-def knapsack(W, wt, val, n):
+def knapsack(weights, values, W):
+    n = len(weights)
+
     dp = [[0]*(W+1) for _ in range(n+1)]
-    
+
     for i in range(1, n+1):
         for w in range(1, W+1):
-            if wt[i-1] <= w:
-                dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w])
+
+            if weights[i-1] <= w:
+                take = values[i-1] + dp[i-1][w - weights[i-1]]
+                not_take = dp[i-1][w]
+                dp[i][w] = max(take, not_take)
             else:
                 dp[i][w] = dp[i-1][w]
-    
+
     return dp[n][W]
+
+
+# Example
+weights = [1, 3, 4, 5]
+values = [1, 4, 5, 7]
+W = 7
+
+print(knapsack(weights, values, W))  # Output: 9
 ```
+
+### 🧮 Explanation
+
+👉 Best combination:
+
+* Item 2 (weight 3, value 4)
+* Item 3 (weight 4, value 5)
+
+Total weight = 7
+Total value = **9**
+
+### ⚡ Space Optimization (1D DP)
+
+```python
+def knapsack(weights, values, W):
+    dp = [0] * (W + 1)
+
+    for i in range(len(weights)):
+        for w in range(W, weights[i] - 1, -1):
+            dp[w] = max(dp[w], values[i] + dp[w - weights[i]])
+
+    return dp[W]
+```
+
+
+### 📌 Key Points
+
+* 0/1 Knapsack = **Pick or Skip**
+* Uses **2D DP (items × capacity)**
+* Time Complexity: **O(n × W)**
+* Space Complexity:
+
+  * 2D → **O(n × W)**
+  * Optimized → **O(W)**
+
 
 ## 🔸 4. Longest Common Subsequence (LCS)
 
