@@ -515,19 +515,16 @@ def min_path_sum(grid):
             dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])
 
     return dp[m-1][n-1]
-```
 
-### ⚡ Space Optimization (1D DP)
 
-```python
-def unique_paths(m, n):
-    dp = [1]*n
+# 🔹 Test input
+grid = [
+    [1, 3, 1],
+    [1, 5, 1],
+    [4, 2, 1]
+]
 
-    for i in range(1, m):
-        for j in range(1, n):
-            dp[j] = dp[j] + dp[j-1]
-
-    return dp[-1]
+print(min_path_sum(grid))  # Output: 7
 ```
 
 ### 🎯 Common Grid DP Patterns
